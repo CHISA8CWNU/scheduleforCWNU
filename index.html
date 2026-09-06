@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>师大课程表 — 使用教程 &amp; 功能介绍 | 西华师范大学专属课程表 App</title>
+<meta name="description" content="师大课程表使用教程与功能介绍：一键导入教务系统课表、双视图课表、夏冬作息自动切换、桌面小组件与上课提醒。安装导入 25 步 + 小组件 9 步全图解，附常见问题解答。">
+<link rel="icon" type="image/png" href="assets/icon-256.png">
+<style>
+
+/* ===================== 基础重置 ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    color: #1e293b; background: #fff; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ===================== 设计变量 ===================== */
+:root {
+    --brand: #00a86c;
+    --brand-2: #10b981;
+    --brand-3: #00955c;
+    --brand-soft: #ecfdf5;
+    --brand-line: #a7f3d0;
+    --green: #eff8f3;
+    --green-line: #d6eee2;
+    --green-text: #00955c;
+    --ink: #0b1220;
+    --gray: #64748b;
+    --line: #e6ecf3;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+.wrap { width: min(1180px, 100% - 48px); margin: 0 auto; }
+.sec { padding: 108px 0; }
+.sec-green { background: var(--green); border-top: 1px solid var(--green-line); border-bottom: 1px solid var(--green-line); }
+.sec-dark { background: #07271d; color: #fff; }
+
+/* ===================== 导航 ===================== */
+.nav {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(255, 255, 255, .82);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid rgba(15, 23, 42, .07);
+    transition: box-shadow .3s var(--ease);
+}
+.nav.scrolled { box-shadow: 0 6px 24px rgba(15, 23, 42, .07); }
+.nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 17.5px; letter-spacing: .2px; color: var(--ink); }
+.brand-mark {
+    width: 38px; height: 38px; flex: none; border-radius: 50%;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, .18);
+}
+.brand small { display: block; font-size: 11px; font-weight: 500; color: var(--gray); line-height: 1.25; letter-spacing: .2px; }
+
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a { font-size: 15px; color: #475569; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--brand); }
+.nav-cta {
+    background: var(--brand); color: #fff !important; padding: 9px 20px;
+    border-radius: 999px; font-size: 14.5px !important; font-weight: 600;
+    transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0, 168, 108, .32); }
+.nav-toggle {
+    display: none; width: 42px; height: 42px; border: 1px solid var(--line);
+    background: #fff; border-radius: 12px; cursor: pointer; font-size: 17px; color: #334155;
+}
+.nav-mobile { display: none; border-top: 1px solid var(--line); background: #fff; }
+.nav-mobile.open { display: block; }
+.nav-mobile a { display: block; padding: 14px 24px; font-size: 15px; border-bottom: 1px solid #f1f5f9; }
+
+/* ===================== 通用按钮 ===================== */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    padding: 16px 38px; border-radius: 999px; font-size: 16.5px; font-weight: 600;
+    background: linear-gradient(135deg, #00b26f 0%, var(--brand) 55%, var(--brand-3) 100%);
+    color: #fff; box-shadow: 0 14px 30px rgba(0, 168, 108, .34);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 168, 108, .42); }
+.btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px; padding: 16px 28px;
+    border-radius: 999px; font-size: 16px; font-weight: 600; color: var(--brand);
+    background: #fff; border: 1px solid var(--brand-line); transition: background .2s, border-color .2s;
+}
+.btn-ghost:hover { background: var(--brand-soft); }
+
+/* ===================== 章节标题（小米式） ===================== */
+.sec-head { text-align: center; margin-bottom: 56px; }
+.sec-head.left { text-align: left; }
+.eyebrow {
+    display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--brand); margin-bottom: 16px;
+}
+.sec-dark .eyebrow { color: #6ee7b7; }
+.sec-head h2 {
+    font-size: clamp(30px, 4.2vw, 46px); font-weight: 800; letter-spacing: -1px;
+    line-height: 1.28; color: var(--ink); margin-bottom: 16px;
+}
+.sec-dark .sec-head h2 { color: #fff; }
+.sec-head h2 .sp { display: inline-block; }
+.sec-head p.sub { color: var(--gray); font-size: 16.5px; max-width: 640px; margin: 0 auto; }
+.sec-head.left p.sub { margin: 0; }
+.sec-dark .sec-head p.sub { color: rgba(255, 255, 255, .66); }
+
+/* 卖点短语列（小米式无标点短语） */
+.spec-lines { margin-top: 26px; }
+.spec-lines li {
+    font-size: 15.5px; color: #334155; padding: 7px 0 7px 18px; position: relative;
+}
+.spec-lines li::before {
+    content: ""; position: absolute; left: 0; top: 17px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2);
+}
+.sec-dark .spec-lines li { color: rgba(255, 255, 255, .8); }
+.sec-dark .spec-lines li::before { background: #6ee7b7; }
+
+/* ===================== 首屏 ===================== */
+.hero {
+    padding: 78px 0 96px; position: relative; overflow: hidden;
+    background:
+        radial-gradient(1000px 460px at 8% -12%, #d1fae5 0%, rgba(209, 250, 229, 0) 60%),
+        radial-gradient(760px 420px at 96% 6%, #d6eee2 0%, rgba(220, 252, 231, 0) 62%),
+        #fff;
+}
+.hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 60px; align-items: center; }
+
+.hero-tag {
+    display: inline-flex; align-items: flex-start; gap: 9px; font-size: 13.5px; font-weight: 600;
+    color: var(--green-text); background: var(--green); border: 1px solid var(--green-line);
+    padding: 8px 17px; border-radius: 18px; max-width: 100%;
+    line-height: 1.55; text-align: left;
+}
+.hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; flex: none; margin-top: 7px; }
+
+h1 {
+    font-size: clamp(38px, 5.6vw, 66px); font-weight: 800; line-height: 1.16;
+    letter-spacing: -2px; color: var(--ink); margin: 26px 0 22px;
+}
+h1 .grad {
+    background: linear-gradient(100deg, #00a86c 0%, #10b981 55%, #10b981 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .lead { font-size: clamp(16px, 1.6vw, 18.5px); color: #475569; max-width: 560px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 28px 0 34px; }
+.chip {
+    font-size: 13.5px; color: #334155; background: #fff;
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 15px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, .04);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; align-items: center; }
+.hero-note { margin-top: 20px; font-size: 13px; color: #94a3b8; }
+
+/* ===================== 手机展示（真实截图） ===================== */
+.stage { position: relative; display: grid; place-items: center; min-height: 520px; }
+.stage::before {
+    content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle, #d1fae5 0%, rgba(209, 250, 229, 0) 68%);
+    z-index: 0;
+}
+.phone {
+    position: relative; z-index: 1;
+    width: 296px; border-radius: 44px; padding: 10px;
+    background: linear-gradient(160deg, #1d4a3a, #0b1220);
+    box-shadow: 0 40px 80px rgba(15, 23, 42, .3), 0 0 0 1px rgba(255, 255, 255, .08) inset;
+}
+.phone::after { /* 顶部听筒 */
+    content: ""; position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+    width: 84px; height: 7px; border-radius: 999px; background: rgba(255, 255, 255, .16);
+}
+.phone-screen { border-radius: 34px; overflow: hidden; background: #f6f8fb; }
+.phone-screen img { width: 100%; height: auto; }
+.stage .caption { position: relative; z-index: 1; }
+
+.caption { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 18px; letter-spacing: .3px; }
+
+/* ===================== 数据区视觉图 ===================== */
+.data-visual { text-align: center; margin: 12px 0 48px; }
+.data-visual .phone { margin: 0 auto; width: 260px; max-width: min(260px, 78vw); }
+
+/* 双视图：两张手机截图并排 */
+.duo { display: flex; gap: 16px; justify-content: center; align-items: flex-start; }
+.duo .phone { width: auto; flex: 1 1 0; max-width: 230px; }
+@media (max-width: 520px) { .duo { flex-direction: column; align-items: center; } .duo .phone { max-width: 260px; } }
+
+/* ===================== 参数条 ===================== */
+.stat-strip { padding: 54px 0; background: var(--green); border-bottom: 1px solid var(--green-line); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stat { text-align: center; }
+.stat .num {
+    font-size: clamp(30px, 3.6vw, 44px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+    color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.stat .num em { font-style: normal; font-size: .52em; font-weight: 700; margin-left: 2px; color: #334155; }
+.stat .lb { font-size: 13.5px; color: var(--gray); margin-top: 6px; }
+.stat .lb b { color: var(--green-text); font-weight: 600; }
+
+/* ===================== 两栏内容 ===================== */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.split.rev .split-txt { order: 2; }
+.split.rev .split-vis { order: 1; }
+
+/* ===================== 纯净承诺（品牌绿满幅） ===================== */
+.promise {
+    position: relative; overflow: hidden; color: #fff;
+    background: linear-gradient(120deg, #007A4A 0%, #00A86C 48%, #2DD4A0 100%);
+}
+.promise::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(620px 320px at 10% 0%, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, 0) 62%),
+        radial-gradient(620px 320px at 92% 100%, rgba(16, 185, 129, .28) 0%, rgba(16, 185, 129, 0) 60%);
+}
+.promise .wrap { position: relative; }
+.promise .eyebrow { color: #a7f3d0; }
+.promise h2 { color: #fff; }
+.promise p.sub { color: rgba(255, 255, 255, .8); }
+
+.promise-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.promise-item {
+    background: rgba(255, 255, 255, .11); border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 18px; padding: 28px 24px;
+    transition: transform .25s var(--ease), background .25s var(--ease);
+}
+.promise-item:hover { transform: translateY(-5px); background: rgba(255, 255, 255, .17); }
+.promise-item .zero { display: flex; align-items: baseline; gap: 6px; color: #fff; font-weight: 700; font-size: 16px; }
+.promise-item .zero b {
+    font-size: 42px; font-weight: 800; letter-spacing: -2px; line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+.promise-item p { font-size: 13.5px; color: rgba(255, 255, 255, .72); margin-top: 10px; }
+
+.promise-note {
+    margin-top: 44px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, .2);
+    text-align: center; font-size: 15px; color: rgba(255, 255, 255, .82);
+}
+.promise-note b { color: #fff; font-weight: 700; }
+
+/* ===================== 细节参数网格 ===================== */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.tile {
+    border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; background: #fff;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+}
+.tile:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0, 168, 108, .12); border-color: var(--brand-line); }
+.tile .k { font-size: 21px; font-weight: 800; color: var(--brand); letter-spacing: -.5px; }
+.tile .t { font-size: 15px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+.tile .d { font-size: 13.5px; color: var(--gray); margin-top: 4px; }
+
+/* ===================== 深色区：提醒 & 小组件 ===================== */
+.widgets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.wg {
+    background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 18px; padding: 22px 20px;
+    transition: transform .25s var(--ease), background .25s var(--ease);
+}
+.wg:hover { transform: translateY(-5px); background: rgba(255, 255, 255, .1); }
+.wg .size {
+    display: inline-block; font-size: 11.5px; font-weight: 700; color: #6ee7b7;
+    background: rgba(110, 231, 183, .12); border: 1px solid rgba(110, 231, 183, .25);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 14px;
+}
+.wg .shot {
+    height: 168px; margin-bottom: 14px; border-radius: 12px;
+    background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14);
+    display: grid; place-items: center; overflow: hidden; padding: 8px;
+}
+.wg .shot img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 6px; }
+.wg h3 { font-size: 15.5px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.wg p { font-size: 13.5px; color: rgba(255, 255, 255, .6); }
+
+/* ===================== 数据区卡片 ===================== */
+.cards4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.card {
+    background: #fff; border: 1px solid var(--green-line); border-radius: 18px; padding: 28px 24px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, .04);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(15, 23, 42, .1); }
+.card .ico {
+    width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
+    font-size: 23px; background: var(--brand-soft); margin-bottom: 18px;
+}
+.card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.card p { font-size: 14.5px; color: var(--gray); }
+
+/* ===================== 下载 ===================== */
+.dl-box {
+    position: relative; overflow: hidden; text-align: center; border-radius: 28px;
+    padding: 64px 40px; border: 1px solid var(--line); background:
+        radial-gradient(900px 320px at 50% 0%, #d1fae5 0%, rgba(209, 250, 229, 0) 70%),
+        linear-gradient(180deg, #ffffff 0%, var(--green) 100%);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, .07);
+}
+.dl-icon {
+    width: 84px; height: 84px; margin: 0 auto 24px; border-radius: 50%;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, .18);
+}
+.dl-box h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; color: var(--ink); margin-bottom: 14px; }
+.dl-box > p { color: #475569; max-width: 540px; margin: 0 auto 32px; font-size: 16.5px; }
+.dl-meta {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 34px;
+    margin-top: 34px; padding-top: 28px; border-top: 1px dashed #cbd5e1;
+    font-size: 14.5px; color: #475569;
+}
+.dl-meta b { color: var(--ink); font-weight: 700; }
+.tip { margin-top: 24px; font-size: 12.5px; color: #94a3b8; }
+
+/* ===================== 页脚 ===================== */
+.footer { background: #07271d; color: #fff; padding: 76px 0 0; }
+.about-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; padding-bottom: 44px; }
+.footer h3 { font-size: 16px; font-weight: 700; margin-bottom: 14px; color: #fff; }
+.footer p { font-size: 14px; color: rgba(255, 255, 255, .58); margin-bottom: 8px; max-width: 620px; }
+.footer a { color: #6ee7b7; }
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .1); padding: 22px 0 30px;
+    display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between;
+    font-size: 13.5px; color: rgba(255, 255, 255, .45);
+}
+.footer-bottom nav a { margin-left: 20px; }
+.footer-bottom nav a:hover { color: #6ee7b7; }
+
+/* ===================== 滚动入场动画 ===================== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* ===================== 响应式 ===================== */
+@media (max-width: 1000px) {
+    .split { grid-template-columns: 1fr; gap: 44px; }
+    .split.rev .split-txt, .split.rev .split-vis { order: initial; }
+    .widgets { grid-template-columns: repeat(2, 1fr); }
+    .cards4 { grid-template-columns: repeat(2, 1fr); }
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    .promise-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+    .wrap { width: min(1180px, 100% - 32px); }
+    .sec { padding: 66px 0; }
+    .hero { padding: 52px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    h1 { letter-spacing: -1px; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 30px 14px; }
+    .stage { min-height: 0; }
+    .dl-box { padding: 48px 22px; }
+    .about-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-bottom nav a { margin: 0 9px; }
+}
+@media (max-width: 520px) {
+    .widgets, .cards4, .tiles, .promise-list { grid-template-columns: 1fr; }
+    .phone { width: 258px; border-radius: 38px; padding: 9px; }
+    .phone::after { top: 19px; width: 72px; height: 6px; }
+    .phone-screen { border-radius: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+}
+
+  #tutorial, .tut-scope {
+    --primary: #00B26F;
+    --primary-dark: #00955C;
+    --primary-soft: #E5F5EE;
+    --accent: #00955c;
+    --accent-dark: #007a4a;
+    --warm-bg: #FAFAF7;
+    --card: #FFFFFF;
+    --ink: #1F2937;
+    --ink-soft: #4B5563;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --warn-bg: #FEF3C7;
+    --warn-ink: #92400E;
+    --tip-bg: #d1fae5;
+    --tip-ink: #065f46;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .04), 0 2px 6px rgba(15, 23, 42, .04);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, .06), 0 12px 32px rgba(15, 23, 42, .06);
+    --radius: 14px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  #tutorial, .tut-scope {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--warm-bg);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :where(#tutorial, .tut-scope) a { color: var(--accent); text-decoration: none; transition: color .15s ease; }
+  :where(#tutorial, .tut-scope) a:hover { color: var(--accent-dark); }
+
+  img { max-width: 100%; display: block; }
+
+  /* ---------- 顶部导航 ---------- */
+  .tut-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .tut-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .tut-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .tut-brand-mark {
+    width: 32px; height: 32px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--primary) 0%, #34D399 100%);
+    color: #fff;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .tut-nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .tut-nav-links a {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: all .15s ease;
+  }
+  .tut-nav-links a:hover { background: var(--primary-soft); color: var(--primary-dark); }
+  .tut-nav-cta {
+    background: var(--primary);
+    color: #fff !important;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 178, 111, .25);
+  }
+  .tut-nav-cta:hover { background: var(--primary-dark); color: #fff; }
+
+  /* ---------- Hero ---------- */
+  .tut-hero {
+    background: linear-gradient(180deg, #F0FBF5 0%, var(--warm-bg) 100%);
+    padding: 64px 24px 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tut-hero-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .tut-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    color: var(--primary-dark);
+    border: 1px solid #C9EDDC;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .tut-pill::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(0, 178, 111, .15);
+  }
+  .tut-hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    margin: 0 0 18px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .tut-hero h1 .tut-accent {
+    background: linear-gradient(135deg, var(--primary) 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tut-hero p.tut-lead {
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto 28px;
+  }
+  .tut-hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .tut-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all .15s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .tut-btn-primary {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 178, 111, .3);
+  }
+  .tut-btn-primary:hover { background: var(--primary-dark); color: #fff; transform: translateY(-1px); }
+  .tut-btn-ghost {
+    background: #fff;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .tut-btn-ghost:hover { border-color: var(--primary); color: var(--primary-dark); }
+
+  .tut-url-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .tut-url-box code {
+    flex: 1;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    direction: rtl;
+  }
+  .tut-url-box .tut-copy-btn {
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+    border: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .15s ease;
+  }
+  .tut-url-box .tut-copy-btn:hover { background: var(--primary); color: #fff; }
+  .tut-url-box .tut-copy-btn.tut-copied { background: var(--primary); color: #fff; }
+
+  .tut-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    max-width: 720px;
+    margin: 36px auto 0;
+  }
+  .tut-features span {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  /* ---------- 主体 ---------- */
+  .tut-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ---------- TOC ---------- */
+  .tut-toc {
+    position: sticky;
+    top: 88px;
+    align-self: start;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow-sm);
+    counter-reset: toc;
+  }
+  .tut-toc h3 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .tut-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tut-toc li {
+    counter-increment: toc;
+    margin-bottom: 2px;
+  }
+  .tut-toc-group-title {
+    margin: 14px 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tut-toc-group-title::before {
+    content: "";
+    width: 4px;
+    height: 14px;
+    border-radius: 2px;
+    background: var(--primary);
+    flex-shrink: 0;
+  }
+  .tut-toc-group:first-of-type .tut-toc-group-title { margin-top: 2px; }
+  .tut-toc-faq { margin-top: 12px; }
+  .tut-toc a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    transition: all .15s ease;
+  }
+  .tut-toc ol a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--warm-bg);
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .tut-toc a:hover { background: var(--primary-soft); color: var(--primary-dark); }
+  .tut-toc a.tut-active { background: var(--primary-soft); color: var(--primary-dark); font-weight: 600; }
+  .tut-toc a.tut-active::before { background: var(--primary); color: #fff; }
+
+  /* ---------- 章节 ---------- */
+  .tut-phase {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px 36px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .tut-phase-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .tut-phase-head .tut-num {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 700;
+    background: var(--primary-soft);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .tut-phase-head h2 {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .tut-phase-head .tut-range {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: "SF Mono", Menlo, monospace;
+  }
+  .tut-phase-desc {
+    color: var(--muted);
+    margin: 6px 0 24px;
+    font-size: 15px;
+  }
+
+  /* ---------- 步骤 ---------- */
+  .tut-step {
+    display: grid;
+    grid-template-columns: 56px 1fr 240px;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px dashed var(--line);
+    scroll-margin-top: 88px;
+  }
+  .tut-step:first-of-type { border-top: none; padding-top: 0; }
+  .tut-step:last-of-type { padding-bottom: 0; }
+
+  .tut-step-badge {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--primary) 0%, #10b981 130%);
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(0, 178, 111, .25);
+    flex-shrink: 0;
+    align-self: start;
+    margin-top: 4px;
+  }
+
+  .tut-step-body { min-width: 0; }
+  .tut-step-body h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .tut-step-body p {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+  }
+  .tut-step-body p:last-child { margin-bottom: 0; }
+
+  .tut-callout {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    border-left: 4px solid;
+    background: var(--warm-bg);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .tut-callout .tut-icon {
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .tut-callout-warn { background: var(--warn-bg); border-color: #F59E0B; color: var(--warn-ink); }
+  .tut-callout-tip  { background: var(--tip-bg);  border-color: var(--accent); color: var(--tip-ink); }
+  .tut-callout-info { background: var(--primary-soft); border-color: var(--primary); color: #065F46; }
+
+  .tut-step-img {
+    width: 240px;
+    background: var(--warm-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 6px;
+    cursor: zoom-in;
+    transition: transform .2s ease, box-shadow .2s ease;
+    align-self: start;
+    overflow: hidden;
+  }
+  .tut-step-img:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .tut-step-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+  }
+  .tut-step-img.tut-step-img-extra { grid-column: 3; margin-top: 12px; }
+
+  .tut-step-img .caption {    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 6px 0 4px;
+    font-family: "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- FAQ ---------- */
+  .tut-faq {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .tut-faq h2 { margin: 0 0 6px; font-size: 24px; font-weight: 700; }
+  .tut-faq .tut-phase-desc { margin-bottom: 20px; }
+  .tut-faq details {
+    border-top: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .tut-faq details:last-of-type { border-bottom: none; }
+  .tut-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+  }
+  .tut-faq summary::-webkit-details-marker { display: none; }
+  .tut-faq summary::after {
+    content: "+";
+    font-size: 20px;
+    color: var(--primary);
+    transition: transform .2s ease;
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+  .tut-faq details\[open\] summary::after { transform: rotate(45deg); }
+  .tut-faq details p {
+    margin: 12px 0 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  /* ---------- Footer ---------- */
+
+  /* ---------- 回到顶部 ---------- */
+  .tut-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 44px; height: 44px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 178, 111, .3);
+    font-size: 22px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .25s ease;
+    pointer-events: none;
+    z-index: 100;
+    font-family: inherit;
+  }
+  .tut-to-top.tut-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .tut-to-top:hover { background: var(--primary-dark); }
+
+  /* ---------- Lightbox ---------- */
+  .tut-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  .tut-lightbox.tut-show { display: flex; }
+  .tut-lightbox img {
+    max-width: 92vw;
+    max-height: 92vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+  }
+  .tut-lightbox .tut-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: inherit;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 960px) {
+    .tut-main {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 32px 18px 60px;
+    }
+    .tut-toc { position: static; }
+    .tut-toc ol { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 4px; }
+    .tut-toc li { margin: 0; }
+    .tut-step {
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+    }
+    .tut-step-img {
+      grid-column: 1 / -1;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .tut-step-img.tut-step-img-extra {
+      grid-column: 1 / -1;
+      margin-top: 12px;
+    }
+    .tut-phase { padding: 28px 22px 22px; }
+    .tut-faq { padding: 28px 22px; }
+  }
+  @media (max-width: 520px) {
+    .tut-hero { padding: 44px 18px 40px; }
+    .tut-nav-inner { padding: 12px 18px; gap: 10px; }
+    .tut-nav-links { display: none; }
+    .tut-url-box code { font-size: 12px; }
+  }
+
+
+/* ===================== 合并页补充 ===================== */
+html { scroll-padding-top: 84px; }
+#tutorial, .tut-scope { position: relative; }
+
+  /* ===================== 全站风格统一补充 ===================== */
+  .tut-btn-soft { background: var(--primary-soft); color: var(--primary-dark); }
+  .tut-btn-soft:hover { background: #d8f0e4; border-color: #c2ead7; }
+  .sec .tut-faq { max-width: 860px; margin: 0 auto; }
+  .sec .tut-faq .tut-phase-head { margin-top: 0; }
+</style>
+</head>
+<body>
+<!-- ===================== 全站导航（教程 + 介绍） ===================== -->
+<header class="nav" id="nav">
+    <div class="wrap nav-inner">
+        <a class="brand" href="#tut-top">
+            <img class="brand-mark" src="assets/icon-256.png" alt="师大课程表图标" width="38" height="38">
+            <span>师大课程表<small>China West Normal University</small></span>
+        </a>
+        <nav class="nav-links">
+            <a href="#tut-top">使用教程</a>
+            <a href="#tut-phase-3">导入课表</a>
+            <a href="#tut-faq">常见问题</a>
+            <a href="#intro">功能介绍</a>
+            <a href="#widgets">小组件</a>
+            <a href="#download">下载</a>
+            <a class="nav-cta" href="#download">免费下载</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false">☰</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+        <a href="#tut-top">使用教程</a>
+        <a href="#tut-widgets">小组件教程</a>
+        <a href="#tut-faq">常见问题</a>
+        <a href="#intro">功能介绍</a>
+        <a href="#widgets">小组件</a>
+        <a href="#download">下载</a>
+        <a href="#about">关于</a>
+    </div>
+</header>
+
+<div id="tutorial">
+<!-- ===== Hero ===== -->
+<header class="tut-hero" id="tut-top">
+  <div class="tut-hero-inner">
+    <div class="tut-pill">西华师范大学专属课程表 APP</div>
+    <h1>课表这件事<br/><span class="tut-accent">一次登录就够了</span></h1>
+    <p class="tut-lead">从教务系统到手机课表，只差一次登录。课程、教师、教室、周次自动录入；夏冬作息自动切换；桌面小组件与上课提醒一应俱全。安装导入 25 步 + 小组件 9 步，10 分钟全搞定。</p>
+    <div class="tut-hero-actions">
+      <a class="tut-btn tut-btn-primary" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v0.15.4.apk" target="_blank" rel="noopener">
+        ⬇ 免费下载 APP
+      </a>
+      <a class="tut-btn tut-btn-ghost" href="#tut-phase-1">开始教程</a>
+      <a class="tut-btn tut-btn-soft" href="#intro">软件介绍</a>
+    </div>
+    <div class="tut-url-box">
+      <code id="tut-app-url">https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/</code>
+      <button class="tut-copy-btn" id="tut-copy-btn" type="button">复制</button>
+    </div>
+    <div class="tut-features">
+      <span>一键导入教务课表</span>
+      <span>桌面小组件</span>
+      <span>上课提醒</span>
+      <span>夏冬作息自动切换</span>
+      <span>高度个性化</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 主体 ===== -->
+<main class="tut-main">
+  <!-- 左侧目录 -->
+  <aside class="tut-toc" aria-label="教程目录">
+    <h3>教程目录</h3>
+    <div class="tut-toc-group">
+      <div class="tut-toc-group-title">安装使用教程</div>
+      <ol>
+        <li><a href="#tut-phase-1">开始使用</a></li>
+        <li><a href="#tut-phase-2">首次配置</a></li>
+        <li><a href="#tut-phase-3">导入课表</a></li>
+        <li><a href="#tut-phase-4">上课提醒</a></li>
+        <li><a href="#tut-phase-5">个性化设置</a></li>
+      </ol>
+    </div>
+    <div class="tut-toc-group">
+      <div class="tut-toc-group-title">小组件教程</div>
+      <ol>
+        <li><a href="#tut-widgets">桌面小组件</a></li>
+      </ol>
+    </div>
+    <a class="tut-toc-faq" href="#tut-faq">常见问题</a>
+  </aside>
+
+  <!-- 右侧内容 -->
+  <div>
+
+    <!-- ============= 阶段 1 ============= -->
+    <section class="tut-phase" id="tut-phase-1">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 01</span>
+        <h2>开始使用</h2>
+        <span class="tut-range">步骤 1 - 5</span>
+      </div>
+      <p class="tut-phase-desc">从浏览器打开链接，到把 APP 装到手机，只需 5 步。</p>
+
+      <article class="tut-step" id="tut-step-1">
+        <div class="tut-step-badge">1</div>
+        <div class="tut-step-body">
+          <h3>复制链接并粘贴到浏览器</h3>
+          <p>把下面的网址复制到手机浏览器（建议用系统自带浏览器或 Chrome / Edge / Safari）：</p>
+          <p><a href="https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/" target="_blank" rel="noopener">https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/</a></p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-01.jpg" title="点击放大">
+          <img src="assets/tut/step-01.jpg" alt="在浏览器地址栏粘贴链接" loading="lazy" />
+          <div class="caption">图 1</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-2">
+        <div class="tut-step-badge">2</div>
+        <div class="tut-step-body">
+          <h3>出现"风险提示"页面 → 点击「确认访问」</h3>
+          <p>首次打开会出现腾讯云测试域名的提示页。点击底部<strong>"确定访问"</strong>按钮即可。</p>
+          <div class="tut-callout tut-callout-info">
+            <span class="tut-icon">💡</span>
+            <span>这是因为作者没有花钱申请正式域名，仅分享给师大的兄弟姐妹们使用，所以无伤大雅，可以放心点。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-02.jpg" title="点击放大">
+          <img src="assets/tut/step-02.jpg" alt="风险提示页面" loading="lazy" />
+          <div class="caption">图 2</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-3">
+        <div class="tut-step-badge">3</div>
+        <div class="tut-step-body">
+          <h3>进入软件介绍页 → 点击「免费下载」</h3>
+          <p>点击"确认访问"后会进入介绍页。直接点底部的绿色 <strong>"免费下载"</strong> 按钮即可立即下载。想了解更多功能也可继续浏览页面。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-03.jpg" title="点击放大">
+          <img src="assets/tut/step-03.jpg" alt="软件介绍页面" loading="lazy" />
+          <div class="caption">图 3</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-4">
+        <div class="tut-step-badge">4</div>
+        <div class="tut-step-body">
+          <h3>点击下载</h3>
+          <p>不同手机品牌的下载页面可能略有差异，根据自己屏幕上显示的提示点击下载即可。下载完成后到 <strong>"下载"</strong> 文件夹或通知栏里找到安装包。</p>
+          <div class="tut-callout tut-callout-tip">
+            <span class="tut-icon">📱</span>
+            <span>如果浏览器拦截了下载，检查右上角的下载提示并允许。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-04.jpg" title="点击放大">
+          <img src="assets/tut/step-04.jpg" alt="下载页面" loading="lazy" />
+          <div class="caption">图 4</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-5">
+        <div class="tut-step-badge">5</div>
+        <div class="tut-step-body">
+          <h3>系统安全扫描 → 继续安装</h3>
+          <p>大多数安卓系统会对未知来源 APK 进行安全扫描，直接选择 <strong>"继续安装"</strong> 即可。如果系统询问"是否允许此来源安装"，选择允许。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-05.jpg" title="点击放大">
+          <img src="assets/tut/step-05.jpg" alt="安装时的安全扫描" loading="lazy" />
+          <div class="caption">图 5</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= 阶段 2 ============= -->
+    <section class="tut-phase" id="tut-phase-2">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 02</span>
+        <h2>首次配置</h2>
+        <span class="tut-range">步骤 6 - 9</span>
+      </div>
+      <p class="tut-phase-desc">首次打开 APP，按向导完成基础设置。</p>
+
+      <article class="tut-step" id="tut-step-6">
+        <div class="tut-step-badge">6</div>
+        <div class="tut-step-body">
+          <h3>语言设置 → 选择「跟随系统」</h3>
+          <p>系统会进入"语言设置"界面。建议直接选 <strong>"跟随系统"</strong>，软件会自动匹配你手机的系统语言。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-06.jpg" title="点击放大">
+          <img src="assets/tut/step-06.jpg" alt="语言设置" loading="lazy" />
+          <div class="caption">图 6</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-7">
+        <div class="tut-step-badge">7</div>
+        <div class="tut-step-body">
+          <h3>主题模式 → 浅色 / 深色 / 动态取色</h3>
+          <p>三种模式可选：</p>
+          <p><strong>浅色 / 深色模式</strong>：手动切换主题色；建议选 <strong>"跟随系统"</strong>。<br/>
+          <strong>动态取色</strong>：会吸取你手机壁纸的主色调作为整个 APP 的主题色 —— 想换心情时换张壁纸即可。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-07.jpg" title="点击放大">
+          <img src="assets/tut/step-07.jpg" alt="主题模式选择" loading="lazy" />
+          <div class="caption">图 7</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-8">
+        <div class="tut-step-badge">8</div>
+        <div class="tut-step-body">
+          <h3>其他基础设置</h3>
+          <p>根据个人情况设置即可。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-08.jpg" title="点击放大">
+          <img src="assets/tut/step-08.jpg" alt="基础设置" loading="lazy" />
+          <div class="caption">图 8</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-9">
+        <div class="tut-step-badge">9</div>
+        <div class="tut-step-body">
+          <h3>推荐使用「教务系统导入」</h3>
+          <p>讲解导入课程的方式：</p>
+          <div class="tut-callout tut-callout-info">
+            <span class="tut-icon">⭐</span>
+            <span>"教务系统导入"是从学校官方教务系统一键拉取你的真实课表，无需手动录入课程、时间、地点，<strong>强烈推荐</strong>。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-09.jpg" title="点击放大">
+          <img src="assets/tut/step-09.jpg" alt="导入方式选择" loading="lazy" />
+          <div class="caption">图 9</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= 阶段 3 ============= -->
+    <section class="tut-phase" id="tut-phase-3">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 03</span>
+        <h2>导入课表</h2>
+        <span class="tut-range">步骤 10 - 17 · 核心环节</span>
+      </div>
+      <p class="tut-phase-desc">从教务系统一键导入你本学期的真实课表。整个流程约 1 - 2 分钟。</p>
+
+      <article class="tut-step" id="tut-step-10">
+        <div class="tut-step-badge">10</div>
+        <div class="tut-step-body">
+          <h3>跳转"西华师范大学信息门户" → 输入账密 → 点「登录」</h3>
+          <p>点击"教务系统导入"会自动跳转到学校官方 <strong>"信息门户"</strong>。输入学号 / 工号和密码，<strong>点击"登录"按钮</strong>（不是右下角的"执行导入"）。</p>
+          <div class="tut-callout tut-callout-warn">
+            <span class="tut-icon">⚠️</span>
+            <span>此页面有可能会<strong>重复出现一次</strong>，属于学校网信的小 bug，再输入一次即可，不用担心。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-10.jpg" title="点击放大">
+          <img src="assets/tut/step-10.jpg" alt="信息门户登录" loading="lazy" />
+          <div class="caption">图 10</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-11">
+        <div class="tut-step-badge">11</div>
+        <div class="tut-step-body">
+          <h3>进入信息门户首页 → 点击「教务系统（学生）」</h3>
+          <p>登录成功后，在首页的应用列表里找到并点击 <strong>"教务系统（学生）"</strong>。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-11.jpg" title="点击放大">
+          <img src="assets/tut/step-11.jpg" alt="信息门户首页" loading="lazy" />
+          <div class="caption">图 11</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-12">
+        <div class="tut-step-badge">12</div>
+        <div class="tut-step-body">
+          <h3>进入教务系统 → 点击「我的课表」</h3>
+          <p>在新打开的教务系统页面里找到 <strong>"我的课表"</strong> 并点击进入。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-12.jpg" title="点击放大">
+          <img src="assets/tut/step-12.jpg" alt="教务系统" loading="lazy" />
+          <div class="caption">图 12</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-13">
+        <div class="tut-step-badge">13</div>
+        <div class="tut-step-body">
+          <h3>课表页面加载完毕 → 点击「执行导入」</h3>
+          <p>当看到你本周的 <strong>"课表"</strong> 页面正常显示后，回到师大课程表 APP，点击右下角浮窗的 <strong>"执行导入"</strong> 按钮。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-13.jpg" title="点击放大">
+          <img src="assets/tut/step-13.jpg" alt="教务课表" loading="lazy" />
+          <div class="caption">图 13</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-14">
+        <div class="tut-step-badge">14</div>
+        <div class="tut-step-body">
+          <h3>弹出确认框 → 点击「确定」</h3>
+          <p>APP 会提示跳转到教务课表页，确认无误后点击 <strong>"确定"</strong>。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-14.jpg" title="点击放大">
+          <img src="assets/tut/step-14.jpg" alt="导入确认" loading="lazy" />
+          <div class="caption">图 14</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-15">
+        <div class="tut-step-badge">15</div>
+        <div class="tut-step-body">
+          <h3>选择学期 → 点击「开始导入」</h3>
+          <p>选择本学期所在的时间段，然后点击 <strong>"开始导入"</strong>。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-15.jpg" title="点击放大">
+          <img src="assets/tut/step-15.jpg" alt="开始导入" loading="lazy" />
+          <div class="caption">图 15</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-16">
+        <div class="tut-step-badge">16</div>
+        <div class="tut-step-body">
+          <h3>再次确认 → 点击「确定」</h3>
+          <p>系统会再弹一次确认框（防止误操作），点击 <strong>"确定"</strong> 即可。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-16.jpg" title="点击放大">
+          <img src="assets/tut/step-16.jpg" alt="最终确认" loading="lazy" />
+          <div class="caption">图 16</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-17">
+        <div class="tut-step-badge">17</div>
+        <div class="tut-step-body">
+          <h3>课表导入成功 🎉</h3>
+          <p>看到 "预设时间段导入成功！" 或类似提示后，你的全部课程就已经躺在 APP 里了，可以直接查看今日课表 / 本周课表。</p>
+          <div class="tut-callout tut-callout-info">
+            <span class="tut-icon">✅</span>
+            <span>课程、教师、教室、周次全部自动录入，无需手动添加。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-17.jpg" title="点击放大">
+          <img src="assets/tut/step-17.jpg" alt="导入成功后的课表" loading="lazy" />
+          <div class="caption">图 17</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= 阶段 4 ============= -->
+    <section class="tut-phase" id="tut-phase-4">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 04</span>
+        <h2>上课提醒</h2>
+        <span class="tut-range">步骤 18 - 20</span>
+      </div>
+      <p class="tut-phase-desc">设置通知、勿扰、提醒方式，让上课前自动提醒你。</p>
+
+      <article class="tut-step" id="tut-step-18">
+        <div class="tut-step-badge">18</div>
+        <div class="tut-step-body">
+          <h3>授予通知、时间、勿扰权限</h3>
+          <p>如果需要开启"课程提醒设置"，APP 会申请 3 项权限：</p>
+          <p>① <strong>通知权限</strong>：上课前弹出提醒。<br/>
+          ② <strong>时间权限</strong>：精确到分钟触发提醒。<br/>
+          ③ <strong>勿扰权限</strong>：上课时自动静音。</p>
+          <div class="tut-callout tut-callout-warn">
+            <span class="tut-icon">⚠️</span>
+            <span>部分国产系统会"杀后台"，请同时把 APP 加入电池白名单 / 锁定后台，否则提醒可能失效。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-18.jpg" title="点击放大">
+          <img src="assets/tut/step-18.jpg" alt="权限申请" loading="lazy" />
+          <div class="caption">图 18</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-19">
+        <div class="tut-step-badge">19</div>
+        <div class="tut-step-body">
+          <h3>选择上课时手机进入勿扰还是静音</h3>
+          <p>可以根据场景选择：</p>
+          <p>• <strong>勿扰模式</strong>：屏蔽来电和通知（适合图书馆等安静场所）。<br/>
+          • <strong>静音模式</strong>：仅静音，仍能接到电话。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-19.jpg" title="点击放大">
+          <img src="assets/tut/step-19.jpg" alt="勿扰设置" loading="lazy" />
+          <div class="caption">图 19</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-20">
+        <div class="tut-step-badge">20</div>
+        <div class="tut-step-body">
+          <h3>个性化课程提醒</h3>
+          <p>设置上课前几分钟提醒、提醒音、是否震动等，按个人喜好调整。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-20.jpg" title="点击放大">
+          <img src="assets/tut/step-20.jpg" alt="提醒设置" loading="lazy" />
+          <div class="caption">图 20</div>
+        </a>
+        <a class="tut-step-img tut-step-img-extra" data-src="assets/tut/step-20-extra.jpg" title="点击放大">
+          <img src="assets/tut/step-20-extra.jpg" alt="课程提醒打开后的效果" loading="lazy" />
+          <div class="caption">图 20 · 效果展示</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= 阶段 5 ============= -->
+    <section class="tut-phase" id="tut-phase-5">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 05</span>
+        <h2>个性化设置</h2>
+        <span class="tut-range">步骤 21 - 25</span>
+      </div>
+      <p class="tut-phase-desc">课程管理、时间段、启动页、关于 —— 让 APP 完全属于你的风格。</p>
+
+      <article class="tut-step" id="tut-step-21">
+        <div class="tut-step-badge">21</div>
+        <div class="tut-step-body">
+          <h3>课程管理：自由修改 / 添加 / 删除</h3>
+          <p>在"课程管理"页面可以自由编辑每一门课：</p>
+          <p>• 修改课程名称、颜色、教师、教室<br/>
+          • 添加自建课程（如社团、讲座）<br/>
+          • 删除不再上的课程</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-21.jpg" title="点击放大">
+          <img src="assets/tut/step-21.jpg" alt="课程管理" loading="lazy" />
+          <div class="caption">图 21</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-22">
+        <div class="tut-step-badge">22</div>
+        <div class="tut-step-body">
+          <h3>时间段管理：夏冬季自动切换</h3>
+          <p>APP 已经<strong>预设好了夏季、冬季两套作息时间</strong>，不用像其他课表软件那样一个时间段一个时间段手动设置。</p>
+          <div class="tut-callout tut-callout-info">
+            <span class="tut-icon">🌞</span>
+            <span>到了夏 / 冬作息切换日，APP 会自动应用新时间段，无需任何操作。根据学校往年的安排文件，切换日期通常是 10 月 1 日和 5 月 1 日。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-22.jpg" title="点击放大">
+          <img src="assets/tut/step-22.jpg" alt="时间段管理" loading="lazy" />
+          <div class="caption">图 22</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-23">
+        <div class="tut-step-badge">23</div>
+        <div class="tut-step-body">
+          <h3>个性化配置</h3>
+          <p>在这一页调整 APP 的整体外观和行为细节，让界面更贴合你的使用习惯。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-23.jpg" title="点击放大">
+          <img src="assets/tut/step-23.jpg" alt="个性化配置" loading="lazy" />
+          <div class="caption">图 23</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-24">
+        <div class="tut-step-badge">24</div>
+        <div class="tut-step-body">
+          <h3>启动页面设置</h3>
+          <p>可以选择打开 APP 时默认弹出：</p>
+          <p>• <strong>今日课表</strong>：快速看今天要上什么课<br/>
+          • <strong>本周总课表</strong>：查看一周全貌</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-24.jpg" title="点击放大">
+          <img src="assets/tut/step-24.jpg" alt="启动页面设置" loading="lazy" />
+          <div class="caption">图 24</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-step-25">
+        <div class="tut-step-badge">25</div>
+        <div class="tut-step-body">
+          <h3>关于软件 & 反馈</h3>
+          <p>这里是 APP 的相关信息、版本号、致谢。</p>
+          <div class="tut-callout tut-callout-tip">
+            <span class="tut-icon">💌</span>
+            <span>如果遇到 bug 或者有功能建议，点击"关于软件"页面里的 <strong>蓝色字（开发者 CHISA_CWNU）</strong>，会弹出作者联系方式，欢迎反馈！</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/step-25.jpg" title="点击放大">
+          <img src="assets/tut/step-25.jpg" alt="关于软件" loading="lazy" />
+          <div class="caption">图 25</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= 阶段 6 · 桌面小组件 ============= -->
+    <section class="tut-phase" id="tut-widgets">
+      <div class="tut-phase-head">
+        <span class="tut-num">PHASE 06</span>
+        <h2>桌面小组件</h2>
+        <span class="tut-range">组件步骤 1 - 9</span>
+      </div>
+      <p class="tut-phase-desc">把课表直接放到手机桌面上，不打开 APP 也能随时看到下一节课。共 9 步，全程约 2 分钟。</p>
+
+      <article class="tut-step" id="tut-w-1">
+        <div class="tut-step-badge">1</div>
+        <div class="tut-step-body">
+          <h3>长按桌面空白处 → 进入组件管理</h3>
+          <p>在桌面空白处长按（或双指捏合缩小桌面），找到"添加组件"、"小组件"或"挂件"之类的入口进入。不同手机系统的叫法可能不一样，找到类似的设置就行。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-01.jpg" title="点击放大">
+          <img src="assets/tut/widget-01.jpg" alt="长按桌面进入组件管理" loading="lazy" />
+          <div class="caption">组件图 1</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-2">
+        <div class="tut-step-badge">2</div>
+        <div class="tut-step-body">
+          <h3>在组件列表中寻找"师大课程表"</h3>
+          <p>在组件列表里向下滑动，找到<strong>"师大课程表"</strong>。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-02.jpg" title="点击放大">
+          <img src="assets/tut/widget-02.jpg" alt="在组件列表中寻找师大课程表" loading="lazy" />
+          <div class="caption">组件图 2</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-3">
+        <div class="tut-step-badge">3</div>
+        <div class="tut-step-body">
+          <h3>点击"师大课程表"</h3>
+          <p>点击后进入规格选择页面。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-03.jpg" title="点击放大">
+          <img src="assets/tut/widget-03.jpg" alt="点击师大课程表" loading="lazy" />
+          <div class="caption">组件图 3</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-4">
+        <div class="tut-step-badge">4</div>
+        <div class="tut-step-body">
+          <h3>四种规格任选，添加到桌面</h3>
+          <p>APP 已提供<strong>四种规格</strong>的小组件（左右滑动可预览），根据自己喜好和实际情况选择，点击<strong>"添加挂件"</strong>即可放到桌面。</p>
+          <div class="tut-callout tut-callout-info">
+            <span class="tut-icon">📐</span>
+            <span>小尺寸适合只看下一节课，大尺寸能直接看到当天全部课程。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-04.jpg" title="点击放大">
+          <img src="assets/tut/widget-04.jpg" alt="选择小组件规格并添加挂件" loading="lazy" />
+          <div class="caption">组件图 4</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-5">
+        <div class="tut-step-badge">5</div>
+        <div class="tut-step-body">
+          <h3>添加完成 · 效果展示</h3>
+          <p>添加后，小组件会显示<strong>当前 / 下一节课</strong>的名称、时间和上课地点，不用打开 APP 一目了然。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-05.jpg" title="点击放大">
+          <img src="assets/tut/widget-05.jpg" alt="小组件添加后的效果" loading="lazy" />
+          <div class="caption">组件图 5 · 效果展示</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-6">
+        <div class="tut-step-badge">6</div>
+        <div class="tut-step-body">
+          <h3>长按小组件进行调整</h3>
+          <p>长按桌面上的小组件，边缘出现<strong>"调整"线</strong>时即可进行后续调整；此时也会出现"移除"按钮。</p>
+          <div class="tut-callout tut-callout-warn">
+            <span class="tut-icon">⚠️</span>
+            <span>部分系统可能不支持调整长宽的操作，长按无反应属正常现象。</span>
+          </div>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-06.jpg" title="点击放大">
+          <img src="assets/tut/widget-06.jpg" alt="长按小组件出现移除按钮" loading="lazy" />
+          <div class="caption">组件图 6</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-7">
+        <div class="tut-step-badge">7</div>
+        <div class="tut-step-body">
+          <h3>自由拉动，个性化组件长宽</h3>
+          <p>拖动边缘的调整线，可以自由改变小组件的长和宽。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-07.jpg" title="点击放大">
+          <img src="assets/tut/widget-07.jpg" alt="自由拉动调整小组件长宽" loading="lazy" />
+          <div class="caption">组件图 7</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-8">
+        <div class="tut-step-badge">8</div>
+        <div class="tut-step-body">
+          <h3>拉大后可显示完整课程</h3>
+          <p>拉大后的效果：组件会自适应显示当天完整课程列表、剩余节数和周次信息。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-08.jpg" title="点击放大">
+          <img src="assets/tut/widget-08.jpg" alt="拉大后显示完整课程列表" loading="lazy" />
+          <div class="caption">组件图 8</div>
+        </a>
+      </article>
+
+      <article class="tut-step" id="tut-w-9">
+        <div class="tut-step-badge">9</div>
+        <div class="tut-step-body">
+          <h3>所有组件都适配个性化长宽</h3>
+          <p>无论你选择哪种规格，都支持按拖动后的尺寸自适应显示，想怎么摆就怎么摆。</p>
+        </div>
+        <a class="tut-step-img" data-src="assets/tut/widget-09.jpg" title="点击放大">
+          <img src="assets/tut/widget-09.jpg" alt="不同尺寸组件均适配长宽" loading="lazy" />
+          <div class="caption">组件图 9</div>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============= FAQ ============= -->
+
+  </div>
+</main>
+</div>
+
+<!-- ===== 回到顶部（全站） ===== -->
+<button class="tut-to-top" id="tut-to-top" type="button" aria-label="回到顶部">↑</button>
+
+<!-- ===== 图片灯箱（全站） ===== -->
+<div class="tut-lightbox" id="tut-lightbox" role="dialog" aria-label="图片预览">
+  <button class="tut-close" type="button" aria-label="关闭">×</button>
+  <img id="tut-lightbox-img" src="" alt="" />
+</div>
+
+
+<!-- ===================== 教程结束 · 进入功能介绍 ===================== -->
+<section class="sec" id="intro" style="padding:96px 0 36px;">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Features</span>
+            <h2><span class="sp">功能介绍</span> <span class="sp">一探究竟</span></h2>
+            <p class="sub">装好了、课表也导入了？下面完整逛一遍师大课程表的能力：一键导入、双视图课表、精致细节、上课提醒、桌面小组件与数据自由。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 参数条 ===================== -->
+<div class="stat-strip">
+    <div class="wrap">
+        <div class="stats">
+            <div class="stat reveal"><div class="num" data-count="3"><em>步</em></div><div class="lb"><b>完成课表导入</b></div></div>
+            <div class="stat reveal d1"><div class="num" data-count="20"><em>周</em></div><div class="lb"><b>整学期自动排布</b></div></div>
+            <div class="stat reveal d2"><div class="num" data-count="12"><em>节</em></div><div class="lb"><b>西华作息全覆盖</b></div></div>
+            <div class="stat reveal d3"><div class="num" data-count="4"><em>种</em></div><div class="lb"><b>桌面小组件</b></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== 纯净承诺 ===================== -->
+<section class="sec promise" id="promise">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Pure &amp; Free</span>
+            <h2><span class="sp">纯净无广告</span> <span class="sp">永久免费</span></h2>
+            <p class="sub">没有开屏广告，没有信息流推荐，没有会员与内购。现在免费，以后也免费<br>——这是一句承诺，不是营销策略。</p>
+        </div>
+
+        <div class="promise-list">
+            <div class="promise-item reveal">
+                <div class="zero"><b>0</b> 广告</div>
+                <p>无开屏、无横幅、无信息流推荐，课表页永远只放课表。</p>
+            </div>
+            <div class="promise-item reveal d1">
+                <div class="zero"><b>0</b> 内购</div>
+                <p>没有会员、没有付费解锁，全部功能一次装上即用。</p>
+            </div>
+            <div class="promise-item reveal d2">
+                <div class="zero"><b>0</b> 推送</div>
+                <p>不打扰、不营销，只发送你自己设置的上课提醒。</p>
+            </div>
+            <div class="promise-item reveal d3">
+                <div class="zero"><b>0</b> 收费</div>
+                <p>现在免费，未来也不会有广告和收费项目。</p>
+            </div>
+        </div>
+
+        <p class="promise-note reveal d2">
+            这是一个师大同学的个人非商业项目，根据学校宝宝们的体质量身定做，只想让师大兄弟姐妹们<b>「看课表」</b>这件事，轻松一点。
+        </p>
+    </div>
+</section>
+
+<!-- ===================== 秒启动 ===================== -->
+<section class="sec sec-green" id="launch">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Launch</span>
+            <h2><span class="sp">冷启动快</span> <span class="sp">秒开即用</span></h2>
+            <p class="sub">不论手机性能高低，点开几乎立刻进入课表。没有开屏动画，没有广告页，所见即课表。</p>
+        </div>
+        <div class="data-visual reveal">
+            <div class="phone">
+                <div class="phone-screen"><img src="assets/launch.gif" alt="师大课程表·冷启动演示" width="300" height="800" loading="lazy" onerror="this.onerror=null;this.src='assets/screen-week.png';"></div>
+            </div>
+            <p class="caption">冷启动演示 · 即点即开</p>
+        </div>
+        <div class="cards4">
+            <div class="card reveal"><div class="ico" aria-hidden="true">⚡</div><h3>冷启动秒开</h3><p>点开即进课表，不转圈、不白屏。</p></div>
+            <div class="card reveal d1"><div class="ico" aria-hidden="true">🚫</div><h3>无开屏动画</h3><p>没有广告页与强制引导，直接看到课表。</p></div>
+            <div class="card reveal d2"><div class="ico" aria-hidden="true">🪶</div><h3>轻量安装</h3><p>安装包约 4 MB，老旧机型也流畅运行。</p></div>
+            <div class="card reveal d3"><div class="ico" aria-hidden="true">🔋</div><h3>不常驻后台</h3><p>不偷跑流量、不常驻耗电，用完即走。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 一键导入 ===================== -->
+<section class="sec" id="import">
+    <div class="wrap split">
+        <div class="split-txt">
+            <div class="sec-head left reveal">
+                <span class="eyebrow">Import</span>
+                <h2><span class="sp">一键导入</span> <span class="sp">课表自来</span></h2>
+                <p class="sub">不用一门门手敲。登录一次学校统一认证，课程名称、授课教师、上课地点、周次安排自动解析入库，几秒钟生成整学期课表。</p>
+            </div>
+            <ul class="spec-lines reveal d1">
+                <li>统一认证登录，直达师大教务系统</li>
+                <li>自动识别课程、教师、教室与上课周次</li>
+                <li>开学日期自动写入，当前周次实时计算</li>
+                <li>支持 JSON 课表文件导入，换机不丢课表</li>
+            </ul>
+        </div>
+        <div class="split-vis reveal d2">
+            <div class="stage" style="min-height:0;">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <img src="assets/screen-today.png" alt="师大课程表·今日课表界面截图" width="1080" height="2400" loading="lazy">
+                    </div>
+                </div>
+                <p class="caption">今日课表 · App 真实界面</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 双视图 ===================== -->
+<section class="sec sec-green">
+    <div class="wrap split rev">
+        <div class="split-txt">
+            <div class="sec-head left reveal">
+                <span class="eyebrow">Schedule</span>
+                <h2><span class="sp">双视图切换</span> <span class="sp">一眼看清</span></h2>
+                <p class="sub">周课表看全局，今日课表看当下。左右滑动切换周次，长按拖动调整课程，假期倒计时与学期进度自动算好。</p>
+            </div>
+            <ul class="spec-lines reveal d1">
+                <li>周课表无限滑动，任意周次随手翻</li>
+                <li>今日课表一屏看完当天安排与剩余节数</li>
+                <li>长按拖动课程，调课换教室即刻完成</li>
+                <li>非本周课程、周末课程自由显示或隐藏</li>
+            </ul>
+        </div>
+        <div class="split-vis reveal d2">
+            <div class="duo">
+                <div class="phone">
+                    <div class="phone-screen"><img src="assets/view-week.jpg" alt="师大课程表·本周课表界面截图" loading="lazy"></div>
+                </div>
+                <div class="phone">
+                    <div class="phone-screen"><img src="assets/view-today.jpg" alt="师大课程表·今日课表界面截图" loading="lazy"></div>
+                </div>
+            </div>
+            <p class="caption">左：本周课表 · 右：今日课表，底部导航栏自由切换<br>也可在课程表设置选择启动时显示本周还是今日课表</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 精致细节 ===================== -->
+<section class="sec" id="details">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Details</span>
+            <h2><span class="sp">精致细节</span> <span class="sp">质感跃升</span></h2>
+            <p class="sub">课表长什么样，由你说了算。从一张背景壁纸到一个圆角，每一处都能单独调整，还能跟随系统深浅色与壁纸取色。</p>
+        </div>
+        <div class="tiles">
+            <div class="tile reveal"><div class="k">🖼 壁纸</div><div class="t">课表背景自定义</div><div class="d">支持选图裁剪，长按可清除</div></div>
+            <div class="tile reveal d1"><div class="k">📐 尺寸</div><div class="t">格子高度与圆角</div><div class="d">高度、圆角、内外间距逐项微调</div></div>
+            <div class="tile reveal d2"><div class="k">🎨 配色</div><div class="t">课程块颜色池</div><div class="d">深浅两套配色，点圆形即可编辑</div></div>
+            <div class="tile reveal"><div class="k">🔠 文字</div><div class="t">缩放与对齐</div><div class="d">文字缩放比例、水平垂直居中</div></div>
+            <div class="tile reveal d1"><div class="k">🌗 主题</div><div class="t">深浅色与动态取色</div><div class="d">跟随系统，或取壁纸主色</div></div>
+            <div class="tile reveal d2"><div class="k">🕐 模式</div><div class="t">24 小时时间轴</div><div class="d">按真实时间轴纵向铺展课程</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 提醒与小组件（深色） ===================== -->
+<section class="sec sec-dark" id="widgets">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Reminder &amp; Widgets</span>
+            <h2><span class="sp">提醒常在</span> <span class="sp">课课不误</span></h2>
+            <p class="sub">课前准点提醒，上课自动切换勿扰或静音；四种尺寸桌面小组件，不打开 App 也能看见下一节课。</p>
+        </div>
+        <div class="widgets">
+            <div class="wg reveal">
+                <span class="size">2 × 1 超小</span>
+                <div class="shot"><img src="assets/widget-tiny.png" alt="超小课程 2×1 小组件截图" loading="lazy"></div>
+                <h3>下一节课</h3>
+                <p>一眼看到时间与教室</p>
+            </div>
+            <div class="wg reveal d1">
+                <span class="size">2 × 2 紧凑</span>
+                <div class="shot"><img src="assets/widget-compact.png" alt="紧凑课程 2×2 小组件截图" loading="lazy"></div>
+                <h3>今日概览</h3>
+                <p>剩余节数与课程列表</p>
+            </div>
+            <div class="wg reveal d2">
+                <span class="size">4 × 2 近日</span>
+                <div class="shot"><img src="assets/widget-double.png" alt="近日课程 4×2 小组件截图" loading="lazy"></div>
+                <h3>今明两天</h3>
+                <p>提前安排明天的行程</p>
+            </div>
+            <div class="wg reveal d3">
+                <span class="size">4 × N 垂直</span>
+                <div class="shot"><img src="assets/widget-list.png" alt="垂直列表课表 4×N 小组件截图" loading="lazy"></div>
+                <h3>垂直列表</h3>
+                <p>高度可拉伸，整周可览</p>
+            </div>
+        </div>
+        <ul class="spec-lines reveal d2" style="margin-top:34px;text-align:center;">
+            <li style="padding-left:0;"><b>小组件到桌面后可长按后自由拖动长宽，完全个性化自定义。</b></li>
+            <li style="padding-left:0;">课前提醒时间可自定义 · 支持精确闹钟与跳过节假日日期</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===================== 数据 ===================== -->
+<section class="sec sec-green" id="data">
+    <div class="wrap">
+        <div class="sec-head reveal">
+            <span class="eyebrow">Your Data</span>
+            <h2><span class="sp">数据自由</span> <span class="sp">安心随行</span></h2>
+            <p class="sub">课表数据握在自己手里。可导出、可备份、可同步，也随时能清理。干净、安全、克制。</p>
+        </div>
+        <div class="data-visual reveal">
+            <div class="phone">
+                <div class="phone-screen"><img src="assets/data-screen.jpg" alt="课表导入/导出界面截图" loading="lazy"></div>
+            </div>
+            <p class="caption">课表导入/导出：JSON / ICS / 系统日历，一站式管理</p>
+        </div>
+        <div class="cards4">
+            <div class="card reveal"><div class="ico" aria-hidden="true">📤</div><h3>JSON 导入导出</h3><p>连时间段配置一起打包导出，换机或分享给同学都方便。</p></div>
+            <div class="card reveal d1"><div class="ico" aria-hidden="true">📆</div><h3>ICS 日历导出</h3><p>生成带提醒参数的日历文件，导入任意日历应用即可用。</p></div>
+            <div class="card reveal d2"><div class="ico" aria-hidden="true">🔄</div><h3>系统日历同步</h3><p>一键把当前课表同步进手机系统日历，跨应用也能看到课。</p></div>
+            <div class="card reveal d3"><div class="ico" aria-hidden="true">🔒</div><h3>凭据不出手机</h3><p>学号密码只在手机内完成登录，无广告、无推送、不申请无关权限。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 下载 ===================== -->
+<section class="sec" id="download">
+    <div class="wrap">
+        <div class="dl-box reveal">
+            <img class="dl-icon" src="assets/icon-256.png" alt="师大课程表图标" width="84" height="84">
+            <h2>立即下载</h2>
+            <p>选择对应机型的安装包，安装后跟随三步引导完成语言、主题与课表导入，即可开始使用。</p>
+            <a class="btn" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v0.15.4.apk" target="_blank" rel="noopener">⬇ 免费下载</a>
+            <div class="dl-meta">
+                <span>📦 当前版本 <b>0.15.4 Beta</b></span>
+                <span>🎁 <b>完全免费</b></span>
+                <span>🚫 <b>无广告</b></span>
+                <span>📏 安装包约 <b>4 MB</b></span>
+            </div>
+            <p class="tip">提示：若手机提示「未知来源应用」，请在系统设置中允许来自此来源的安装；首次打开后请先导入课表。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 页脚 ===================== -->
+
+<!-- ===================== 常见问题（全页末尾） ===================== -->
+<section class="sec sec-green" id="tut-faq">
+    <div class="wrap">
+        <div class="tut-faq tut-scope reveal">
+
+      <div class="tut-phase-head">
+        <span class="tut-num">FAQ</span>
+        <h2>常见问题</h2>
+      </div>
+      <p class="tut-phase-desc">配图说明里提到的几个高频疑问，统一在这里解答。</p>
+
+      <details>
+        <summary>为什么浏览器会显示"风险提示"页面？安全吗？</summary>
+        <p>该域名是腾讯云 CloudBase 的<strong>测试域名</strong>（未备案、未申请正式域名），所以会触发"页面访问提示"。作者没有花钱申请正式域名是因为本软件只分享给师大的兄弟姐妹们使用。内容安全，可以放心点击"确认访问"。</p>
+      </details>
+      <details>
+        <summary>登录信息门户时，页面重复出现了两次怎么办？</summary>
+        <p>这是学校网信的小 bug，会在极少数手机上出现。无需担心，<strong>再输入一次账密登录</strong>即可继续。</p>
+      </details>
+      <details>
+        <summary>安卓系统提示"未知来源应用" / 安全扫描怎么办？</summary>
+        <p>选择 <strong>"继续安装"</strong> 即可。如果系统询问"是否允许此来源安装"，勾选允许。这是安卓对未上架应用商店的 APK 的常规流程。</p>
+      </details>
+      <details>
+        <summary>课表导入了但没收到上课提醒？</summary>
+        <p>请检查：① 通知权限、时间权限、勿扰权限是否都已授予；② 是否把 APP 加入<strong>电池白名单 / 后台锁定</strong>（国产 ROM 默认会杀后台）；③ 在系统设置里把 APP 的自启动权限打开。</p>
+      </details>
+      <details>
+        <summary>夏冬作息切换需要手动调整吗？</summary>
+        <p>不需要。"时间段管理"已经预设了夏冬两套作息，到了切换日 APP 会<strong>自动应用</strong>。</p>
+      </details>
+      <details>
+        <summary>如何反馈 Bug 或建议？</summary>
+        <p>打开 APP → 进入 <strong>"关于软件"</strong> 页面 → 点击蓝色字（开发者 CHISA_CWNU），会弹出作者联系方式。</p>
+      </details>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" id="about">
+    <div class="wrap">
+        <div class="about-grid">
+            <div>
+                <h3>关于师大课程表</h3>
+                <p>"师大课程表"是一款CHISA_CWNU专为西华师范大学定制的课程表APP，基于XingHeYuZhuan的开源项目改造，采用 Kotlin Multiplatform 与 Compose Multiplatform 构建。</p>
+                <p>本项目仅供学习、交流与技术研究使用，请勿用于任何商业用途。使用本软件即代表您已同意上述声明。</p>
+                <p>使用教程中的配图与文案仅供学习交流使用 · Icons by Google and CHISA_CWNU · UI Framework by Material Design 3</p>
+            </div>
+            <div>
+                <h3>联系与反馈</h3>
+                <p>CHISA_CWNU, who is a stupid student at the Business School of China West Normal University</p>
+                <p>邮箱：<a href="mailto:chisa8cwnu@duck.com">chisa8cwnu@duck.com</a></p>
+                <p>GitHub：<a href="https://github.com/CHISA8CWNU" target="_blank" rel="noopener">github.com/CHISA8CWNU</a></p>
+                <p>Gitee：<a href="https://gitee.com/CHISA8CWMU" target="_blank" rel="noopener" style="color:#6ee7b7">https://gitee.com/CHISA8CWMU</a></p>
+                <p>腾讯QID：Deep1Sleep</p>
+                <p>特别鸣谢：<a href="https://github.com/XingHeYuZhuan" target="_blank" rel="noopener">XingHeYuZhuan</a>及<a href="https://github.com/XingHeYuZhuan/shiguangschedule/graphs/contributors?from=2026%2F6%2F6" target="_blank" rel="noopener" style="color:#6ee7b7">代码仓库的贡献者们</a>。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <nav>
+                <a href="#tut-top">使用教程</a>
+                <a href="#import">功能介绍</a>
+                <a href="#widgets">小组件</a>
+                <a href="#download">下载</a>
+                <a href="#about">关于</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+<script>
+
+(function () {
+    'use strict';
+
+    /* 移动端菜单 */
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMobile');
+    toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.textContent = open ? '✕' : '☰';
+    });
+    menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = '☰';
+        }
+    });
+
+    /* 导航阴影 */
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    /* 滚动入场 */
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach(function (el) { io.observe(el); });
+    } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    /* 数字滚动 */
+    var nums = document.querySelectorAll('[data-count]');
+    function countUp(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var em = el.querySelector('em');
+        var suffix = em ? em.outerHTML : '';
+        var start = null, dur = 1100;
+        function step(ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            el.innerHTML = v + suffix;
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (en.isIntersecting) { countUp(en.target); io2.unobserve(en.target); }
+            });
+        }, { threshold: 0.5 });
+        nums.forEach(function (el) { io2.observe(el); });
+    }
+})();
+
+// ---- 复制链接 ----
+  const copyBtn = document.getElementById('tut-copy-btn');
+  const urlEl = document.getElementById('tut-app-url');
+  copyBtn.addEventListener('click', async () => {
+    const url = urlEl.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    copyBtn.textContent = '已复制 ✓';
+    copyBtn.classList.add('tut-copied');
+    setTimeout(() => {
+      copyBtn.textContent = '复制';
+      copyBtn.classList.remove('tut-copied');
+    }, 2000);
+  });
+
+  // ---- TOC 高亮当前阶段 ----
+  const tocLinks = document.querySelectorAll('.tut-toc a');
+  const sections = ['tut-phase-1', 'tut-phase-2', 'tut-phase-3', 'tut-phase-4', 'tut-phase-5', 'tut-widgets', 'tut-faq'];
+  const setActive = (id) => {
+    tocLinks.forEach(a => {
+      a.classList.toggle('tut-active', a.getAttribute('href') === '#' + id);
+    });
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // ---- 回到顶部 ----
+  const toTop = document.getElementById('tut-to-top');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('tut-show', window.scrollY > 400);
+  }, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ---- 图片灯箱 ----
+  const lightbox = document.getElementById('tut-lightbox');
+  const lightboxImg = document.getElementById('tut-lightbox-img');
+  document.querySelectorAll('.tut-step-img').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      lightboxImg.src = a.dataset.src;
+      lightboxImg.alt = a.querySelector('img').alt || '';
+      lightbox.classList.add('tut-show');
+    });
+  });
+  const closeLightbox = () => lightbox.classList.remove('tut-show');
+  lightbox.addEventListener('click', closeLightbox);
+  lightbox.querySelector('.tut-close').addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
