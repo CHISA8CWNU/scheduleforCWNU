@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN" data-page-node-id="k4TAczt6TxYyV116ra80jL">
+<head data-page-node-id="N9oQcxCsjYvHqBB6CYSYu5">
+<meta charset="UTF-8" data-page-node-id="EoUKNFTB1XnVmls5GZERQ1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="9pHkgCpa76omljVKahaui2">
 <title>师大课程表 — 使用教程 &amp; 功能介绍 | 西华师范大学专属课程表 App</title>
-<meta name="description" content="师大课程表使用教程与功能介绍：一键导入教务系统课表、双视图课表、夏冬作息自动切换、桌面小组件与上课提醒。安装导入 25 步 + 小组件 9 步全图解，附常见问题解答。">
-<link rel="icon" type="image/png" href="assets/icon-256.png">
+<meta name="description" content="师大课程表使用教程与功能介绍：一键导入教务系统课表、双视图课表、夏冬作息自动切换、桌面小组件与上课提醒。安装导入 25 步 + 小组件 9 步全图解，附常见问题解答。" data-page-node-id="e6A71avGkwxTY7LtM7Uy5T">
+<link rel="icon" type="image/png" href="assets/icon-256.png" data-page-node-id="csYHY33IZv3O3obYyhfP64">
 <style>
 
 /* ===================== 基础重置 ===================== */
@@ -975,614 +975,863 @@ html { scroll-padding-top: 84px; }
   .tut-btn-soft:hover { background: #d8f0e4; border-color: #c2ead7; }
   .sec .tut-faq { max-width: 860px; margin: 0 auto; }
   .sec .tut-faq .tut-phase-head { margin-top: 0; }
+
+  /* ===================== 移动端补充优化 ===================== */
+  @media (max-width: 600px) {
+    .tut-hero { padding: 40px 16px 34px; }
+    .tut-hero h1 { font-size: 30px; line-height: 1.25; }
+    .tut-lead { font-size: 15px; }
+    .tut-hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+    .tut-hero-actions .tut-btn { width: 100%; justify-content: center; }
+    .tut-phase-head h2 { font-size: 22px; }
+    .tut-phase-desc { font-size: 14px; }
+    .tut-step { grid-template-columns: 1fr; gap: 10px; }
+    .tut-step-badge { width: 30px; height: 30px; font-size: 14px; }
+    .tut-step-img { max-width: 100%; }
+    .stat-strip .stats { grid-template-columns: repeat(2, 1fr); }
+    .tut-toc { padding: 12px 14px; }
+    .tut-toc ol { grid-template-columns: repeat(2, 1fr); gap: 4px 10px; }
+    .tut-faq details p { font-size: 14px; }
+    .footer-bottom nav { flex-wrap: wrap; gap: 6px 14px; justify-content: center; }
+    .footer-bottom nav a { font-size: 13px; }
+    .about-grid { grid-template-columns: 1fr; gap: 20px; padding-bottom: 28px; }
+    .tut-thanks { font-size: 17px; }
+    .sec-head h2, .sec-head .sp { font-size: 22px; }
+  }
+  @media (max-width: 380px) {
+    .tut-hero h1 { font-size: 25px; }
+    .tut-phase-head h2 { font-size: 20px; }
+    .sec-head h2, .sec-head .sp { font-size: 19px; }
+  }
 </style>
 </head>
-<body>
+<body data-page-node-id="8rowFAZHUnHieiLPDp32lG">
 <!-- ===================== 全站导航（教程 + 介绍） ===================== -->
-<header class="nav" id="nav">
-    <div class="wrap nav-inner">
-        <a class="brand" href="#tut-top">
-            <img class="brand-mark" src="assets/icon-256.png" alt="师大课程表图标" width="38" height="38">
-            <span>师大课程表<small>China West Normal University</small></span>
+<header class="nav" id="nav" data-page-node-id="Tc6OecgVl0bIReFAegwdEa">
+    <div class="wrap nav-inner" data-page-node-id="vn9qNFdzK6SP209smuXS1l">
+        <a class="brand" href="#tut-top" data-page-node-id="FcBTU30QA1V89rw5fFFCz3">
+            <img class="brand-mark" src="assets/icon-256.png" alt="师大课程表图标" width="38" height="38" data-page-node-id="p2LavpkFYIm1Iw9eODGeSC">
+            <span data-page-node-id="yRbV62KQs79CQ7uRmq9TXt">师大课程表<small data-page-node-id="yCfxBJxkDey8YJmEyhvIfm">China West Normal University</small></span>
         </a>
-        <nav class="nav-links">
-            <a href="#tut-top">使用教程</a>
-            <a href="#tut-phase-3">导入课表</a>
-            <a href="#tut-faq">常见问题</a>
-            <a href="#intro">功能介绍</a>
-            <a href="#widgets">小组件</a>
-            <a href="#download">下载</a>
-            <a class="nav-cta" href="#download">免费下载</a>
+        <nav class="nav-links" data-page-node-id="nFzy1WZFng7TmItqF0NqZ9">
+            <a href="#tut-top" data-page-node-id="SVgxbvsUnoUhRckFZkLSeZ">总览</a>
+            <a href="#intro" data-page-node-id="w7qnEvIHUF69auDStOv65o">详细介绍</a>
+            <a href="#tut-phase-1" data-page-node-id="kqJpdxt6xAVYQ4eX2F7SNC">安装使用教程</a>
+            <a href="#tut-widgets" data-page-node-id="Q39BGg3rioQPegG6gPZwrh">小组件使用教程</a>
+            <a href="#tut-update" data-page-node-id="H7555pinCJwfxa9QkIER2w">应用迭代更新</a>
+            <a href="#tut-faq" data-page-node-id="xV9chv1hRJ0HDD2o36mxg2">常见问题</a>
+            <a href="#about" data-page-node-id="1UDZ9iG7P73uYWGu2VGERF">关于 & 反馈</a>
+            <a class="nav-cta" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v1.0.0-20260907.apk" target="_blank" rel="noopener" data-page-node-id="qoHiiHnSQMbtgKkzqtA0Vf">免费下载</a>
         </nav>
-        <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false">☰</button>
+        <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false" data-page-node-id="FkH0gezsDHWwf3nrj1zWhE">☰</button>
     </div>
-    <div class="nav-mobile" id="navMobile">
-        <a href="#tut-top">使用教程</a>
-        <a href="#tut-widgets">小组件教程</a>
-        <a href="#tut-faq">常见问题</a>
-        <a href="#intro">功能介绍</a>
-        <a href="#widgets">小组件</a>
-        <a href="#download">下载</a>
-        <a href="#about">关于</a>
-    </div>
+        <div class="nav-mobile" id="navMobile" data-page-node-id="gEEKTlBSBtBI9adOJbaOt5">
+            <a href="#tut-top" data-page-node-id="EtZN3WDDMDZ9aeRt1IvcAC">总览</a>
+            <a href="#intro" data-page-node-id="wtHN3JrCxrAuE2MppnkGDN">详细介绍</a>
+            <a href="#tut-phase-1" data-page-node-id="ge5p2OGLcvFR7e1MviDWgJ">安装使用教程</a>
+            <a href="#tut-widgets" data-page-node-id="oGclO9ZLtFFYJd3GsuCKmH">小组件使用教程</a>
+            <a href="#tut-update" data-page-node-id="uTU0PBh2s0C6TVlprQAV1C">应用迭代更新</a>
+            <a href="#tut-faq" data-page-node-id="ypcMUshsIWd8xHzhMLWwGo">常见问题</a>
+            <a href="#about" data-page-node-id="imT4vpZ7JrtqXceDpdM7Yz">关于 & 反馈</a>
+        </div>
 </header>
 
-<div id="tutorial">
+<div id="tutorial" data-page-node-id="Ja634koZkUEiopCDdwxMAO">
 <!-- ===== Hero ===== -->
-<header class="tut-hero" id="tut-top">
-  <div class="tut-hero-inner">
-    <div class="tut-pill">西华师范大学专属课程表 APP</div>
-    <h1>课表这件事<br/><span class="tut-accent">一次登录就够了</span></h1>
-    <p class="tut-lead">从教务系统到手机课表，只差一次登录。课程、教师、教室、周次自动录入；夏冬作息自动切换；桌面小组件与上课提醒一应俱全。安装导入 25 步 + 小组件 9 步，10 分钟全搞定。</p>
-    <div class="tut-hero-actions">
-      <a class="tut-btn tut-btn-primary" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v0.15.4.apk" target="_blank" rel="noopener">
-        ⬇ 免费下载 APP
-      </a>
-      <a class="tut-btn tut-btn-ghost" href="#tut-phase-1">开始教程</a>
-      <a class="tut-btn tut-btn-soft" href="#intro">软件介绍</a>
+<header class="tut-hero" id="tut-top" data-page-node-id="BYHTeIPitMvwsZJXWfz6xd">
+  <div class="tut-hero-inner" data-page-node-id="l8ArQjf2bf843h9SA5GD9d">
+    <div class="tut-pill" data-page-node-id="iAxmuHR4GHRi5QL1STzJ35">西华师范大学专属课程表 APP</div>
+    <h1 data-page-node-id="F7CiBdro7nYCpmmb4Y6LvZ">课表这件事<br data-page-node-id="Y1vFqkocEkkNioFAMq6ENl"/><span class="tut-accent" data-page-node-id="WoBr9UE9hmiVZmw1Ww7hiP">一次登录就够了</span></h1>
+    <p class="tut-lead" data-page-node-id="OCQSNljKknIflHHVllBWOn">从教务系统到手机课表，只需一次登录。<br data-page-node-id="XX7RIso0fpJ1GqKf0JhBsY"/>课程名称、教师、教室、周次自动录入；夏冬作息自动切换，已根据师大实际作息时间表预设，不用自己手动修改，当然想自定义也可以；桌面小组件与上课提醒一应俱全。</p>
+    <div class="tut-hero-actions" data-page-node-id="iKroS7rCL8XDuPPxAQtF3B">
+      <a class="tut-btn tut-btn-primary" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v1.0.0-20260907.apk" target="_blank" rel="noopener" data-page-node-id="7iJRarKgq68oIsr5EzLMLg">⬇ 下载最新版APP</a>
+      <a class="tut-btn tut-btn-ghost" href="#tut-phase-1" data-page-node-id="FzDLvts2DnVCbeJp54Tpv0">安装使用教程</a>
+      <a class="tut-btn tut-btn-soft" href="#tut-widgets" data-page-node-id="JcJ40pJUsKEi6bEuBtFbrd">小组件使用教程</a>
+      <a class="tut-btn tut-btn-soft" href="#tut-update" data-page-node-id="M168BowvziNiJZPu5Kk0zp">应用更新方法</a>
     </div>
-    <div class="tut-url-box">
-      <code id="tut-app-url">https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/</code>
-      <button class="tut-copy-btn" id="tut-copy-btn" type="button">复制</button>
-    </div>
-    <div class="tut-features">
-      <span>一键导入教务课表</span>
-      <span>桌面小组件</span>
-      <span>上课提醒</span>
-      <span>夏冬作息自动切换</span>
-      <span>高度个性化</span>
-    </div>
+    <p style="margin-top:18px;font-size:13.5px;color:#00955c;font-weight:600;" data-page-node-id="Lk3wHf4nSl2IV59GDaXZG1">应用已于2026年9月7日上午8时整结束公测，推出第一个正式版 v1.0.0！</p>
   </div>
 </header>
 
+<!-- ===================== 教程结束 · 进入功能介绍 ===================== -->
+<section class="sec" id="intro" style="padding:96px 0 36px;" data-page-node-id="blDFNanttDH2uTMm8qwepN">
+    <div class="wrap" data-page-node-id="PyYTB0QmCRIm5EQfDiGESw">
+        <div class="sec-head reveal" data-page-node-id="Guhqg6srkUXhkGPrBbeEOb">
+            <span class="eyebrow" data-page-node-id="vDUDzBMTwCtHT60lef3qYC">Features</span>
+            <h2 data-page-node-id="02z0CMHPzlDItyu0ZC4RFh"><span class="sp" data-page-node-id="y7sVzpVXSILP7hA8ymeFKo">功能介绍</span> <span class="sp" data-page-node-id="Gu01vgdL0otR6luMzrh0hd">一探究竟</span></h2>
+            <p class="sub" data-page-node-id="EoZOdO6MgJOxzcfN5rGpo9">装好了、课表也导入了？下面完整逛一遍师大课程表的能力：一键导入、双视图课表、精致细节、上课提醒、桌面小组件与数据自由。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 参数条 ===================== -->
+<div class="stat-strip" data-page-node-id="WOLispRG4r9gwZa7BWKLft">
+    <div class="wrap" data-page-node-id="rbGvtMquEBzjV6WAlYODEW">
+        <div class="stats" data-page-node-id="fJja7y9P83yG0Sn4Ms9XLa">
+            <div class="stat reveal" data-page-node-id="sAR8sEhNAdQZIoegbdF8Yt"><div class="num" data-count="3" data-page-node-id="7xlTTZEbsfdETk5GqfFFOu"><em data-page-node-id="fPSnyBiDHE5CtS362nB9yN">步</em></div><div class="lb" data-page-node-id="74xDj9ok54cgg8amdHTRt6"><b data-page-node-id="yC2UqRX5wOmJOeazYtn6GY">完成课表导入</b></div></div>
+            <div class="stat reveal d1" data-page-node-id="5L81oGDm0Oa2DnZSdtflwI"><div class="num" data-count="20" data-page-node-id="HMvTgue3CIzKiAIbG3ARxi"><em data-page-node-id="g0OLdAnQDFz1qBAQmFFzI0">周</em></div><div class="lb" data-page-node-id="5C9BLG3aFdUHizQvfsBzg0"><b data-page-node-id="Nil19QayJbOnS4ZrsFTdx7">整学期自动排布</b></div></div>
+            <div class="stat reveal d2" data-page-node-id="89E2xMA4yC11QoYovBQRTW"><div class="num" data-count="12" data-page-node-id="SYCg3ATyQx2Uqo38g3q69k"><em data-page-node-id="z3B4i195bnMeWoAbfHW8BL">节</em></div><div class="lb" data-page-node-id="g14rG0YDH4UQdGFnHOVk1t"><b data-page-node-id="ao6VRtsXWwlF5Gxvt32Vke">西华作息全覆盖</b></div></div>
+            <div class="stat reveal d3" data-page-node-id="er2ziwgAcoFXzPtccdRHCc"><div class="num" data-count="4" data-page-node-id="BS5oTHnj8KRxRYYH31Z3Co"><em data-page-node-id="MQCvI7jcDYlEWWsRQEh5L3">种</em></div><div class="lb" data-page-node-id="8G0OADShcPW8yPWFSEWuqq"><b data-page-node-id="V9BwVu8KKO9ltVb0NUanwy">桌面小组件</b></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== 纯净承诺 ===================== -->
+<section class="sec promise" id="promise" data-page-node-id="VhS6Hprw3zoKmbMBnu83CE">
+    <div class="wrap" data-page-node-id="VQWx2v6XAzkOgHakvimZ8n">
+        <div class="sec-head reveal" data-page-node-id="4aLeFnylys7agqVGIBB7RV">
+            <span class="eyebrow" data-page-node-id="9zvrrkP3KrSP8AGpPs1YBz">Pure &amp; Free</span>
+            <h2 data-page-node-id="7whQgp9GJDpO7AZFfUcv5K"><span class="sp" data-page-node-id="cdcvx7Q2UDkmq2l8tG4HBI">纯净无广告</span> <span class="sp" data-page-node-id="RGu7FnRsE9lSev6UkGEurD">永久免费</span></h2>
+            <p class="sub" data-page-node-id="MY3HdapV5GUXPQPYZFKP2M">没有开屏广告，没有信息流推荐，没有会员与内购。现在免费，以后也免费<br data-page-node-id="iKfBJcAb0w6gf2cl8MFbZZ">——这是一句承诺，不是营销策略。</p>
+        </div>
+
+        <div class="promise-list" data-page-node-id="RZgGJTqyVPDjHwvJV8DH5b">
+            <div class="promise-item reveal" data-page-node-id="qtP5ZZm2QNQYilQcccJcKO">
+                <div class="zero" data-page-node-id="ZBHo68LbCWDOQYMW4GAApN"><b data-page-node-id="V64CJtrDGwAttP4NqEJ40F">0</b> 广告</div>
+                <p data-page-node-id="p56bAJQKmiRVBCkp2AQniT">无开屏、无横幅、无信息流推荐，课表页永远只放课表。</p>
+            </div>
+            <div class="promise-item reveal d1" data-page-node-id="kK1gNMvkCUek81PMLSDBPe">
+                <div class="zero" data-page-node-id="TLCUUPznRnebai8yG84ZQM"><b data-page-node-id="HOLheA1eCshVN0BhtuBcd4">0</b> 内购</div>
+                <p data-page-node-id="dwdFCZ5okp62ZXDBxjReML">没有会员、没有付费解锁，全部功能一次装上即用。</p>
+            </div>
+            <div class="promise-item reveal d2" data-page-node-id="Z8lga9HDFayBUc1Ky8pxny">
+                <div class="zero" data-page-node-id="wPwXza3bvAXLAeAsGlJIWd"><b data-page-node-id="D5cNgqUO6k475COFhDBE2w">0</b> 推送</div>
+                <p data-page-node-id="AbMSliBUsFu9sIgHwOHOxq">不打扰、不营销，只发送你自己设置的上课提醒。</p>
+            </div>
+            <div class="promise-item reveal d3" data-page-node-id="u3NvmKe45qJ6sN0oK4BUGj">
+                <div class="zero" data-page-node-id="ZrAB4R38fYqQGMPLdNcrXK"><b data-page-node-id="KPGbIAYWEaK0PXEWhtKjny">0</b> 收费</div>
+                <p data-page-node-id="SlUVVwLyqBc0xJquV4q9NJ">现在免费，未来也不会有广告和收费项目。</p>
+            </div>
+        </div>
+
+        <p class="promise-note reveal d2" data-page-node-id="qS3cQUpjQFeHga3II6MfuV">
+            这是一个师大同学的个人非商业项目，根据学校宝宝们的体质量身定做，只想让师大兄弟姐妹们<b data-page-node-id="mS4KiSGh8J3bpTfErl3Sse">「看课表」</b>这件事，轻松一点。
+        </p>
+    </div>
+</section>
+
+<!-- ===================== 秒启动 ===================== -->
+<section class="sec sec-green" id="launch" data-page-node-id="mOdxgzksW6ajX1rhyx3s0x">
+    <div class="wrap" data-page-node-id="mLyfChQvDhyd7bhKwGWxDD">
+        <div class="sec-head reveal" data-page-node-id="ffknGk1yTiK9TQaSE7oktQ">
+            <span class="eyebrow" data-page-node-id="k6jD7vK13ns6MpWa8mpVVx">Launch</span>
+            <h2 data-page-node-id="PGdKQQGl5p2FkWDsi9DvEC"><span class="sp" data-page-node-id="oLmzhlGXwiFjnXiJQ63VUf">冷启动快</span> <span class="sp" data-page-node-id="t39hCHFPt26GgYz2R76E6M">秒开即用</span></h2>
+            <p class="sub" data-page-node-id="HNt0Tw2Nyu3sebGJXJpBud">不论手机性能高低，点开几乎立刻进入课表。没有开屏动画，没有广告页，所见即课表。</p>
+        </div>
+        <div class="data-visual reveal" data-page-node-id="9HlAPhbNVqUGpB8ccsGsrF">
+            <div class="phone" data-page-node-id="fCVF5DTGZwMDDmfrdg0XmK">
+                <div class="phone-screen" data-page-node-id="5y5APrJjzRL6MMBwKAAUq5"><img src="assets/launch.gif" alt="师大课程表·冷启动演示" width="300" height="800" loading="lazy" onerror="this.onerror=null;this.src='assets/screen-week.png';" data-page-node-id="gJHw2AXIJk2efBiPDhaIPT"></div>
+            </div>
+            <p class="caption" data-page-node-id="EZ1R4ViAEWUg4MUokJJKVl">冷启动演示 · 即点即开</p>
+        </div>
+        <div class="cards4" data-page-node-id="AdKrB3qNbrNPvLBw41rpzy">
+            <div class="card reveal" data-page-node-id="Wn2gnYExAG8WEjYGqdKNvO"><div class="ico" aria-hidden="true" data-page-node-id="3HahZ9T5uJ40OU245R5qCB">⚡</div><h3 data-page-node-id="SvbHmQ1IpWRPrNLcLTU3Q4">冷启动秒开</h3><p data-page-node-id="EzGZ55zA6TONFzt3Yx3sZ1">点开即进课表，不转圈、不白屏。</p></div>
+            <div class="card reveal d1" data-page-node-id="ED70o5CZQeoxYsHnfxWqkH"><div class="ico" aria-hidden="true" data-page-node-id="mlZZMBu07oIqD7AtoHmpUD">🚫</div><h3 data-page-node-id="S5vV9y6dckwVSjMOYrS7Rb">无开屏动画</h3><p data-page-node-id="rshsNMeaNOGX8b2987Yd1T">没有广告页与强制引导，直接看到课表。</p></div>
+            <div class="card reveal d2" data-page-node-id="7MYmcZq47a6jdLdH9SsGYN"><div class="ico" aria-hidden="true" data-page-node-id="c8zXvG1AXl51npObhKvS0C">🪶</div><h3 data-page-node-id="XJ4oJyEyjTQzuq96uOnnFk">轻量安装</h3><p data-page-node-id="J730YUUTwMdSy5iOnHx2DS">安装包约 4 MB，老旧机型也流畅运行。</p></div>
+            <div class="card reveal d3" data-page-node-id="X1zi2qcAdhM2KEMHJKdqO1"><div class="ico" aria-hidden="true" data-page-node-id="6Rg61R2r2K2u8p9wO7rCwo">🔋</div><h3 data-page-node-id="8wlDxV5xHJJE8ReWjKkTi8">不常驻后台</h3><p data-page-node-id="y2QCTdjHleYMk0NQXhwOIW">不偷跑流量、不常驻耗电，用完即走。</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 一键导入 ===================== -->
+<section class="sec" id="import" data-page-node-id="97ywhhlFy4Mjs4meCos28W">
+    <div class="wrap split" data-page-node-id="FBUGfWOMCWeGwdnUXjRZQi">
+        <div class="split-txt" data-page-node-id="JSUiDK8HFaxn3607GvkJXs">
+            <div class="sec-head left reveal" data-page-node-id="hSAodg303HUBfmzHLuUtQK">
+                <span class="eyebrow" data-page-node-id="t6DX4EDlBi4W0kGJgZAzqK">Import</span>
+                <h2 data-page-node-id="6nbYI65qqwnkPMCX5sdJtt"><span class="sp" data-page-node-id="xM7Qr5WkCdSPoVnhAPeuAE">一键导入</span> <span class="sp" data-page-node-id="Jp0DzYZguXqAusFXhsZuwt">课表自来</span></h2>
+                <p class="sub" data-page-node-id="rEW6bX7uOtzbmZdVFo1TaK">不用一门门手敲。登录一次学校统一认证，课程名称、授课教师、上课地点、周次安排自动解析入库，几秒钟生成整学期课表。</p>
+            </div>
+            <ul class="spec-lines reveal d1" data-page-node-id="83cvKHqvQBTK5m45HPMooV">
+                <li data-page-node-id="YZp18koSEdk1JqYmSvbbNF">统一认证登录，直达师大教务系统</li>
+                <li data-page-node-id="SpEh1BSZtEik7wRm7ExYZj">自动识别课程、教师、教室与上课周次</li>
+                <li data-page-node-id="PuCpg0bor6pKdzRoDIOAPX">开学日期自动写入，当前周次实时计算</li>
+                <li data-page-node-id="0VDgrewz7moRXlDaWyz4gF">支持 JSON 课表文件导入，换机不丢课表</li>
+            </ul>
+        </div>
+        <div class="split-vis reveal d2" data-page-node-id="uNRLQV2z4AlVQdpVaaFAE5">
+            <div class="stage" style="min-height:0;" data-page-node-id="fLs4mjAPJVRFHT4XbctHMc">
+                <div class="phone" data-page-node-id="CzNZoMOBXy8Ai28frfifgn">
+                    <div class="phone-screen" data-page-node-id="0ucqhFeEGWybzewHBcaOfT">
+                        <img src="assets/screen-today.png" alt="师大课程表·今日课表界面截图" width="1080" height="2400" loading="lazy" data-page-node-id="lgHFjmsH5CMCEDd9Lf7udK">
+                    </div>
+                </div>
+                <p class="caption" data-page-node-id="iIylkehbeYJAg9xiqH5hTb">今日课表 · App 真实界面</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 双视图 ===================== -->
+<section class="sec sec-green" data-page-node-id="E1oyJRvrz8uVT5WB0A0QsU">
+    <div class="wrap split rev" data-page-node-id="BH01KteGYYrhOy5PZQSu7h">
+        <div class="split-txt" data-page-node-id="MQ03mVIKSMuWvPMhflbu39">
+            <div class="sec-head left reveal" data-page-node-id="hTwjgIq1QtGA7nqRCJuZqB">
+                <span class="eyebrow" data-page-node-id="xDw9Dxpz0rBikkbPRA5xAk">Schedule</span>
+                <h2 data-page-node-id="6PBGQPf0FdQ6RHRnf35dQP"><span class="sp" data-page-node-id="oTSfuaaBI5krcO73CtR7Ze">双视图切换</span> <span class="sp" data-page-node-id="ZZBZbSMlRsZ74G6CbIBk20">一眼看清</span></h2>
+                <p class="sub" data-page-node-id="hmIjT5zrlA1F36uaWtZx6M">周课表看全局，今日课表看当下。左右滑动切换周次，长按拖动调整课程，假期倒计时与学期进度自动算好。</p>
+            </div>
+            <ul class="spec-lines reveal d1" data-page-node-id="Osaw9vyQyhVUSwhUj72gv0">
+                <li data-page-node-id="0iaQ5ql9EYxBznvewt1Z1p">周课表无限滑动，任意周次随手翻</li>
+                <li data-page-node-id="zyiKrdI6psHHOfu0Cs1a7Y">今日课表一屏看完当天安排与剩余节数</li>
+                <li data-page-node-id="4C7Z2tts3p8SebS4gLE7aa">长按拖动课程，调课换教室即刻完成</li>
+                <li data-page-node-id="BOHA02KR13PFxzhCLNGZtK">非本周课程、周末课程自由显示或隐藏</li>
+            </ul>
+        </div>
+        <div class="split-vis reveal d2" data-page-node-id="jm70yAQD1bjvH5sK32ZTHJ">
+            <div class="duo" data-page-node-id="9iNcqMwkVKveoFiwS76YVj">
+                <div class="phone" data-page-node-id="HYqr7QaaRuFs1vmufWAbaV">
+                    <div class="phone-screen" data-page-node-id="xHnHe6NgwrbzfHeGxaB1XU"><img src="assets/view-week.jpg" alt="师大课程表·本周课表界面截图" loading="lazy" data-page-node-id="fVOZrbM4RfcUUvx3vY5mZv"></div>
+                </div>
+                <div class="phone" data-page-node-id="PxoSNcjAnRsJ8HmkT4vYhz">
+                    <div class="phone-screen" data-page-node-id="ZrqQLQZUe6vMCcPrEIeRST"><img src="assets/view-today.jpg" alt="师大课程表·今日课表界面截图" loading="lazy" data-page-node-id="E9GP2xArXPoDT0osVlIvDs"></div>
+                </div>
+            </div>
+            <p class="caption" data-page-node-id="bqdcWEuus5bqaXjHuc5YQL">左：本周课表 · 右：今日课表，底部导航栏自由切换<br data-page-node-id="51ZLaMOuSGYnB285QG3WB2">也可在课程表设置选择启动时显示本周还是今日课表</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 精致细节 ===================== -->
+<section class="sec" id="details" data-page-node-id="rDO0Hs3d0xESzO4zQXG8RN">
+    <div class="wrap" data-page-node-id="KAcnIRXdt32UDCwjhKV0c0">
+        <div class="sec-head reveal" data-page-node-id="HD7b1PCDdaPAM7edsQqIQZ">
+            <span class="eyebrow" data-page-node-id="K45kEiybKAtHyfo9Us47bs">Details</span>
+            <h2 data-page-node-id="5TTIB1Uwmrfkg6IIqwBjVE"><span class="sp" data-page-node-id="aagk6bNTI5d1LWvBEbtOgA">精致细节</span> <span class="sp" data-page-node-id="y15hkpnwBveepf9nCu8Zuz">质感跃升</span></h2>
+            <p class="sub" data-page-node-id="5eF7ZDPgaes0uQlwfOXVmt">课表长什么样，由你说了算。从一张背景壁纸到一个圆角，每一处都能单独调整，还能跟随系统深浅色与壁纸取色。</p>
+        </div>
+        <div class="tiles" data-page-node-id="3RFKRHEGlOoHAteAZkFxoa">
+            <div class="tile reveal" data-page-node-id="UolaWRiIlHEyQDMa3Ow4RM"><div class="k" data-page-node-id="OjHxpV2zLlSNkhU3aNaA1G">🖼 壁纸</div><div class="t" data-page-node-id="PWRtcXtRWRyW7GyS2nAg8z">课表背景自定义</div><div class="d" data-page-node-id="yXwzWE58Oj9BD8ST5H50M1">支持选图裁剪，长按可清除</div></div>
+            <div class="tile reveal d1" data-page-node-id="sJWIk3rNHfymGPKhntDUrX"><div class="k" data-page-node-id="1H6M4y87pjmfnjOsmigCWN">📐 尺寸</div><div class="t" data-page-node-id="PYvBMPiBv5B0YKVAKou9mq">格子高度与圆角</div><div class="d" data-page-node-id="7kZxHSa6bDufk3bv7pGjtD">高度、圆角、内外间距逐项微调</div></div>
+            <div class="tile reveal d2" data-page-node-id="fzj2VgGehUd8maS98uaQsy"><div class="k" data-page-node-id="rVAnEzAzLkeqQ39Bxw12RA">🎨 配色</div><div class="t" data-page-node-id="s5iKv1KojlGEiOwEpnfiDu">课程块颜色池</div><div class="d" data-page-node-id="sr63SycHZbNfcBS8DzFli5">深浅两套配色，点圆形即可编辑</div></div>
+            <div class="tile reveal" data-page-node-id="hOK7EfK5bsMjGf0ucCVdpU"><div class="k" data-page-node-id="elttAdaGdPkTr1sMt5ceQT">🔠 文字</div><div class="t" data-page-node-id="7pjLqpqfsto9qcAZ5lte3r">缩放与对齐</div><div class="d" data-page-node-id="xHkTyQOlyD4GJA5T5nUDcZ">文字缩放比例、水平垂直居中</div></div>
+            <div class="tile reveal d1" data-page-node-id="jar1TqTIUGKcucSDgiHmLn"><div class="k" data-page-node-id="6OHmbGPAcTpPQlmEEhjvqP">🌗 主题</div><div class="t" data-page-node-id="E0ZxSM4H1FKBFN0LIZgZ4p">深浅色与动态取色</div><div class="d" data-page-node-id="UcbEze2nxOX3VpJv0tDmo0">跟随系统，或取壁纸主色</div></div>
+            <div class="tile reveal d2" data-page-node-id="rdWopAafh7Yed2HPL5ZNHc"><div class="k" data-page-node-id="gTOqM4vAJk5CHn4b5uxg61">🕐 模式</div><div class="t" data-page-node-id="VPId3YJ7N7RxRvQ8x35m0s">24 小时时间轴</div><div class="d" data-page-node-id="E1awFGGEbhLkNmUoR4FBpz">按真实时间轴纵向铺展课程</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== 提醒与小组件（深色） ===================== -->
+<section class="sec sec-dark" id="widgets" data-page-node-id="hETOYhFvKzCDEjlSE9W5s2">
+    <div class="wrap" data-page-node-id="GD9zgMOXb8JAPxEy1eWh4i">
+        <div class="sec-head reveal" data-page-node-id="l8qbFRypVr8nP5Z55AbfKJ">
+            <span class="eyebrow" data-page-node-id="xxy5dC3fl5igRm0YCv4n5v">Reminder &amp; Widgets</span>
+            <h2 data-page-node-id="loVNhR4EUZu6hMdOciPaPW"><span class="sp" data-page-node-id="WYIVy1W1BU06SbvV3xai0A">提醒常在</span> <span class="sp" data-page-node-id="DiJza3c8YL9ipU8AOKgW70">课课不误</span></h2>
+            <p class="sub" data-page-node-id="GvfJqF9k7UmnLjl7DuHdDk">课前准点提醒，上课自动切换勿扰或静音；四种尺寸桌面小组件，不打开 App 也能看见下一节课。</p>
+        </div>
+        <div class="widgets" data-page-node-id="yMlvmDFEdv6f6Npa8fzllD">
+            <div class="wg reveal" data-page-node-id="BUuO4NnDSEgwYrmFTTGHyj">
+                <span class="size" data-page-node-id="tr11bj4BLJc9Jw32hSStYH">2 × 1 超小</span>
+                <div class="shot" data-page-node-id="Tt9pDZs5WflTDJuGgKDPDD"><img src="assets/widget-tiny.png" alt="超小课程 2×1 小组件截图" loading="lazy" data-page-node-id="iHbyqsEyaUSQy7kgUZmfnS"></div>
+                <h3 data-page-node-id="YAXqkcAnemJZaaQdieAPu5">下一节课</h3>
+                <p data-page-node-id="V1h7A4NB4oYLflji2AQc0F">一眼看到时间与教室</p>
+            </div>
+            <div class="wg reveal d1" data-page-node-id="UKZLopSbFzv0PWKw1KVgBb">
+                <span class="size" data-page-node-id="mYWM5qYh2Eh6fB7PolAlTy">2 × 2 紧凑</span>
+                <div class="shot" data-page-node-id="NqOWLwR77AET5wqQESau0x"><img src="assets/widget-compact.png" alt="紧凑课程 2×2 小组件截图" loading="lazy" data-page-node-id="nfb591Bs7voPjLcmTvMN5f"></div>
+                <h3 data-page-node-id="1auU5IiUlEZe6fSWh4ixMs">今日概览</h3>
+                <p data-page-node-id="HvWBNz6tLYbsnFrDN4lOOM">剩余节数与课程列表</p>
+            </div>
+            <div class="wg reveal d2" data-page-node-id="fErRWhNMExazqDTX1QiUHX">
+                <span class="size" data-page-node-id="gWXH9msqtGZkMVyiG9TUnf">4 × 2 近日</span>
+                <div class="shot" data-page-node-id="9aK1FdBXc6geEy7JIExMKI"><img src="assets/widget-double.png" alt="近日课程 4×2 小组件截图" loading="lazy" data-page-node-id="j9WBPdtn4gjMfh2mbkKLr7"></div>
+                <h3 data-page-node-id="75h6NQvfWhNzwBZrLdeMlq">今明两天</h3>
+                <p data-page-node-id="5ar9fKeZH44ieOx3nD3jjT">提前安排明天的行程</p>
+            </div>
+            <div class="wg reveal d3" data-page-node-id="CB2C3Obn1mSD2sSegB6mUi">
+                <span class="size" data-page-node-id="yT7Dgkiucc4Js6oILk59Ez">4 × N 垂直</span>
+                <div class="shot" data-page-node-id="P6OqUgwDzS3baZ7fNEOWOV"><img src="assets/widget-list.png" alt="垂直列表课表 4×N 小组件截图" loading="lazy" data-page-node-id="SJnMwTlrdOxIm3QoUMw4EQ"></div>
+                <h3 data-page-node-id="txMeGWLBmzIRPDTlGqwxjC">垂直列表</h3>
+                <p data-page-node-id="VFROXoLH7f845TllIBj7Jy">高度可拉伸，整周可览</p>
+            </div>
+        </div>
+        <ul class="spec-lines reveal d2" style="margin-top:34px;text-align:center;" data-page-node-id="QgiZhkFGBA5z8bCFTIrTzv">
+            <li style="padding-left:0;" data-page-node-id="9lGn0LW8ValMuaqurL78FC"><b data-page-node-id="yHVUkKwYDxcpXw1AgPTHfB">小组件到桌面后可长按后自由拖动长宽，完全个性化自定义。</b></li>
+            <li style="padding-left:0;" data-page-node-id="VLbgoSE8qXFneKdMInPYUI">课前提醒时间可自定义 · 支持精确闹钟与跳过节假日日期</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===================== 数据 ===================== -->
+<section class="sec sec-green" id="data" data-page-node-id="DcbUNY5h1U8iHOWBvkbsJB">
+    <div class="wrap" data-page-node-id="LJxvurupgF4QKsDkRqo25C">
+        <div class="sec-head reveal" data-page-node-id="EsqYnbC7GRmCyg7AS7fE8E">
+            <span class="eyebrow" data-page-node-id="3Z5OCrtUcGKixeoUUkS6m4">Your Data</span>
+            <h2 data-page-node-id="eWdtBJOu1hPZ38LJkpQepN"><span class="sp" data-page-node-id="AZrKLjWkqooUHVI746f6j8">数据自由</span> <span class="sp" data-page-node-id="loTkKwWljUjAZ7AxzrSvBL">安心随行</span></h2>
+            <p class="sub" data-page-node-id="gvP5WY4XhHGvZUJIOfRB3X">课表数据握在自己手里。可导出、可备份、可同步，也随时能清理。干净、安全、克制。</p>
+        </div>
+        <div class="data-visual reveal" data-page-node-id="oHaphfHfnnE3yRrEG23wxn">
+            <div class="phone" data-page-node-id="1FY28dCzt5Q5DEDkIor3EV">
+                <div class="phone-screen" data-page-node-id="6wZ5YZebQP6CI6bUwcztuj"><img src="assets/data-screen.jpg" alt="课表导入/导出界面截图" loading="lazy" data-page-node-id="Qq7a7PBJLov7z6EawPJ6FH"></div>
+            </div>
+            <p class="caption" data-page-node-id="gdrs4Bd2hQchLHIVJjy7Lb">课表导入/导出：JSON / ICS / 系统日历，一站式管理</p>
+        </div>
+        <div class="cards4" data-page-node-id="wEHFQh0A2DUBnbcCP5TsyB">
+            <div class="card reveal" data-page-node-id="OimpBttBK08obxFPe73sQV"><div class="ico" aria-hidden="true" data-page-node-id="T8ItFjwk4JKvr3ZMHs9pq2">📤</div><h3 data-page-node-id="Vu224P6UiAHSOQYhA3DA7M">JSON 导入导出</h3><p data-page-node-id="smvsDPSZ3Tq7PohzwdouPz">连时间段配置一起打包导出，换机或分享给同学都方便。</p></div>
+            <div class="card reveal d1" data-page-node-id="yeTF0HahE0ETakTth0PQAM"><div class="ico" aria-hidden="true" data-page-node-id="fhZZDrVMcVBu61agDbfn7N">📆</div><h3 data-page-node-id="2mcQPx2Qd3q55sorB560Zu">ICS 日历导出</h3><p data-page-node-id="F6ijeKmwnepRYzhGtAL1Oq">生成带提醒参数的日历文件，导入任意日历应用即可用。</p></div>
+            <div class="card reveal d2" data-page-node-id="gkHA9mHGCUArjcCKPX0prF"><div class="ico" aria-hidden="true" data-page-node-id="lkL0BqWSqIvWWz299CueHl">🔄</div><h3 data-page-node-id="DyjmadjXaDBKJGuGrqCapt">系统日历同步</h3><p data-page-node-id="mbr4UiTHVduBMgdV2M7rRK">一键把当前课表同步进手机系统日历，跨应用也能看到课。</p></div>
+            <div class="card reveal d3" data-page-node-id="aOsd3EW1ztDSyncJmOV71Y"><div class="ico" aria-hidden="true" data-page-node-id="svNpybhZdhKyNZ7pNiWDlE">🔒</div><h3 data-page-node-id="xKBgBD02c3pSwqUHFpvYkB">凭据不出手机</h3><p data-page-node-id="kH5sJQWXMV0QXohgDzJWkz">学号密码只在手机内完成登录，无广告、无推送、不申请无关权限。</p></div>
+        </div>
+    </div>
+</section>
+
+
 <!-- ===== 主体 ===== -->
-<main class="tut-main">
+<main class="tut-main" data-page-node-id="GDvPIidybdw4uOJgkG2Q3s">
   <!-- 左侧目录 -->
-  <aside class="tut-toc" aria-label="教程目录">
-    <h3>教程目录</h3>
-    <div class="tut-toc-group">
-      <div class="tut-toc-group-title">安装使用教程</div>
-      <ol>
-        <li><a href="#tut-phase-1">开始使用</a></li>
-        <li><a href="#tut-phase-2">首次配置</a></li>
-        <li><a href="#tut-phase-3">导入课表</a></li>
-        <li><a href="#tut-phase-4">上课提醒</a></li>
-        <li><a href="#tut-phase-5">个性化设置</a></li>
+  <aside class="tut-toc" aria-label="教程目录" data-page-node-id="ChzUOtGYLZquBU8qHMFGjb">
+    <h3 data-page-node-id="cH5sIgomQoz3DLS4zUB9CJ">教程目录</h3>
+    <div class="tut-toc-group" data-page-node-id="CtJCLNcgD1QqkEjDJSfFBe">
+      <div class="tut-toc-group-title" data-page-node-id="maDYIbWXA2cwjWFHzDmW2g">总览</div>
+      <ol data-page-node-id="OYpLwTz5Bc12GnrMdhqPvm">
+        <li data-page-node-id="cDiDZmpKYGuiHEceMr1Zof"><a href="#tut-top" data-page-node-id="BDdg8i5REXMIiRCdG746A1">应用总览</a></li>
       </ol>
     </div>
-    <div class="tut-toc-group">
-      <div class="tut-toc-group-title">小组件教程</div>
-      <ol>
-        <li><a href="#tut-widgets">桌面小组件</a></li>
+    <div class="tut-toc-group" data-page-node-id="oTJgz6VA3H2CaCvR7F0vi7">
+      <div class="tut-toc-group-title" data-page-node-id="CBT7Xf7vQmuGIQv9MiwDK2">详细介绍</div>
+      <ol data-page-node-id="PvW9Elelf5JaSMsD3xQ5Rq">
+        <li data-page-node-id="XHeQIRqOdK6no4chRKFPSK"><a href="#intro" data-page-node-id="lCBz8sdVqSiaq3kCIy6t4J">功能介绍</a></li>
       </ol>
     </div>
-    <a class="tut-toc-faq" href="#tut-faq">常见问题</a>
+    <div class="tut-toc-group" data-page-node-id="ZaYzBeaLmf7WsRfQGmssGQ">
+      <div class="tut-toc-group-title" data-page-node-id="EHncpZndaInrXk1xz0xDoj">安装使用教程</div>
+      <ol data-page-node-id="BfsH0zF96w0Jr5Vh4qf4IN">
+        <li data-page-node-id="U8shfHXzxYNjpubB71PehW"><a href="#tut-phase-1" data-page-node-id="EjDGuITGGlQPW8S7T4BINj">开始使用</a></li>
+        <li data-page-node-id="AouRiZM1zdt5CncBzJhqw1"><a href="#tut-phase-2" data-page-node-id="H55fiOjyfzcKcRcM8ehd3C">首次配置</a></li>
+        <li data-page-node-id="6Vn7iJm3B3Jxd3usFKoH5a"><a href="#tut-phase-3" data-page-node-id="7DuuEl7yBW0x1ogYQ5Zsq7">导入课表</a></li>
+        <li data-page-node-id="6aPApmch6oQaLbSIeFaU1Z"><a href="#tut-phase-4" data-page-node-id="o2uh6Wjjl7GfDYnCvpTxc7">上课提醒</a></li>
+        <li data-page-node-id="72mZByGB31WKkK7U7SBoGN"><a href="#tut-phase-5" data-page-node-id="PvG8JRDSVVSHBE8opogPV4">个性化设置</a></li>
+      </ol>
+    </div>
+    <div class="tut-toc-group" data-page-node-id="Z74nM4rJWFMzqNcLUAjyka">
+      <div class="tut-toc-group-title" data-page-node-id="NTUbzYkqM12DOwjimLsHeI">小组件教程</div>
+      <ol data-page-node-id="bpo1eJimE7mY8ywL0mjzYF">
+        <li data-page-node-id="zmc09krfpfG4ospVa2fCrg"><a href="#tut-widgets" data-page-node-id="nCPilI4EEtgBXI9AiKyjfO">桌面小组件</a></li>
+      </ol>
+    </div>
+    <div class="tut-toc-group" data-page-node-id="PCpdWJN0cOHs1DBBG2QuQY">
+      <div class="tut-toc-group-title" data-page-node-id="GVHbRlaktTwbPUeEYOJx35">应用迭代更新</div>
+      <ol data-page-node-id="b00TEVEleA354biyGC0DOG">
+        <li data-page-node-id="fX0oI7zZAZsBEBC20hZbUz"><a href="#tut-update" data-page-node-id="CflGJDPDBPhIkLGySv56VY">更新安装教程</a></li>
+      </ol>
+    </div>
+    <a class="tut-toc-faq" href="#tut-faq" data-page-node-id="b1jVHXlSfDBlsaTYTt0mAw">常见问题</a>
+    <a class="tut-toc-faq" href="#about" data-page-node-id="dOAyYBSR0bS9jm25EgoXzZ">关于 & 反馈</a>
   </aside>
 
   <!-- 右侧内容 -->
-  <div>
+  <div data-page-node-id="AgLaAFhzuQvB3WDsn0XYNx">
 
     <!-- ============= 阶段 1 ============= -->
-    <section class="tut-phase" id="tut-phase-1">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 01</span>
-        <h2>开始使用</h2>
-        <span class="tut-range">步骤 1 - 5</span>
+    <section class="tut-phase" id="tut-phase-1" data-page-node-id="UCcnrcmjWyNLm0yMC2y217">
+      <div class="tut-phase-head" data-page-node-id="zRrDBdvDh2pJPqmKfFqkR2">
+        <span class="tut-num" data-page-node-id="DUK7nkKGId271P8X6ENB6C">PHASE 01</span>
+        <h2 data-page-node-id="jtlrDFZkJh2EBrESOunklP">开始使用</h2>
+        <span class="tut-range" data-page-node-id="dx42W84uCjfZKIWppSvE8J">步骤 1 - 5</span>
       </div>
-      <p class="tut-phase-desc">从浏览器打开链接，到把 APP 装到手机，只需 5 步。</p>
+      <p class="tut-phase-desc" data-page-node-id="VQ4yH5jYpnKKUS2fnj7g5J">从浏览器打开链接，到把 APP 装到手机，只需 5 步。</p>
 
-      <article class="tut-step" id="tut-step-1">
-        <div class="tut-step-badge">1</div>
-        <div class="tut-step-body">
-          <h3>复制链接并粘贴到浏览器</h3>
-          <p>把下面的网址复制到手机浏览器（建议用系统自带浏览器或 Chrome / Edge / Safari）：</p>
-          <p><a href="https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/" target="_blank" rel="noopener">https://shidakechengbiao-d5esqi0a03eb95b-1482047676.tcloudbaseapp.com/</a></p>
-        </div>
-        <a class="tut-step-img" data-src="assets/tut/step-01.jpg" title="点击放大">
-          <img src="assets/tut/step-01.jpg" alt="在浏览器地址栏粘贴链接" loading="lazy" />
-          <div class="caption">图 1</div>
-        </a>
-      </article>
-
-      <article class="tut-step" id="tut-step-2">
-        <div class="tut-step-badge">2</div>
-        <div class="tut-step-body">
-          <h3>出现"风险提示"页面 → 点击「确认访问」</h3>
-          <p>首次打开会出现腾讯云测试域名的提示页。点击底部<strong>"确定访问"</strong>按钮即可。</p>
-          <div class="tut-callout tut-callout-info">
-            <span class="tut-icon">💡</span>
-            <span>这是因为作者没有花钱申请正式域名，仅分享给师大的兄弟姐妹们使用，所以无伤大雅，可以放心点。</span>
+      <article class="tut-step" id="tut-step-1" data-page-node-id="QxeExS9Lcthb7QcF8V1Qzn">
+        <div class="tut-step-badge" data-page-node-id="ardsYCihuoXjbrqTZ2NjUy">1</div>
+        <div class="tut-step-body" data-page-node-id="VCcnj4MFxB8aNg7FwC2eSZ">
+          <h3 data-page-node-id="rPpc2xFKcINoR859rhbIEc">复制链接并粘贴到浏览器</h3>
+          <p data-page-node-id="YtCg6CgvPubiiKM0vanIoQ">把下面的网址复制到手机浏览器（建议用系统自带浏览器或 Chrome / Edge / Safari）：</p>
+          <p data-page-node-id="lXgt8NV17qpm0jLMflg80M"><a href="https://chisa8cwnu.github.io/scheduleforCWNU/" target="_blank" rel="noopener" data-page-node-id="yMBIJ8oMSKvMyYEXALOIr6">https://chisa8cwnu.github.io/scheduleforCWNU/</a></p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="aBwZr0XYTisNialL92yyLh">
+            <span class="tut-icon" data-page-node-id="OFetB3KMh5yxmJ7129GRjn">💡</span>
+            <span data-page-node-id="EzaWInG3IxJeZlmEZ0gFbG">若连接校内 WiFi 打不开，请使用手机流量。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-02.jpg" title="点击放大">
-          <img src="assets/tut/step-02.jpg" alt="风险提示页面" loading="lazy" />
-          <div class="caption">图 2</div>
+        <a class="tut-step-img" data-src="assets/222.jpg" title="点击放大" data-page-node-id="ngH4dZFQbu56MPpzC9JsBq">
+          <img src="assets/222.jpg" alt="在浏览器地址栏粘贴链接" loading="lazy" data-page-node-id="ru9JFENEHEbVAXr6Zb5aW7" />
+          <div class="caption" data-page-node-id="d0nUxaADF1gGTnJSFCSMoZ">图 1</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-3">
-        <div class="tut-step-badge">3</div>
-        <div class="tut-step-body">
-          <h3>进入软件介绍页 → 点击「免费下载」</h3>
-          <p>点击"确认访问"后会进入介绍页。直接点底部的绿色 <strong>"免费下载"</strong> 按钮即可立即下载。想了解更多功能也可继续浏览页面。</p>
+
+
+      <article class="tut-step" id="tut-step-3" data-page-node-id="o76gaQcyrdQr8RM3zXX2mX">
+        <div class="tut-step-badge" data-page-node-id="WHPFbjr1pi6bCZGE6B7Zh4">3</div>
+        <div class="tut-step-body" data-page-node-id="DZDo0byKnlFDwrVifUOwAW">
+          <h3 data-page-node-id="IxVFEXkP7paruEvFc10N8e">进入软件介绍页 → 点击「免费下载」</h3>
+          <p data-page-node-id="hj5haa597lShhCZgG3Kh1k">点击「免费下载」即可立即下载软件安装包。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-03.jpg" title="点击放大">
-          <img src="assets/tut/step-03.jpg" alt="软件介绍页面" loading="lazy" />
-          <div class="caption">图 3</div>
+        <a class="tut-step-img" data-src="assets/tut/step-03.jpg" title="点击放大" data-page-node-id="xNvuxfysxfSzm0Hnh3OJ4Y">
+          <img src="assets/tut/step-03.jpg" alt="软件介绍页面" loading="lazy" data-page-node-id="AtF2FBKDHQvBgVQCRsmNLl" />
+          <div class="caption" data-page-node-id="JzWIC0uAG7Tm3wqmJPaJfM">图 3</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-4">
-        <div class="tut-step-badge">4</div>
-        <div class="tut-step-body">
-          <h3>点击下载</h3>
-          <p>不同手机品牌的下载页面可能略有差异，根据自己屏幕上显示的提示点击下载即可。下载完成后到 <strong>"下载"</strong> 文件夹或通知栏里找到安装包。</p>
-          <div class="tut-callout tut-callout-tip">
-            <span class="tut-icon">📱</span>
-            <span>如果浏览器拦截了下载，检查右上角的下载提示并允许。</span>
+      <article class="tut-step" id="tut-step-4" data-page-node-id="ZZB0pi4agoV5tEHqbAS4tz">
+        <div class="tut-step-badge" data-page-node-id="VAGoYIrC8EMwzw61S4rC9C">4</div>
+        <div class="tut-step-body" data-page-node-id="AbY6OLaNn87W26LUFCBZoD">
+          <h3 data-page-node-id="GZvLQfttpeByvV2W8CFx1V">点击下载</h3>
+          <p data-page-node-id="6NMlhUb6ZRxnDVHJHrYrZK">不同手机品牌的下载页面可能略有差异，根据自己屏幕上显示的提示点击下载即可。下载完成后到 <strong data-page-node-id="KrAtFvIRgL7dhcH0ZJy9zn">「下载」</strong> 文件夹或通知栏里找到安装包。</p>
+          <div class="tut-callout tut-callout-tip" data-page-node-id="x1f0jIiZEFFFs1jEVfRgh7">
+            <span class="tut-icon" data-page-node-id="SmvmJSJ2A9alodn5OrQVWo">📱</span>
+            <span data-page-node-id="IgHpbdjCPRwf3GvAWmpmfE">如果浏览器拦截了下载，请根据下载风险提示允许下载。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-04.jpg" title="点击放大">
-          <img src="assets/tut/step-04.jpg" alt="下载页面" loading="lazy" />
-          <div class="caption">图 4</div>
+        <a class="tut-step-img" data-src="assets/tut/step-04.jpg" title="点击放大" data-page-node-id="dsle652tn1BTcnicWS5KjQ">
+          <img src="assets/tut/step-04.jpg" alt="下载页面" loading="lazy" data-page-node-id="59OkVjz6dnyUndSpaawJWU" />
+          <div class="caption" data-page-node-id="3bIllgFub6AwBZnpPpdGfH">图 4</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-5">
-        <div class="tut-step-badge">5</div>
-        <div class="tut-step-body">
-          <h3>系统安全扫描 → 继续安装</h3>
-          <p>大多数安卓系统会对未知来源 APK 进行安全扫描，直接选择 <strong>"继续安装"</strong> 即可。如果系统询问"是否允许此来源安装"，选择允许。</p>
+      <article class="tut-step" id="tut-step-5" data-page-node-id="KufkjdeLgeppc2WniuHOW3">
+        <div class="tut-step-badge" data-page-node-id="bY2RRp91v7smPJDoaWfEQU">5</div>
+        <div class="tut-step-body" data-page-node-id="Dth1lorCOJgGeTSG9YN5Yn">
+          <h3 data-page-node-id="DWyTqnKm8kcfbGyGXVvH3N">系统安全扫描 → 继续安装</h3>
+          <p data-page-node-id="bXL9OCDp5ipAZyTM2lDI57">大多数安卓系统会对未知来源 APK 进行安全扫描，直接选择 <strong data-page-node-id="XOxAk3IC2UmN9n0DP0EbtW">「继续安装」</strong> 即可。如果系统询问「是否允许此来源安装」，选择允许。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-05.jpg" title="点击放大">
-          <img src="assets/tut/step-05.jpg" alt="安装时的安全扫描" loading="lazy" />
-          <div class="caption">图 5</div>
+        <a class="tut-step-img" data-src="assets/333.jpg" title="点击放大" data-page-node-id="JKoAFniW9gPlgdHBlHOINx">
+          <img src="assets/333.jpg" alt="安装时的安全扫描" loading="lazy" data-page-node-id="M4o80FWI3gxwNkadfYH4bW" />
+          <div class="caption" data-page-node-id="ADuKUsYfUOlhIRc0dFu7dF">图 5</div>
         </a>
       </article>
     </section>
 
     <!-- ============= 阶段 2 ============= -->
-    <section class="tut-phase" id="tut-phase-2">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 02</span>
-        <h2>首次配置</h2>
-        <span class="tut-range">步骤 6 - 9</span>
+    <section class="tut-phase" id="tut-phase-2" data-page-node-id="tBwErUXFkIPWCEFbiQ0YoW">
+      <div class="tut-phase-head" data-page-node-id="MJdSxvY4UcBaPox22odb6h">
+        <span class="tut-num" data-page-node-id="xmoG4AyFzfs0zvjB5Kb3UX">PHASE 02</span>
+        <h2 data-page-node-id="ljUr4SRFrBSF6mZKSycqo4">首次配置</h2>
+        <span class="tut-range" data-page-node-id="hP04R566IbgV5CXP4iB3pQ">步骤 6 - 9</span>
       </div>
-      <p class="tut-phase-desc">首次打开 APP，按向导完成基础设置。</p>
+      <p class="tut-phase-desc" data-page-node-id="wRM3UnrMoIzAbwIUkdRALD">首次打开 APP，按向导完成基础设置。</p>
 
-      <article class="tut-step" id="tut-step-6">
-        <div class="tut-step-badge">6</div>
-        <div class="tut-step-body">
-          <h3>语言设置 → 选择「跟随系统」</h3>
-          <p>系统会进入"语言设置"界面。建议直接选 <strong>"跟随系统"</strong>，软件会自动匹配你手机的系统语言。</p>
+      <article class="tut-step" id="tut-step-6" data-page-node-id="DuldQIeDI6Dwhyk3FOywfe">
+        <div class="tut-step-badge" data-page-node-id="9DiMyQAbRXNxQiqnjjBGGP">6</div>
+        <div class="tut-step-body" data-page-node-id="RRGbhBAadEkSOc9AJ0nWdG">
+          <h3 data-page-node-id="olRX80SnG58nbjIgCTbd3A">语言设置 → 选择「跟随系统」</h3>
+          <p data-page-node-id="jZZEgto9PfBrXIQ6JXRMzH">系统会进入「语言设置」界面。建议直接选 <strong data-page-node-id="TFGvfpn7yX6CcrDWtYVAlT">「跟随系统」</strong>，软件会自动匹配你手机的系统语言。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-06.jpg" title="点击放大">
-          <img src="assets/tut/step-06.jpg" alt="语言设置" loading="lazy" />
-          <div class="caption">图 6</div>
+        <a class="tut-step-img" data-src="assets/tut/step-06.jpg" title="点击放大" data-page-node-id="7Oo0uKXFhimqvayy9kL0fP">
+          <img src="assets/tut/step-06.jpg" alt="语言设置" loading="lazy" data-page-node-id="p0ZIAE40EvpuVHIrcBuWCe" />
+          <div class="caption" data-page-node-id="dQbJ12ASTNbUvOR8xxIbUQ">图 6</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-7">
-        <div class="tut-step-badge">7</div>
-        <div class="tut-step-body">
-          <h3>主题模式 → 浅色 / 深色 / 动态取色</h3>
-          <p>三种模式可选：</p>
-          <p><strong>浅色 / 深色模式</strong>：手动切换主题色；建议选 <strong>"跟随系统"</strong>。<br/>
-          <strong>动态取色</strong>：会吸取你手机壁纸的主色调作为整个 APP 的主题色 —— 想换心情时换张壁纸即可。</p>
+      <article class="tut-step" id="tut-step-7" data-page-node-id="h3IDRV7nT6DQtSmO6SAyYE">
+        <div class="tut-step-badge" data-page-node-id="aDDSfIC453iTAOogKKDVLe">7</div>
+        <div class="tut-step-body" data-page-node-id="aYLL2Al7rJgJeTZVJJ34Bs">
+          <h3 data-page-node-id="fN4yczZomyJHbp8ovzaKmX">主题模式 → 浅色 / 深色 / 动态取色</h3>
+          <p data-page-node-id="2pDv6PMgcjWUFvTptHZhX8">三种模式可选：</p>
+          <p data-page-node-id="M2cFSrm85InjbCL2kmUKqw"><strong data-page-node-id="kCT1tBi1ZB2whpUawYZhQ2">浅色 / 深色模式</strong>：手动切换主题色；建议选 <strong data-page-node-id="RWGU1CJXEvVf1uwYpsXciJ">「跟随系统」</strong>。<br data-page-node-id="9G8VhDQBGZwD51eJidKi6t"/>
+          <strong data-page-node-id="RyNK0FK5WBExz62gIpFQAX">动态取色</strong>：会吸取你手机壁纸的主色调作为整个 APP 的主题色 —— 想换心情时换张壁纸即可。<br data-page-node-id="Hi5YDAaSxZ6L59nL8gIZo0"/>
+          「跟随系统」或「浅 / 深色模式」点击一次即可。点击「下一步」进入下一项设置。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-07.jpg" title="点击放大">
-          <img src="assets/tut/step-07.jpg" alt="主题模式选择" loading="lazy" />
-          <div class="caption">图 7</div>
+        <a class="tut-step-img" data-src="assets/444.jpg" title="点击放大" data-page-node-id="LU5xnO2evh5vnV8e0GT0lD">
+          <img src="assets/444.jpg" alt="主题模式选择" loading="lazy" data-page-node-id="B94hfWACZcoDBytUsBmU1A" />
+          <div class="caption" data-page-node-id="4nR7hUWb45aSicNUC5yun9">图 7</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-8">
-        <div class="tut-step-badge">8</div>
-        <div class="tut-step-body">
-          <h3>其他基础设置</h3>
-          <p>根据个人情况设置即可。</p>
+      <article class="tut-step" id="tut-step-8" data-page-node-id="gWyWBXTii3wQ9pYxCzCQhC">
+        <div class="tut-step-badge" data-page-node-id="zU1J4iCtRjINRFnX079hsi">8</div>
+        <div class="tut-step-body" data-page-node-id="iSYzpygeGJ3ynGTdppMZY3">
+          <h3 data-page-node-id="q8T6q7Hy0bs2HPPQWcVDtP">其他基础设置</h3>
+          <p data-page-node-id="Ap7fJpVWnf6qpCsYlOn5dK">根据个人情况设置即可。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-08.jpg" title="点击放大">
-          <img src="assets/tut/step-08.jpg" alt="基础设置" loading="lazy" />
-          <div class="caption">图 8</div>
+        <a class="tut-step-img" data-src="assets/tut/step-08.jpg" title="点击放大" data-page-node-id="nohLNBxuygpNdtgGsYYyjS">
+          <img src="assets/tut/step-08.jpg" alt="基础设置" loading="lazy" data-page-node-id="FRWeruwjcCMGYKHjKYTUt0" />
+          <div class="caption" data-page-node-id="oRvQ9R7FrYR5hGFGBlcwMX">图 8</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-9">
-        <div class="tut-step-badge">9</div>
-        <div class="tut-step-body">
-          <h3>推荐使用「教务系统导入」</h3>
-          <p>讲解导入课程的方式：</p>
-          <div class="tut-callout tut-callout-info">
-            <span class="tut-icon">⭐</span>
-            <span>"教务系统导入"是从学校官方教务系统一键拉取你的真实课表，无需手动录入课程、时间、地点，<strong>强烈推荐</strong>。</span>
+      <article class="tut-step" id="tut-step-9" data-page-node-id="e0bmv9rD3tIbNHgw4ofv0A">
+        <div class="tut-step-badge" data-page-node-id="ZDu66P69Jj6Rpe4EqEnlfj">9</div>
+        <div class="tut-step-body" data-page-node-id="c8ezT2fSSylrO3HWduSleD">
+          <h3 data-page-node-id="JE5CwVqtIvDw9VP8YINcGB">推荐使用「教务系统导入」</h3>
+          <p data-page-node-id="IqpapNkFy5Z2wz7mQZoq5S">讲解导入课程的方式：</p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="zPP5XiGgtLAVr2bNQlVUS3">
+            <span class="tut-icon" data-page-node-id="XSVr5NZgnBS06kgXe11P2z">⭐</span>
+            <span data-page-node-id="J5kEKHEeUdzyKSvIbx4AGV">「教务系统导入」是从学校官方教务系统一键拉取你的真实课表，无需手动录入课程、时间、地点，<strong data-page-node-id="G7u6kXYnYUFSR3592XcgZE">强烈推荐</strong>。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-09.jpg" title="点击放大">
-          <img src="assets/tut/step-09.jpg" alt="导入方式选择" loading="lazy" />
-          <div class="caption">图 9</div>
+        <a class="tut-step-img" data-src="assets/555.jpg" title="点击放大" data-page-node-id="aCukCOKhzWfP1m37oGrZAt">
+          <img src="assets/555.jpg" alt="导入方式选择" loading="lazy" data-page-node-id="fUURdfzVwIYMQtVWJwHxwD" />
+          <div class="caption" data-page-node-id="uaoo4YmfmeCn0ZQTCGMhoy">图 9</div>
         </a>
       </article>
     </section>
 
     <!-- ============= 阶段 3 ============= -->
-    <section class="tut-phase" id="tut-phase-3">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 03</span>
-        <h2>导入课表</h2>
-        <span class="tut-range">步骤 10 - 17 · 核心环节</span>
+    <section class="tut-phase" id="tut-phase-3" data-page-node-id="1qlaMHm39qcrUhbflijYYE">
+      <div class="tut-phase-head" data-page-node-id="9EkimkfTNLclqrY1L5i7lc">
+        <span class="tut-num" data-page-node-id="94uk5p6BsdC8IVnCXi4E50">PHASE 03</span>
+        <h2 data-page-node-id="6ms2Sg3RuL7GGsfUZPaqcF">导入课表</h2>
+        <span class="tut-range" data-page-node-id="ERnH92PTCzTdXZIkgYfbqb">步骤 10 - 17 · 核心环节</span>
       </div>
-      <p class="tut-phase-desc">从教务系统一键导入你本学期的真实课表。整个流程约 1 - 2 分钟。</p>
+      <p class="tut-phase-desc" data-page-node-id="CuzAveIzHn7H6lwtnfoSCV">从教务系统一键导入你本学期的真实课表。整个流程约 1 - 2 分钟。</p>
 
-      <article class="tut-step" id="tut-step-10">
-        <div class="tut-step-badge">10</div>
-        <div class="tut-step-body">
-          <h3>跳转"西华师范大学信息门户" → 输入账密 → 点「登录」</h3>
-          <p>点击"教务系统导入"会自动跳转到学校官方 <strong>"信息门户"</strong>。输入学号 / 工号和密码，<strong>点击"登录"按钮</strong>（不是右下角的"执行导入"）。</p>
-          <div class="tut-callout tut-callout-warn">
-            <span class="tut-icon">⚠️</span>
-            <span>此页面有可能会<strong>重复出现一次</strong>，属于学校网信的小 bug，再输入一次即可，不用担心。</span>
+      <article class="tut-step" id="tut-step-10" data-page-node-id="Jss7IICDejIosrXaa0aBO5">
+        <div class="tut-step-badge" data-page-node-id="IVGGVXTIUNe0hKIvkm7ii2">10</div>
+        <div class="tut-step-body" data-page-node-id="lRL9tm3VJMNBbEvXNtWFrk">
+          <h3 data-page-node-id="jvheULfhhMqOFaJZ3Cx529">跳转「西华师范大学信息门户」 → 输入账密 → 点「登录」</h3>
+          <p data-page-node-id="ZX6TDJ8VaG2CioDyqH7Hwn">点击「教务系统导入」会自动跳转到学校官方 <strong data-page-node-id="vFDpGSiKxa2TreTDtIWyj9">「信息门户」</strong>。输入学号 / 工号和密码，<strong data-page-node-id="W5DlBHH1VZRr860guy1Y5o">点击「登录」按钮</strong>（不是右下角的「执行导入」）。</p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="fn6nEernTxFYCk0GD9T0At">
+            <span class="tut-icon" data-page-node-id="uK6MJnEyj8aH8Fyko3UuAw">💡</span>
+            <span data-page-node-id="7PxOT0aVzqtNlgfksrt3eh">手机若连接校内 WiFi（CWNU_DIANXIN 或 CWNU_YIDONG），则正常登录信息门户；若使用流量，则可能在登录时再出现一次登录页面，此时正常登录即可（相当于输入两遍账密）。<br data-page-node-id="NZJEM8cTt3sZASibj6tqNr"/>若 WiFi 导入失败，请切换到流量状态；若流量状态导入失败，请切换 WiFi。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-10.jpg" title="点击放大">
-          <img src="assets/tut/step-10.jpg" alt="信息门户登录" loading="lazy" />
-          <div class="caption">图 10</div>
+        <a class="tut-step-img" data-src="assets/tut/step-10.jpg" title="点击放大" data-page-node-id="L91jc0gWXDrYLK3zvCZH4I">
+          <img src="assets/tut/step-10.jpg" alt="信息门户登录" loading="lazy" data-page-node-id="iwkh29f7hPxTE4vh7kcQYJ" />
+          <div class="caption" data-page-node-id="tb41A2OiOXavKacrBB5Wkz">图 10</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-11">
-        <div class="tut-step-badge">11</div>
-        <div class="tut-step-body">
-          <h3>进入信息门户首页 → 点击「教务系统（学生）」</h3>
-          <p>登录成功后，在首页的应用列表里找到并点击 <strong>"教务系统（学生）"</strong>。</p>
+      <article class="tut-step" id="tut-step-11" data-page-node-id="BU7GlRVQMY5s8EyZvQwsHf">
+        <div class="tut-step-badge" data-page-node-id="Sj1qehCxtfJdec7WbDMazu">11</div>
+        <div class="tut-step-body" data-page-node-id="pi0P0JUOW3yaf3wChRRsrI">
+          <h3 data-page-node-id="OIutlZYdgxijUuY3YqUCZ9">进入信息门户首页 → 点击「教务系统（学生）」</h3>
+          <p data-page-node-id="fb4E0hJucLhHWA1TSLBIhD">登录成功后，在首页的应用列表里找到并点击 <strong data-page-node-id="47DgAr68OiCwJCrihMYgjl">「教务系统（学生）」</strong>。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-11.jpg" title="点击放大">
-          <img src="assets/tut/step-11.jpg" alt="信息门户首页" loading="lazy" />
-          <div class="caption">图 11</div>
+        <a class="tut-step-img" data-src="assets/tut/step-11.jpg" title="点击放大" data-page-node-id="HIaElOSNtT5xCYVwmyc318">
+          <img src="assets/tut/step-11.jpg" alt="信息门户首页" loading="lazy" data-page-node-id="wYgSNmYTgTymDceVVpNWsq" />
+          <div class="caption" data-page-node-id="iSoC9l2TunXcDAnPKzMl9r">图 11</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-12">
-        <div class="tut-step-badge">12</div>
-        <div class="tut-step-body">
-          <h3>进入教务系统 → 点击「我的课表」</h3>
-          <p>在新打开的教务系统页面里找到 <strong>"我的课表"</strong> 并点击进入。</p>
+      <article class="tut-step" id="tut-step-12" data-page-node-id="aHqdmknHT9JsQXBtUmaAEi">
+        <div class="tut-step-badge" data-page-node-id="0FuaBUmCHU2Dpo3GalYKzr">12</div>
+        <div class="tut-step-body" data-page-node-id="lmslCOGXu82OTPa5eBcbDB">
+          <h3 data-page-node-id="HjJjGuWNnfqNCU8CQATsIL">进入教务系统 → 点击「我的课表」</h3>
+          <p data-page-node-id="IiyQdUhERfY1vapBFqsXpK">在新打开的教务系统页面里找到 <strong data-page-node-id="J8qMxzCZpDORWm28gwIHSx">「我的课表」</strong> 并点击进入。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-12.jpg" title="点击放大">
-          <img src="assets/tut/step-12.jpg" alt="教务系统" loading="lazy" />
-          <div class="caption">图 12</div>
+        <a class="tut-step-img" data-src="assets/tut/step-12.jpg" title="点击放大" data-page-node-id="oPylTjyKH60alaWNCji8KG">
+          <img src="assets/tut/step-12.jpg" alt="教务系统" loading="lazy" data-page-node-id="aTRjxvDRaTCNEPVVCPyKCs" />
+          <div class="caption" data-page-node-id="sr1IMYVnNRklEm2Mz81Ud0">图 12</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-13">
-        <div class="tut-step-badge">13</div>
-        <div class="tut-step-body">
-          <h3>课表页面加载完毕 → 点击「执行导入」</h3>
-          <p>当看到你本周的 <strong>"课表"</strong> 页面正常显示后，回到师大课程表 APP，点击右下角浮窗的 <strong>"执行导入"</strong> 按钮。</p>
+      <article class="tut-step" id="tut-step-13" data-page-node-id="pGHjKzSozXYXcbpHCBDazK">
+        <div class="tut-step-badge" data-page-node-id="l9ySwhHkFdyewAGljhEAtV">13</div>
+        <div class="tut-step-body" data-page-node-id="CZoskBdQXHmp9HSTBr1Uot">
+          <h3 data-page-node-id="Est0SAvTTbhwZMxXHxuSwy">课表页面加载完毕 → 点击「执行导入」</h3>
+          <p data-page-node-id="wNO26WS6tlDgkKl6IwA9Fw">当看到你如图所示的页面正常显示后，点击右下角浮窗的「执行导入」按钮。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-13.jpg" title="点击放大">
-          <img src="assets/tut/step-13.jpg" alt="教务课表" loading="lazy" />
-          <div class="caption">图 13</div>
+        <a class="tut-step-img" data-src="assets/tut/step-13.jpg" title="点击放大" data-page-node-id="lvxKFRiKus2EKdOgwEZ22a">
+          <img src="assets/tut/step-13.jpg" alt="教务课表" loading="lazy" data-page-node-id="OBJEXKU6KQo0huCBDQAis8" />
+          <div class="caption" data-page-node-id="0UY6GBThesE8nUb7vdPrBn">图 13</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-14">
-        <div class="tut-step-badge">14</div>
-        <div class="tut-step-body">
-          <h3>弹出确认框 → 点击「确定」</h3>
-          <p>APP 会提示跳转到教务课表页，确认无误后点击 <strong>"确定"</strong>。</p>
+      <article class="tut-step" id="tut-step-14" data-page-node-id="Da6TWv9McqPbxzxoTP6GNX">
+        <div class="tut-step-badge" data-page-node-id="QH1F1ZDTCwvllwujt4T1rA">14</div>
+        <div class="tut-step-body" data-page-node-id="luwFRc9V9FL5DoTqtM1tkk">
+          <h3 data-page-node-id="IF3fQMCrLYizvXdc1PFaSj">弹出确认框 → 点击「确定」</h3>
+
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-14.jpg" title="点击放大">
-          <img src="assets/tut/step-14.jpg" alt="导入确认" loading="lazy" />
-          <div class="caption">图 14</div>
+        <a class="tut-step-img" data-src="assets/tut/step-14.jpg" title="点击放大" data-page-node-id="jhc7w8C3SGs2hJrQGgcoTj">
+          <img src="assets/tut/step-14.jpg" alt="导入确认" loading="lazy" data-page-node-id="U8zt5diWKcUX4T75KQydre" />
+          <div class="caption" data-page-node-id="OSYnHcjngCALIAPzrFIK8F">图 14</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-15">
-        <div class="tut-step-badge">15</div>
-        <div class="tut-step-body">
-          <h3>选择学期 → 点击「开始导入」</h3>
-          <p>选择本学期所在的时间段，然后点击 <strong>"开始导入"</strong>。</p>
+      <article class="tut-step" id="tut-step-15" data-page-node-id="fQpG4M8MYReDgyHdqhhgz3">
+        <div class="tut-step-badge" data-page-node-id="FMPmAynaqs3fdZ21Ebig93">15</div>
+        <div class="tut-step-body" data-page-node-id="bPNNlp6aeJoLfEgGxxO2Eq">
+          <h3 data-page-node-id="CQnQvHGVjMj3F6HQk8TlJ7">选择学期 → 点击「开始导入」</h3>
+
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-15.jpg" title="点击放大">
-          <img src="assets/tut/step-15.jpg" alt="开始导入" loading="lazy" />
-          <div class="caption">图 15</div>
+        <a class="tut-step-img" data-src="assets/tut/step-15.jpg" title="点击放大" data-page-node-id="GF7oy2NogXB5x5RGgRIBUb">
+          <img src="assets/tut/step-15.jpg" alt="开始导入" loading="lazy" data-page-node-id="eNZT8sZIoMTgRdr1BokDks" />
+          <div class="caption" data-page-node-id="HH6z3plAOq6z2hsBmDJd5Q">图 15</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-16">
-        <div class="tut-step-badge">16</div>
-        <div class="tut-step-body">
-          <h3>再次确认 → 点击「确定」</h3>
-          <p>系统会再弹一次确认框（防止误操作），点击 <strong>"确定"</strong> 即可。</p>
+      <article class="tut-step" id="tut-step-16" data-page-node-id="ItN0NpZhWrSjqqBYi8UmkA">
+        <div class="tut-step-badge" data-page-node-id="KbsG7jOlH8faeuGdqDX5Aa">16</div>
+        <div class="tut-step-body" data-page-node-id="hXG9fW1Gtau5bU1ixn9s6r">
+          <h3 data-page-node-id="DgrJwZ0qShmIZYfajVAZk8">再次确认 → 点击「确定」</h3>
+
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-16.jpg" title="点击放大">
-          <img src="assets/tut/step-16.jpg" alt="最终确认" loading="lazy" />
-          <div class="caption">图 16</div>
+        <a class="tut-step-img" data-src="assets/tut/step-16.jpg" title="点击放大" data-page-node-id="HK6KGCm6E5OVfemATPjAIr">
+          <img src="assets/tut/step-16.jpg" alt="最终确认" loading="lazy" data-page-node-id="tSeMb1wb9NpXDIKwdD51e5" />
+          <div class="caption" data-page-node-id="KQMUgnTY4bb5XhC3SeRUoj">图 16</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-17">
-        <div class="tut-step-badge">17</div>
-        <div class="tut-step-body">
-          <h3>课表导入成功 🎉</h3>
-          <p>看到 "预设时间段导入成功！" 或类似提示后，你的全部课程就已经躺在 APP 里了，可以直接查看今日课表 / 本周课表。</p>
-          <div class="tut-callout tut-callout-info">
-            <span class="tut-icon">✅</span>
-            <span>课程、教师、教室、周次全部自动录入，无需手动添加。</span>
+      <article class="tut-step" id="tut-step-17" data-page-node-id="UyD3Ib43jOkXDsdG8vTrt2">
+        <div class="tut-step-badge" data-page-node-id="XiOGc0VbygIapUCSMEpBn7">17</div>
+        <div class="tut-step-body" data-page-node-id="dXaVdyltSGMQE12t7GYV7J">
+          <h3 data-page-node-id="RTooGMWe5s1h04nub8I74Q">课表导入成功 🎉</h3>
+          <p data-page-node-id="5qEkmGFB9zR8Lqb3Smm4AR">看到 「预设时间段导入成功！」 或类似提示后，你的全部课程就已经躺在 APP 里了，可以直接查看今日课表 / 本周课表。</p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="EXnD91GUYuwpeHiUc92Q5B">
+            <span class="tut-icon" data-page-node-id="V8ajatZ8Bk5Mik5TpNp0vF">✅</span>
+            <span data-page-node-id="lTbmqUBWn18pmnduw7emhG">课程名称、教师、教室、周次全部自动录入，无需手动添加。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-17.jpg" title="点击放大">
-          <img src="assets/tut/step-17.jpg" alt="导入成功后的课表" loading="lazy" />
-          <div class="caption">图 17</div>
+        <a class="tut-step-img" data-src="assets/tut/step-17.jpg" title="点击放大" data-page-node-id="Ol72NT40829aGj771fIhsn">
+          <img src="assets/tut/step-17.jpg" alt="导入成功后的课表" loading="lazy" data-page-node-id="UomwHuU7HT4Cqrt7CIHAJx" />
+          <div class="caption" data-page-node-id="3xa14NWPtKhiloNGbyB8wS">图 17</div>
         </a>
       </article>
     </section>
 
     <!-- ============= 阶段 4 ============= -->
-    <section class="tut-phase" id="tut-phase-4">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 04</span>
-        <h2>上课提醒</h2>
-        <span class="tut-range">步骤 18 - 20</span>
+    <section class="tut-phase" id="tut-phase-4" data-page-node-id="c7tGBlUCRDme8KFQkOuWfU">
+      <div class="tut-phase-head" data-page-node-id="I07rT6ZbZlAtIPNf7ZfSk6">
+        <span class="tut-num" data-page-node-id="ufkOEAroP1OocXMxTZQVXl">PHASE 04</span>
+        <h2 data-page-node-id="W41hUwnPVwLdfvJEtMTEK8">上课提醒</h2>
+        <span class="tut-range" data-page-node-id="dzAtRJoejFu5zkV00TX0BY">步骤 18 - 20</span>
       </div>
-      <p class="tut-phase-desc">设置通知、勿扰、提醒方式，让上课前自动提醒你。</p>
+      <p class="tut-phase-desc" data-page-node-id="uT7hMyhapg4OKLHd2riNGD">设置通知、勿扰、提醒方式，让上课前自动提醒你。</p>
 
-      <article class="tut-step" id="tut-step-18">
-        <div class="tut-step-badge">18</div>
-        <div class="tut-step-body">
-          <h3>授予通知、时间、勿扰权限</h3>
-          <p>如果需要开启"课程提醒设置"，APP 会申请 3 项权限：</p>
-          <p>① <strong>通知权限</strong>：上课前弹出提醒。<br/>
-          ② <strong>时间权限</strong>：精确到分钟触发提醒。<br/>
-          ③ <strong>勿扰权限</strong>：上课时自动静音。</p>
-          <div class="tut-callout tut-callout-warn">
-            <span class="tut-icon">⚠️</span>
-            <span>部分国产系统会"杀后台"，请同时把 APP 加入电池白名单 / 锁定后台，否则提醒可能失效。</span>
+      <article class="tut-step" id="tut-step-18" data-page-node-id="ll0f9wXn8JznRyiJTAFTdv">
+        <div class="tut-step-badge" data-page-node-id="JypP4JESTrw5tBLIaGSiu5">18</div>
+        <div class="tut-step-body" data-page-node-id="4sjdWW2CvdbZetZlDduJXw">
+          <h3 data-page-node-id="rWWLGAb5tsLAyhP9exg2Ea">授予通知与时间权限</h3>
+          <p data-page-node-id="x3ItS2u6yhB4kg6vdi2HRU">如果需要开启「课程提醒设置」，APP 会申请 2 项权限：</p>
+          <p data-page-node-id="WdYv52hRdvCsuwi4EveMDH">① <strong data-page-node-id="cxsNpOYqTI7AGFIPnyTweP">通知权限</strong>：上课前弹出提醒。<br data-page-node-id="NM1dE8OCNU2EMW42A3Z14i"/>
+          ② <strong data-page-node-id="XVaK1TmvMkE9l7SHp6ak6n">时间权限</strong>：精确到分钟触发提醒。</p>
+          <div class="tut-callout tut-callout-warn" data-page-node-id="Ft6OQtB31XD6oyPx2n8gq0">
+            <span class="tut-icon" data-page-node-id="S4F1EtBNZjAQM91eaBE2yf">⚠️</span>
+            <span data-page-node-id="3qbpqWlt0pTcDvl7X3FsET">部分国产系统会「杀后台」，请同时把 APP 加入电池白名单 / 锁定后台，否则提醒可能失效。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-18.jpg" title="点击放大">
-          <img src="assets/tut/step-18.jpg" alt="权限申请" loading="lazy" />
-          <div class="caption">图 18</div>
+        <a class="tut-step-img" data-src="assets/tut/step-18.jpg" title="点击放大" data-page-node-id="bumZhs2hJUt9kUFSaaCpPZ">
+          <img src="assets/tut/step-18.jpg" alt="权限申请" loading="lazy" data-page-node-id="Yj8CPWiUwStSHTM4DkRgRj" />
+          <div class="caption" data-page-node-id="3yx3umUHgrIEF1pAgaaMro">图 18</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-19">
-        <div class="tut-step-badge">19</div>
-        <div class="tut-step-body">
-          <h3>选择上课时手机进入勿扰还是静音</h3>
-          <p>可以根据场景选择：</p>
-          <p>• <strong>勿扰模式</strong>：屏蔽来电和通知（适合图书馆等安静场所）。<br/>
-          • <strong>静音模式</strong>：仅静音，仍能接到电话。</p>
+      <article class="tut-step" id="tut-step-19" data-page-node-id="rnwpWtvk6PR6JHMFW3yh5D">
+        <div class="tut-step-badge" data-page-node-id="g7s3fduEzZJq74H21O7ET6">19</div>
+        <div class="tut-step-body" data-page-node-id="gm3UnRALlguk0hDuRbJ0Nm">
+          <h3 data-page-node-id="ljQ1gk9ezt6ZC0rsMZVUMB">授予勿扰权限 & 选择上课时进入勿扰 / 静音</h3>
+          <p data-page-node-id="7aBGjGWRyj6QAqviuKRX16">先授予 <strong data-page-node-id="ExkUbbrfG151iZU4GfBeBv">勿扰权限</strong>：上课时 APP 可自动把手机设为静音或勿扰，避免上课被打扰。</p>
+          <p data-page-node-id="XfDn8HTL9QB31JGUadAp9k">然后根据场景选择模式：</p>
+          <p data-page-node-id="9fM4hsSlVBC3hZeCPu0QME">• <strong data-page-node-id="ajHqEKQgheQr906ilQS4uA">勿扰模式</strong>：屏蔽来电和通知（适合图书馆等安静场所）。<br data-page-node-id="pYkwC7oVJ3shi7ctIkipzn"/>
+          • <strong data-page-node-id="xhUzDeIOFaOLdnTTPyV4OG">静音模式</strong>：仅静音，仍能接到电话。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-19.jpg" title="点击放大">
-          <img src="assets/tut/step-19.jpg" alt="勿扰设置" loading="lazy" />
-          <div class="caption">图 19</div>
+        <a class="tut-step-img" data-src="assets/tut/step-19.jpg" title="点击放大" data-page-node-id="452SHrF6uZbK9LrUGdWlHB">
+          <img src="assets/tut/step-19.jpg" alt="勿扰设置" loading="lazy" data-page-node-id="Wcf4V6vZeBkl2J2EZbC9Yt" />
+          <div class="caption" data-page-node-id="yWB32QKR9I3uDXpORj45fV">图 19</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-20">
-        <div class="tut-step-badge">20</div>
-        <div class="tut-step-body">
-          <h3>个性化课程提醒</h3>
-          <p>设置上课前几分钟提醒、提醒音、是否震动等，按个人喜好调整。</p>
+      <article class="tut-step" id="tut-step-20" data-page-node-id="5eycQIz3GOD1yZNnYhElHs">
+        <div class="tut-step-badge" data-page-node-id="HE4UBWzNkpskM1XrL29bIO">20</div>
+        <div class="tut-step-body" data-page-node-id="0CsuHDIwuC2Mslxw7OAf40">
+          <h3 data-page-node-id="lMrNewVcGYDFWVRYfgNpqS">个性化课程提醒</h3>
+          <p data-page-node-id="ObwqZHUgGWZQ5DYlxxNY3m">设置上课前几分钟提醒、提醒音等，按个人喜好调整。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-20.jpg" title="点击放大">
-          <img src="assets/tut/step-20.jpg" alt="提醒设置" loading="lazy" />
-          <div class="caption">图 20</div>
-        </a>
-        <a class="tut-step-img tut-step-img-extra" data-src="assets/tut/step-20-extra.jpg" title="点击放大">
-          <img src="assets/tut/step-20-extra.jpg" alt="课程提醒打开后的效果" loading="lazy" />
-          <div class="caption">图 20 · 效果展示</div>
+        <a class="tut-step-img tut-step-img-extra" data-src="assets/tut/step-20-extra.jpg" title="点击放大" data-page-node-id="T4oPhrRNUc9axWL5kX3d4s">
+          <img src="assets/tut/step-20-extra.jpg" alt="课程提醒打开后的效果" loading="lazy" data-page-node-id="grkMqHJM5By1Bnk9cJQv6J" />
+          <div class="caption" data-page-node-id="POhGjUPGF0YFAvu40YLTfT">图 20 · 效果展示</div>
         </a>
       </article>
     </section>
 
     <!-- ============= 阶段 5 ============= -->
-    <section class="tut-phase" id="tut-phase-5">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 05</span>
-        <h2>个性化设置</h2>
-        <span class="tut-range">步骤 21 - 25</span>
+    <section class="tut-phase" id="tut-phase-5" data-page-node-id="yW3jahYYbwI8xhd1Y38cam">
+      <div class="tut-phase-head" data-page-node-id="k0F9EnfHZ5C903Es9L4SFL">
+        <span class="tut-num" data-page-node-id="IW5F6I9ky6Xo2T9szTgf4H">PHASE 05</span>
+        <h2 data-page-node-id="adtJBrJumCjqhEsUqujfIR">个性化设置</h2>
+        <span class="tut-range" data-page-node-id="IXAsE5xerQ7o1Fjmm6kgZB">步骤 21 - 25</span>
       </div>
-      <p class="tut-phase-desc">课程管理、时间段、启动页、关于 —— 让 APP 完全属于你的风格。</p>
+      <p class="tut-phase-desc" data-page-node-id="yjmDbIkh1SpjGS66kwaY1I">课程管理、时间段、启动页、关于 —— 让 APP 完全属于你的风格。</p>
 
-      <article class="tut-step" id="tut-step-21">
-        <div class="tut-step-badge">21</div>
-        <div class="tut-step-body">
-          <h3>课程管理：自由修改 / 添加 / 删除</h3>
-          <p>在"课程管理"页面可以自由编辑每一门课：</p>
-          <p>• 修改课程名称、颜色、教师、教室<br/>
-          • 添加自建课程（如社团、讲座）<br/>
+      <article class="tut-step" id="tut-step-21" data-page-node-id="ZcDJECI2774mj4C2btRiVD">
+        <div class="tut-step-badge" data-page-node-id="mgEO7ErsfwCiThtphgGtNT">21</div>
+        <div class="tut-step-body" data-page-node-id="EyHyQnYkAhzXvRP2gGX6ZF">
+          <h3 data-page-node-id="zzCkTJo47ONVjdXCWqvgw3">课程管理：自由修改 / 添加 / 删除</h3>
+          <p data-page-node-id="qNJtZ8lr2lcQEaBwA30wnH">在「课程管理」页面可以自由编辑每一门课：</p>
+          <p data-page-node-id="qeL5fbgRVQ5gOyW7WKzoBK">• 修改课程名称、颜色、教师、教室<br data-page-node-id="wOeOn4BIiuDToybqeKff9V"/>
+          • 添加自建课程（如社团、讲座）<br data-page-node-id="lOHBQBlm1GPpP1WtBLIkvM"/>
           • 删除不再上的课程</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-21.jpg" title="点击放大">
-          <img src="assets/tut/step-21.jpg" alt="课程管理" loading="lazy" />
-          <div class="caption">图 21</div>
+        <a class="tut-step-img" data-src="assets/tut/step-21.jpg" title="点击放大" data-page-node-id="S8Z4YAKqjVENqadyQOZtpk">
+          <img src="assets/tut/step-21.jpg" alt="课程管理" loading="lazy" data-page-node-id="hJGtD0d3jEH20vMTYRITUW" />
+          <div class="caption" data-page-node-id="hcUKoG5A5r4uLMh4Mh83f5">图 21</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-22">
-        <div class="tut-step-badge">22</div>
-        <div class="tut-step-body">
-          <h3>时间段管理：夏冬季自动切换</h3>
-          <p>APP 已经<strong>预设好了夏季、冬季两套作息时间</strong>，不用像其他课表软件那样一个时间段一个时间段手动设置。</p>
-          <div class="tut-callout tut-callout-info">
-            <span class="tut-icon">🌞</span>
-            <span>到了夏 / 冬作息切换日，APP 会自动应用新时间段，无需任何操作。根据学校往年的安排文件，切换日期通常是 10 月 1 日和 5 月 1 日。</span>
+      <article class="tut-step" id="tut-step-22" data-page-node-id="jbDBGFRSjFKSQD34afCDO2">
+        <div class="tut-step-badge" data-page-node-id="MHM6ejlCvaPOD0FhT3YHbu">22</div>
+        <div class="tut-step-body" data-page-node-id="jUgOBOPHXRGe2z2HqF2hA6">
+          <h3 data-page-node-id="BqmaFytcvZc9aqK5asBuXe">时间段管理</h3>
+          <p data-page-node-id="AE8uIH8B0bEBMGNcMNn56j">APP 已经<strong data-page-node-id="iVgM91gbUfxECPmbJSztNc">预设好了夏季、冬季两套作息时间</strong>，不用像其他课表软件或小程序那样一个一个慢慢手动设置，繁琐费时且无奈。当然，你也可以自定义你的时间。</p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="RfRZTDySggvHiLkIBPmkUG">
+            <span class="tut-icon" data-page-node-id="eIRgBbtG52TnLa8OpBIf1n">🌞</span>
+            <span data-page-node-id="ZmDVGUKi1wqWG1sTXFMskQ">到了夏 / 冬作息切换日，APP 会自动应用新时间段，无需任何操作。根据学校往年的安排文件，切换日期通常是 10 月 1 日和 5 月 1 日。</span>
+          </div>
+          <div class="tut-callout tut-callout-info" data-page-node-id="uBIPRPVnmGJEqYg6TEuFy0">
+            <span class="tut-icon" data-page-node-id="oYpY7H9PF6Wy9F9ArxpVkz">📚</span>
+            <span data-page-node-id="3KQPEY839HDpKT28zPKOmd">有早晚自习的同学建议自定义。「自定义」模式可以自动添加早、晚自习占位在课程表中。其中晚自习占位逻辑是：只要第 10 ~ 12 节课是空的，则占位「晚自习」框。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-22.jpg" title="点击放大">
-          <img src="assets/tut/step-22.jpg" alt="时间段管理" loading="lazy" />
-          <div class="caption">图 22</div>
+        <a class="tut-step-img" data-src="assets/666.jpg" title="点击放大" data-page-node-id="cymnfAZOG9Kxs7NqFCwAFk">
+          <img src="assets/666.jpg" alt="时间段管理" loading="lazy" data-page-node-id="BflyOQ0mVlFIjLmvCfhXvO" />
+          <div class="caption" data-page-node-id="ZYQ8Upe6MjT9Xqz3Q0p7Xq">图 22</div>
+        </a>
+        <a class="tut-step-img tut-step-img-extra" data-src="assets/777.jpg" title="点击放大" data-page-node-id="0w7pavMrutj8hKeAMXvV52">
+          <img src="assets/777.jpg" alt="时间段自定义" loading="lazy" data-page-node-id="2HJuvFcbC47CqzJyoOLJfm" />
+          <div class="caption" data-page-node-id="RT4x2GWNILBt8Sa6QwJR1j">图 22.5</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-23">
-        <div class="tut-step-badge">23</div>
-        <div class="tut-step-body">
-          <h3>个性化配置</h3>
-          <p>在这一页调整 APP 的整体外观和行为细节，让界面更贴合你的使用习惯。</p>
+      <article class="tut-step" id="tut-step-23" data-page-node-id="CsVdYX7y9qZSuKM57BjHaT">
+        <div class="tut-step-badge" data-page-node-id="Nf2b3mtQ8KDLC25EaIdHpk">23</div>
+        <div class="tut-step-body" data-page-node-id="weI9UIpt5mmbnZYPuCvZHH">
+          <h3 data-page-node-id="kh3i2ahMNG95LRLVPKHy4c">个性化配置</h3>
+          <p data-page-node-id="EV7ppGIovyFXFqh3s2fZiP">在这一页调整 APP 的整体外观和行为细节，让界面更贴合你的使用习惯。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-23.jpg" title="点击放大">
-          <img src="assets/tut/step-23.jpg" alt="个性化配置" loading="lazy" />
-          <div class="caption">图 23</div>
+        <a class="tut-step-img" data-src="assets/tut/step-23.jpg" title="点击放大" data-page-node-id="fz3aAqkTH9aW780PjEXl2C">
+          <img src="assets/tut/step-23.jpg" alt="个性化配置" loading="lazy" data-page-node-id="tf9dowOE07V6MHTCJrZ6aJ" />
+          <div class="caption" data-page-node-id="no3lPpgW2oo83foqJUtRac">图 23</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-24">
-        <div class="tut-step-badge">24</div>
-        <div class="tut-step-body">
-          <h3>启动页面设置</h3>
-          <p>可以选择打开 APP 时默认弹出：</p>
-          <p>• <strong>今日课表</strong>：快速看今天要上什么课<br/>
-          • <strong>本周总课表</strong>：查看一周全貌</p>
+      <article class="tut-step" id="tut-step-24" data-page-node-id="RADZxHfB32fLgymKQHZ4o1">
+        <div class="tut-step-badge" data-page-node-id="ICkRSWQ5i4ok6UYcPG17MT">24</div>
+        <div class="tut-step-body" data-page-node-id="xE8E8bKfgftnLAaLYF17LE">
+          <h3 data-page-node-id="j35Z3RYCTyswGZYfZKTtF6">启动页面设置</h3>
+          <p data-page-node-id="0l2uxUcCPgWLl20Rq1MJx7">可以选择打开 APP 时默认弹出：</p>
+          <p data-page-node-id="9HYmDRdIAOykB5grCnGhGx">• <strong data-page-node-id="8qwOW1g4OsT0i13spkoCXA">今日课表</strong>：快速看今天要上什么课<br data-page-node-id="2K9B3cfrXS2eUGjtXKY2xV"/>
+          • <strong data-page-node-id="aUsVDx0bHuDXg48gH04Dey">本周总课表</strong>：查看一周全貌</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-24.jpg" title="点击放大">
-          <img src="assets/tut/step-24.jpg" alt="启动页面设置" loading="lazy" />
-          <div class="caption">图 24</div>
+        <a class="tut-step-img" data-src="assets/tut/step-24.jpg" title="点击放大" data-page-node-id="H7G9SgdrBnBCmF9ySyDGYE">
+          <img src="assets/tut/step-24.jpg" alt="启动页面设置" loading="lazy" data-page-node-id="gaMcCS7pgFVhQ0vfPLhGyl" />
+          <div class="caption" data-page-node-id="EXrKQV2s75GWRdK53oWgzN">图 24</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-step-25">
-        <div class="tut-step-badge">25</div>
-        <div class="tut-step-body">
-          <h3>关于软件 & 反馈</h3>
-          <p>这里是 APP 的相关信息、版本号、致谢。</p>
-          <div class="tut-callout tut-callout-tip">
-            <span class="tut-icon">💌</span>
-            <span>如果遇到 bug 或者有功能建议，点击"关于软件"页面里的 <strong>蓝色字（开发者 CHISA_CWNU）</strong>，会弹出作者联系方式，欢迎反馈！</span>
+      <article class="tut-step" id="tut-step-25" data-page-node-id="VCcjKgQo2w8uCrRs6uPJk3">
+        <div class="tut-step-badge" data-page-node-id="gzxx4DzNpLyIWtXyFJfPBZ">25</div>
+        <div class="tut-step-body" data-page-node-id="WVoIazNxmh7BTE4DGcB0CG">
+          <h3 data-page-node-id="OZQ1xB5ECahrFQBZfNue8x">关于软件 & 反馈</h3>
+          <p data-page-node-id="3yJosDmzuw17e3y4okD9OL">这里是 APP 的相关信息、版本号、致谢。</p>
+          <div class="tut-callout tut-callout-tip" data-page-node-id="haqR79imC4Oj1QyDCUhIkG">
+            <span class="tut-icon" data-page-node-id="schuxcBpSU5VToUcDlQPWS">💌</span>
+            <span data-page-node-id="KAGLAdqtTQnN2Z50Anu0WA">① 点击校徽或「熊猫教授」会跳转到学校官网主页；② 点击「西华师范大学课程表」会跳转到该网页；③ 点击「CHISA_CWNU」会弹出作者联系方式和主页。如果遇到 bug 或者有功能建议，欢迎联系和反馈！</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/step-25.jpg" title="点击放大">
-          <img src="assets/tut/step-25.jpg" alt="关于软件" loading="lazy" />
-          <div class="caption">图 25</div>
+        <a class="tut-step-img" data-src="assets/888.jpg" title="点击放大" data-page-node-id="DKhcGjxjat560ez0Uk3Erk">
+          <img src="assets/888.jpg" alt="关于软件" loading="lazy" data-page-node-id="Ogz3dZH08nfvYRXFASaK5e" />
+          <div class="caption" data-page-node-id="jMlk0cGh9aJat9XWZazanl">图 25</div>
         </a>
       </article>
     </section>
 
     <!-- ============= 阶段 6 · 桌面小组件 ============= -->
-    <section class="tut-phase" id="tut-widgets">
-      <div class="tut-phase-head">
-        <span class="tut-num">PHASE 06</span>
-        <h2>桌面小组件</h2>
-        <span class="tut-range">组件步骤 1 - 9</span>
+    <section class="tut-phase" id="tut-widgets" data-page-node-id="G2wbxcWXaqStANRt5Dok3k">
+      <div class="tut-phase-head" data-page-node-id="Ii9ClS99LlHfsFe50xsZb7">
+        <span class="tut-num" data-page-node-id="cTVrCG8GV1zL1sIymdkrs6">PHASE 06</span>
+        <h2 data-page-node-id="49i3OCsD9j3gDp90ClswcZ">桌面小组件</h2>
+        <span class="tut-range" data-page-node-id="84CIxblZlyWAayMYf4FeLx">组件步骤 1 - 8</span>
       </div>
-      <p class="tut-phase-desc">把课表直接放到手机桌面上，不打开 APP 也能随时看到下一节课。共 9 步，全程约 2 分钟。</p>
+      <p class="tut-phase-desc" data-page-node-id="TxzzF7keokXHdvpPRG99X2">把课表直接放到手机桌面上，不打开 APP 也能随时看到下一节课。共 8 步，全程约 2 分钟。</p>
 
-      <article class="tut-step" id="tut-w-1">
-        <div class="tut-step-badge">1</div>
-        <div class="tut-step-body">
-          <h3>长按桌面空白处 → 进入组件管理</h3>
-          <p>在桌面空白处长按（或双指捏合缩小桌面），找到"添加组件"、"小组件"或"挂件"之类的入口进入。不同手机系统的叫法可能不一样，找到类似的设置就行。</p>
+      <article class="tut-step" id="tut-w-1" data-page-node-id="XL7grCQcpDRifMpWBwuKrQ">
+        <div class="tut-step-badge" data-page-node-id="rSvgRw44ahHsD4p3Z77ZM9">1</div>
+        <div class="tut-step-body" data-page-node-id="GFcWpl3aKZTYAHwmWLErdZ">
+          <h3 data-page-node-id="X4NcvVB2pLHyW16kBnRyXv">长按桌面空白处 → 进入组件管理</h3>
+          <p data-page-node-id="KE0AXlABk4mGJSG7OzyF69">在桌面空白处长按（或双指捏合缩小桌面），找到「添加组件」「小组件」或「挂件」之类的入口进入；不同手机系统的叫法可能不一样，找到类似的设置就行。有的手机需要划到列表最下方，点击「安卓小部件」或「应用挂件」之类的二级菜单才能找到本应用；有的手机还要先在系统设置里打开「桌面小组件」权限，耐心找一下即可。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-01.jpg" title="点击放大">
-          <img src="assets/tut/widget-01.jpg" alt="长按桌面进入组件管理" loading="lazy" />
-          <div class="caption">组件图 1</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-01.jpg" title="点击放大" data-page-node-id="56qvpdzuDX42eWwfBaFw3D">
+          <img src="assets/tut/widget-01.jpg" alt="长按桌面进入组件管理" loading="lazy" data-page-node-id="e0UEDx7xBkTkTt0RpbxnlS" />
+          <div class="caption" data-page-node-id="pqugGMeS01pYHhNrvpDoIF">组件图 1</div>
+        </a>
+        <a class="tut-step-img tut-step-img-extra" data-src="assets/tut/widget-02.jpg" title="点击放大" data-page-node-id="DSbCzaY8idFTDq6jsGybJa">
+          <img src="assets/tut/widget-02.jpg" alt="在组件列表中寻找师大课程表" loading="lazy" data-page-node-id="nLNqTGDIwoNlWrXCEj6l3h" />
+          <div class="caption" data-page-node-id="FGwNZSKvd9XYN1EDY6yy28">组件图 2</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-2">
-        <div class="tut-step-badge">2</div>
-        <div class="tut-step-body">
-          <h3>在组件列表中寻找"师大课程表"</h3>
-          <p>在组件列表里向下滑动，找到<strong>"师大课程表"</strong>。</p>
+
+
+      <article class="tut-step" id="tut-w-2" data-page-node-id="XUL1MXQC7gFd0ADNFiF4f0">
+        <div class="tut-step-badge" data-page-node-id="MDYr9LBYJASXqiC63pD17k">2</div>
+        <div class="tut-step-body" data-page-node-id="9BjkZ1RbFLuwjeiBzBQcjj">
+          <h3 data-page-node-id="x2cUi6mIDLYJSApMmloHCM">点击「师大课程表」</h3>
+          <p data-page-node-id="578j79QshqfdmbzxgNSLfT">点击后进入规格选择页面。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-02.jpg" title="点击放大">
-          <img src="assets/tut/widget-02.jpg" alt="在组件列表中寻找师大课程表" loading="lazy" />
-          <div class="caption">组件图 2</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-03.jpg" title="点击放大" data-page-node-id="MSHYzyuVqjbGbCXfdrQmZT">
+          <img src="assets/tut/widget-03.jpg" alt="点击师大课程表" loading="lazy" data-page-node-id="1UmSEV5wzbfaERg2BmXZ8D" />
+          <div class="caption" data-page-node-id="AWc9sAxSyoRF1Lk9TBOCYf">组件图 3</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-3">
-        <div class="tut-step-badge">3</div>
-        <div class="tut-step-body">
-          <h3>点击"师大课程表"</h3>
-          <p>点击后进入规格选择页面。</p>
-        </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-03.jpg" title="点击放大">
-          <img src="assets/tut/widget-03.jpg" alt="点击师大课程表" loading="lazy" />
-          <div class="caption">组件图 3</div>
-        </a>
-      </article>
-
-      <article class="tut-step" id="tut-w-4">
-        <div class="tut-step-badge">4</div>
-        <div class="tut-step-body">
-          <h3>四种规格任选，添加到桌面</h3>
-          <p>APP 已提供<strong>四种规格</strong>的小组件（左右滑动可预览），根据自己喜好和实际情况选择，点击<strong>"添加挂件"</strong>即可放到桌面。</p>
-          <div class="tut-callout tut-callout-info">
-            <span class="tut-icon">📐</span>
-            <span>小尺寸适合只看下一节课，大尺寸能直接看到当天全部课程。</span>
+      <article class="tut-step" id="tut-w-3" data-page-node-id="7xt8x7He1lEimzxsn6W4qm">
+        <div class="tut-step-badge" data-page-node-id="FR0cBOnWi8lf6OgfViCesl">3</div>
+        <div class="tut-step-body" data-page-node-id="CBzExsjDID3vw92BzkCL8u">
+          <h3 data-page-node-id="mJ1QXKkKpJN0mFBJrpa7PY">四种规格任选，添加到桌面</h3>
+          <p data-page-node-id="fIpWxHDuythbz6MFl5A1BH">APP 已提供<strong data-page-node-id="yqELTbvlHHX2r57HIUtyuE">四种规格</strong>的小组件（左右滑动可预览），根据自己喜好和实际情况选择，点击<strong data-page-node-id="ILDw5VVHGBj1ai3G5E1vAe">「添加挂件」</strong>即可放到桌面。</p>
+          <div class="tut-callout tut-callout-info" data-page-node-id="kHBxMNPOjp6IvSkwBo1CyV">
+            <span class="tut-icon" data-page-node-id="GICdXyaEtdcTO5jBjzEpqL">📐</span>
+            <span data-page-node-id="hBZyhcaLFo60ZV4AAMPWZV">小尺寸适合只看下一节课，大尺寸能直接看到当天全部课程。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-04.jpg" title="点击放大">
-          <img src="assets/tut/widget-04.jpg" alt="选择小组件规格并添加挂件" loading="lazy" />
-          <div class="caption">组件图 4</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-04.jpg" title="点击放大" data-page-node-id="MlAD0unD1J5xTG2zutkDTs">
+          <img src="assets/tut/widget-04.jpg" alt="选择小组件规格并添加挂件" loading="lazy" data-page-node-id="94o9fNr1ce844gfSBON3RH" />
+          <div class="caption" data-page-node-id="r7NfPsHTKiCD0rm0Yd2dSt">组件图 4</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-5">
-        <div class="tut-step-badge">5</div>
-        <div class="tut-step-body">
-          <h3>添加完成 · 效果展示</h3>
-          <p>添加后，小组件会显示<strong>当前 / 下一节课</strong>的名称、时间和上课地点，不用打开 APP 一目了然。</p>
+      <article class="tut-step" id="tut-w-4" data-page-node-id="N54CFAf2bj6SS8s2ZilHdu">
+        <div class="tut-step-badge" data-page-node-id="8zp8H58CLjycVtdybyojC2">4</div>
+        <div class="tut-step-body" data-page-node-id="rbUfXvCCMuOh5sy8bHZDIe">
+          <h3 data-page-node-id="2OtEdOBZAVEKsmUWoO9Bz3">添加完成 · 效果展示</h3>
+          <p data-page-node-id="U3yUOfxISKJSAvBa6qJ0U6">添加后，小组件会显示<strong data-page-node-id="8DKCBBu1hwK55NWFYhb8ZE">当前 / 下一节课</strong>的名称、时间和上课地点，不用打开 APP 一目了然。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-05.jpg" title="点击放大">
-          <img src="assets/tut/widget-05.jpg" alt="小组件添加后的效果" loading="lazy" />
-          <div class="caption">组件图 5 · 效果展示</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-05.jpg" title="点击放大" data-page-node-id="cVjFitueMYC1VMe8hYz7T3">
+          <img src="assets/tut/widget-05.jpg" alt="小组件添加后的效果" loading="lazy" data-page-node-id="GzgxqTYVipo8ERuusUzsUV" />
+          <div class="caption" data-page-node-id="e8m7aXFZBXrAENSSddT0ti">组件图 5 · 效果展示</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-6">
-        <div class="tut-step-badge">6</div>
-        <div class="tut-step-body">
-          <h3>长按小组件进行调整</h3>
-          <p>长按桌面上的小组件，边缘出现<strong>"调整"线</strong>时即可进行后续调整；此时也会出现"移除"按钮。</p>
-          <div class="tut-callout tut-callout-warn">
-            <span class="tut-icon">⚠️</span>
-            <span>部分系统可能不支持调整长宽的操作，长按无反应属正常现象。</span>
+      <article class="tut-step" id="tut-w-5" data-page-node-id="JBDQDNfCmtcpZjfPrKrGKF">
+        <div class="tut-step-badge" data-page-node-id="8DTsYGEBukjhFeZkj5DiX0">5</div>
+        <div class="tut-step-body" data-page-node-id="NgmMzQNmvCmZbbzJe7Z32K">
+          <h3 data-page-node-id="hTxDbooOksDqXiJlU17yDW">长按小组件进行调整</h3>
+          <p data-page-node-id="mhbhvqF82IOTCT57tCgJ04">长按桌面上的小组件，边缘出现<strong data-page-node-id="Bmybi9uvNu6eK6GZMP4qNC">「调整」线</strong>时即可进行后续调整；此时也会出现「移除」按钮。</p>
+          <div class="tut-callout tut-callout-warn" data-page-node-id="c8VYekdTmqGNpDtfc6xxpe">
+            <span class="tut-icon" data-page-node-id="Fl842FRpoZS4TLEs8mWAAo">⚠️</span>
+            <span data-page-node-id="mjL6eqUKl7cGG3WIcHW69f">部分系统可能不支持调整长宽的操作，长按无反应属正常现象。</span>
           </div>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-06.jpg" title="点击放大">
-          <img src="assets/tut/widget-06.jpg" alt="长按小组件出现移除按钮" loading="lazy" />
-          <div class="caption">组件图 6</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-06.jpg" title="点击放大" data-page-node-id="EUizVHoKvu1QIcEMY3atF1">
+          <img src="assets/tut/widget-06.jpg" alt="长按小组件出现移除按钮" loading="lazy" data-page-node-id="0drcF2jS1dVF70pXERMDN3" />
+          <div class="caption" data-page-node-id="EMA1dRx6yJwCHeE5Huq9Bb">组件图 6</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-7">
-        <div class="tut-step-badge">7</div>
-        <div class="tut-step-body">
-          <h3>自由拉动，个性化组件长宽</h3>
-          <p>拖动边缘的调整线，可以自由改变小组件的长和宽。</p>
+      <article class="tut-step" id="tut-w-6" data-page-node-id="ZefkH7dJQgt4o2yjFtcZkH">
+        <div class="tut-step-badge" data-page-node-id="l5m4xrUUhyZfSDV0MRlfUm">6</div>
+        <div class="tut-step-body" data-page-node-id="etRZXpJ7gfWgNBILLBRykH">
+          <h3 data-page-node-id="Lo7lZwXEO77ImGDafC8wd9">自由拉动，个性化组件长宽</h3>
+          <p data-page-node-id="44gecRbJ9XjUhCCBsVY1h0">拖动边缘的调整线，可以自由改变小组件的长和宽。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-07.jpg" title="点击放大">
-          <img src="assets/tut/widget-07.jpg" alt="自由拉动调整小组件长宽" loading="lazy" />
-          <div class="caption">组件图 7</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-07.jpg" title="点击放大" data-page-node-id="EAYsv9FXwEs8cuXsQA1PZh">
+          <img src="assets/tut/widget-07.jpg" alt="自由拉动调整小组件长宽" loading="lazy" data-page-node-id="qcNB96wIzBlPdnPJ9q9wJ3" />
+          <div class="caption" data-page-node-id="FnpW8d841IhpgzNpWA5mac">组件图 7</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-8">
-        <div class="tut-step-badge">8</div>
-        <div class="tut-step-body">
-          <h3>拉大后可显示完整课程</h3>
-          <p>拉大后的效果：组件会自适应显示当天完整课程列表、剩余节数和周次信息。</p>
+      <article class="tut-step" id="tut-w-7" data-page-node-id="uDoLx5nHSRHcpNaKNp9FiY">
+        <div class="tut-step-badge" data-page-node-id="6EaJnXxQlwJHOYw8b6mIdY">7</div>
+        <div class="tut-step-body" data-page-node-id="ToOGe1woCP08yhwAWwE2wM">
+          <h3 data-page-node-id="nECgAbqdRwfhKAXpiUotX5">拉大后可显示完整课程</h3>
+          <p data-page-node-id="IYpyggYq6MkpmnGVoVpdY7">拉大后的效果：组件会自适应显示当天完整课程列表、剩余节数和周次信息。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-08.jpg" title="点击放大">
-          <img src="assets/tut/widget-08.jpg" alt="拉大后显示完整课程列表" loading="lazy" />
-          <div class="caption">组件图 8</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-08.jpg" title="点击放大" data-page-node-id="DxDQgW7nNDIcSxwVrd3rIG">
+          <img src="assets/tut/widget-08.jpg" alt="拉大后显示完整课程列表" loading="lazy" data-page-node-id="8DSjkFRFKEG4ICxpRpfYxj" />
+          <div class="caption" data-page-node-id="fbiJUm7Vl0rYjW2wFa7hBH">组件图 8</div>
         </a>
       </article>
 
-      <article class="tut-step" id="tut-w-9">
-        <div class="tut-step-badge">9</div>
-        <div class="tut-step-body">
-          <h3>所有组件都适配个性化长宽</h3>
-          <p>无论你选择哪种规格，都支持按拖动后的尺寸自适应显示，想怎么摆就怎么摆。</p>
+      <article class="tut-step" id="tut-w-8" data-page-node-id="hnD1yBSG4zMFleZDJKCsD8">
+        <div class="tut-step-badge" data-page-node-id="ShHimr0Dw6kIBoZwOiiSFH">8</div>
+        <div class="tut-step-body" data-page-node-id="Io6U5pmHytYTYV4uVXxvsV">
+          <h3 data-page-node-id="B9s4bo9JnIN1fK0YraedAN">所有组件都适配个性化长宽</h3>
+          <p data-page-node-id="NfMyKRnHGnHu7JY4ldSPfW">无论你选择哪种规格，都支持按拖动后的尺寸自适应显示，想怎么摆就怎么摆。</p>
         </div>
-        <a class="tut-step-img" data-src="assets/tut/widget-09.jpg" title="点击放大">
-          <img src="assets/tut/widget-09.jpg" alt="不同尺寸组件均适配长宽" loading="lazy" />
-          <div class="caption">组件图 9</div>
+        <a class="tut-step-img" data-src="assets/tut/widget-09.jpg" title="点击放大" data-page-node-id="O4Wxt1WkfDaRRXjcFxi2Bi">
+          <img src="assets/tut/widget-09.jpg" alt="不同尺寸组件均适配长宽" loading="lazy" data-page-node-id="LuNwaPOsMuYXugdS09WQqV" />
+          <div class="caption" data-page-node-id="ly11wlkVUWMzAi04e8OHhb">组件图 9</div>
         </a>
       </article>
     </section>
@@ -1594,323 +1843,157 @@ html { scroll-padding-top: 84px; }
 </div>
 
 <!-- ===== 回到顶部（全站） ===== -->
-<button class="tut-to-top" id="tut-to-top" type="button" aria-label="回到顶部">↑</button>
+<button class="tut-to-top" id="tut-to-top" type="button" aria-label="回到顶部" data-page-node-id="MmKbKRSYtcuVOJsL7L0tv0">↑</button>
 
 <!-- ===== 图片灯箱（全站） ===== -->
-<div class="tut-lightbox" id="tut-lightbox" role="dialog" aria-label="图片预览">
-  <button class="tut-close" type="button" aria-label="关闭">×</button>
-  <img id="tut-lightbox-img" src="" alt="" />
+<div class="tut-lightbox" id="tut-lightbox" role="dialog" aria-label="图片预览" data-page-node-id="T5pVsQIDsyoUF9OO8tUiA6">
+  <button class="tut-close" type="button" aria-label="关闭" data-page-node-id="fOetqpUcYkbYONtAuEg6ad">×</button>
+  <img id="tut-lightbox-img" src="" alt="" data-page-node-id="SymHRAXpmfaWTaMAdQqYjq" />
 </div>
 
 
-<!-- ===================== 教程结束 · 进入功能介绍 ===================== -->
-<section class="sec" id="intro" style="padding:96px 0 36px;">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Features</span>
-            <h2><span class="sp">功能介绍</span> <span class="sp">一探究竟</span></h2>
-            <p class="sub">装好了、课表也导入了？下面完整逛一遍师大课程表的能力：一键导入、双视图课表、精致细节、上课提醒、桌面小组件与数据自由。</p>
-        </div>
-    </div>
-</section>
 
-<!-- ===================== 参数条 ===================== -->
-<div class="stat-strip">
-    <div class="wrap">
-        <div class="stats">
-            <div class="stat reveal"><div class="num" data-count="3"><em>步</em></div><div class="lb"><b>完成课表导入</b></div></div>
-            <div class="stat reveal d1"><div class="num" data-count="20"><em>周</em></div><div class="lb"><b>整学期自动排布</b></div></div>
-            <div class="stat reveal d2"><div class="num" data-count="12"><em>节</em></div><div class="lb"><b>西华作息全覆盖</b></div></div>
-            <div class="stat reveal d3"><div class="num" data-count="4"><em>种</em></div><div class="lb"><b>桌面小组件</b></div></div>
-        </div>
-    </div>
-</div>
-
-<!-- ===================== 纯净承诺 ===================== -->
-<section class="sec promise" id="promise">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Pure &amp; Free</span>
-            <h2><span class="sp">纯净无广告</span> <span class="sp">永久免费</span></h2>
-            <p class="sub">没有开屏广告，没有信息流推荐，没有会员与内购。现在免费，以后也免费<br>——这是一句承诺，不是营销策略。</p>
-        </div>
-
-        <div class="promise-list">
-            <div class="promise-item reveal">
-                <div class="zero"><b>0</b> 广告</div>
-                <p>无开屏、无横幅、无信息流推荐，课表页永远只放课表。</p>
-            </div>
-            <div class="promise-item reveal d1">
-                <div class="zero"><b>0</b> 内购</div>
-                <p>没有会员、没有付费解锁，全部功能一次装上即用。</p>
-            </div>
-            <div class="promise-item reveal d2">
-                <div class="zero"><b>0</b> 推送</div>
-                <p>不打扰、不营销，只发送你自己设置的上课提醒。</p>
-            </div>
-            <div class="promise-item reveal d3">
-                <div class="zero"><b>0</b> 收费</div>
-                <p>现在免费，未来也不会有广告和收费项目。</p>
-            </div>
-        </div>
-
-        <p class="promise-note reveal d2">
-            这是一个师大同学的个人非商业项目，根据学校宝宝们的体质量身定做，只想让师大兄弟姐妹们<b>「看课表」</b>这件事，轻松一点。
-        </p>
-    </div>
-</section>
-
-<!-- ===================== 秒启动 ===================== -->
-<section class="sec sec-green" id="launch">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Launch</span>
-            <h2><span class="sp">冷启动快</span> <span class="sp">秒开即用</span></h2>
-            <p class="sub">不论手机性能高低，点开几乎立刻进入课表。没有开屏动画，没有广告页，所见即课表。</p>
-        </div>
-        <div class="data-visual reveal">
-            <div class="phone">
-                <div class="phone-screen"><img src="assets/launch.gif" alt="师大课程表·冷启动演示" width="300" height="800" loading="lazy" onerror="this.onerror=null;this.src='assets/screen-week.png';"></div>
-            </div>
-            <p class="caption">冷启动演示 · 即点即开</p>
-        </div>
-        <div class="cards4">
-            <div class="card reveal"><div class="ico" aria-hidden="true">⚡</div><h3>冷启动秒开</h3><p>点开即进课表，不转圈、不白屏。</p></div>
-            <div class="card reveal d1"><div class="ico" aria-hidden="true">🚫</div><h3>无开屏动画</h3><p>没有广告页与强制引导，直接看到课表。</p></div>
-            <div class="card reveal d2"><div class="ico" aria-hidden="true">🪶</div><h3>轻量安装</h3><p>安装包约 4 MB，老旧机型也流畅运行。</p></div>
-            <div class="card reveal d3"><div class="ico" aria-hidden="true">🔋</div><h3>不常驻后台</h3><p>不偷跑流量、不常驻耗电，用完即走。</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== 一键导入 ===================== -->
-<section class="sec" id="import">
-    <div class="wrap split">
-        <div class="split-txt">
-            <div class="sec-head left reveal">
-                <span class="eyebrow">Import</span>
-                <h2><span class="sp">一键导入</span> <span class="sp">课表自来</span></h2>
-                <p class="sub">不用一门门手敲。登录一次学校统一认证，课程名称、授课教师、上课地点、周次安排自动解析入库，几秒钟生成整学期课表。</p>
-            </div>
-            <ul class="spec-lines reveal d1">
-                <li>统一认证登录，直达师大教务系统</li>
-                <li>自动识别课程、教师、教室与上课周次</li>
-                <li>开学日期自动写入，当前周次实时计算</li>
-                <li>支持 JSON 课表文件导入，换机不丢课表</li>
-            </ul>
-        </div>
-        <div class="split-vis reveal d2">
-            <div class="stage" style="min-height:0;">
-                <div class="phone">
-                    <div class="phone-screen">
-                        <img src="assets/screen-today.png" alt="师大课程表·今日课表界面截图" width="1080" height="2400" loading="lazy">
-                    </div>
-                </div>
-                <p class="caption">今日课表 · App 真实界面</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== 双视图 ===================== -->
-<section class="sec sec-green">
-    <div class="wrap split rev">
-        <div class="split-txt">
-            <div class="sec-head left reveal">
-                <span class="eyebrow">Schedule</span>
-                <h2><span class="sp">双视图切换</span> <span class="sp">一眼看清</span></h2>
-                <p class="sub">周课表看全局，今日课表看当下。左右滑动切换周次，长按拖动调整课程，假期倒计时与学期进度自动算好。</p>
-            </div>
-            <ul class="spec-lines reveal d1">
-                <li>周课表无限滑动，任意周次随手翻</li>
-                <li>今日课表一屏看完当天安排与剩余节数</li>
-                <li>长按拖动课程，调课换教室即刻完成</li>
-                <li>非本周课程、周末课程自由显示或隐藏</li>
-            </ul>
-        </div>
-        <div class="split-vis reveal d2">
-            <div class="duo">
-                <div class="phone">
-                    <div class="phone-screen"><img src="assets/view-week.jpg" alt="师大课程表·本周课表界面截图" loading="lazy"></div>
-                </div>
-                <div class="phone">
-                    <div class="phone-screen"><img src="assets/view-today.jpg" alt="师大课程表·今日课表界面截图" loading="lazy"></div>
-                </div>
-            </div>
-            <p class="caption">左：本周课表 · 右：今日课表，底部导航栏自由切换<br>也可在课程表设置选择启动时显示本周还是今日课表</p>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== 精致细节 ===================== -->
-<section class="sec" id="details">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Details</span>
-            <h2><span class="sp">精致细节</span> <span class="sp">质感跃升</span></h2>
-            <p class="sub">课表长什么样，由你说了算。从一张背景壁纸到一个圆角，每一处都能单独调整，还能跟随系统深浅色与壁纸取色。</p>
-        </div>
-        <div class="tiles">
-            <div class="tile reveal"><div class="k">🖼 壁纸</div><div class="t">课表背景自定义</div><div class="d">支持选图裁剪，长按可清除</div></div>
-            <div class="tile reveal d1"><div class="k">📐 尺寸</div><div class="t">格子高度与圆角</div><div class="d">高度、圆角、内外间距逐项微调</div></div>
-            <div class="tile reveal d2"><div class="k">🎨 配色</div><div class="t">课程块颜色池</div><div class="d">深浅两套配色，点圆形即可编辑</div></div>
-            <div class="tile reveal"><div class="k">🔠 文字</div><div class="t">缩放与对齐</div><div class="d">文字缩放比例、水平垂直居中</div></div>
-            <div class="tile reveal d1"><div class="k">🌗 主题</div><div class="t">深浅色与动态取色</div><div class="d">跟随系统，或取壁纸主色</div></div>
-            <div class="tile reveal d2"><div class="k">🕐 模式</div><div class="t">24 小时时间轴</div><div class="d">按真实时间轴纵向铺展课程</div></div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== 提醒与小组件（深色） ===================== -->
-<section class="sec sec-dark" id="widgets">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Reminder &amp; Widgets</span>
-            <h2><span class="sp">提醒常在</span> <span class="sp">课课不误</span></h2>
-            <p class="sub">课前准点提醒，上课自动切换勿扰或静音；四种尺寸桌面小组件，不打开 App 也能看见下一节课。</p>
-        </div>
-        <div class="widgets">
-            <div class="wg reveal">
-                <span class="size">2 × 1 超小</span>
-                <div class="shot"><img src="assets/widget-tiny.png" alt="超小课程 2×1 小组件截图" loading="lazy"></div>
-                <h3>下一节课</h3>
-                <p>一眼看到时间与教室</p>
-            </div>
-            <div class="wg reveal d1">
-                <span class="size">2 × 2 紧凑</span>
-                <div class="shot"><img src="assets/widget-compact.png" alt="紧凑课程 2×2 小组件截图" loading="lazy"></div>
-                <h3>今日概览</h3>
-                <p>剩余节数与课程列表</p>
-            </div>
-            <div class="wg reveal d2">
-                <span class="size">4 × 2 近日</span>
-                <div class="shot"><img src="assets/widget-double.png" alt="近日课程 4×2 小组件截图" loading="lazy"></div>
-                <h3>今明两天</h3>
-                <p>提前安排明天的行程</p>
-            </div>
-            <div class="wg reveal d3">
-                <span class="size">4 × N 垂直</span>
-                <div class="shot"><img src="assets/widget-list.png" alt="垂直列表课表 4×N 小组件截图" loading="lazy"></div>
-                <h3>垂直列表</h3>
-                <p>高度可拉伸，整周可览</p>
-            </div>
-        </div>
-        <ul class="spec-lines reveal d2" style="margin-top:34px;text-align:center;">
-            <li style="padding-left:0;"><b>小组件到桌面后可长按后自由拖动长宽，完全个性化自定义。</b></li>
-            <li style="padding-left:0;">课前提醒时间可自定义 · 支持精确闹钟与跳过节假日日期</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ===================== 数据 ===================== -->
-<section class="sec sec-green" id="data">
-    <div class="wrap">
-        <div class="sec-head reveal">
-            <span class="eyebrow">Your Data</span>
-            <h2><span class="sp">数据自由</span> <span class="sp">安心随行</span></h2>
-            <p class="sub">课表数据握在自己手里。可导出、可备份、可同步，也随时能清理。干净、安全、克制。</p>
-        </div>
-        <div class="data-visual reveal">
-            <div class="phone">
-                <div class="phone-screen"><img src="assets/data-screen.jpg" alt="课表导入/导出界面截图" loading="lazy"></div>
-            </div>
-            <p class="caption">课表导入/导出：JSON / ICS / 系统日历，一站式管理</p>
-        </div>
-        <div class="cards4">
-            <div class="card reveal"><div class="ico" aria-hidden="true">📤</div><h3>JSON 导入导出</h3><p>连时间段配置一起打包导出，换机或分享给同学都方便。</p></div>
-            <div class="card reveal d1"><div class="ico" aria-hidden="true">📆</div><h3>ICS 日历导出</h3><p>生成带提醒参数的日历文件，导入任意日历应用即可用。</p></div>
-            <div class="card reveal d2"><div class="ico" aria-hidden="true">🔄</div><h3>系统日历同步</h3><p>一键把当前课表同步进手机系统日历，跨应用也能看到课。</p></div>
-            <div class="card reveal d3"><div class="ico" aria-hidden="true">🔒</div><h3>凭据不出手机</h3><p>学号密码只在手机内完成登录，无广告、无推送、不申请无关权限。</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== 下载 ===================== -->
-<section class="sec" id="download">
-    <div class="wrap">
-        <div class="dl-box reveal">
-            <img class="dl-icon" src="assets/icon-256.png" alt="师大课程表图标" width="84" height="84">
-            <h2>立即下载</h2>
-            <p>选择对应机型的安装包，安装后跟随三步引导完成语言、主题与课表导入，即可开始使用。</p>
-            <a class="btn" href="https://gitee.com/CHISA8CWMU/shidakechengbiao/raw/master/v0.15.4.apk" target="_blank" rel="noopener">⬇ 免费下载</a>
-            <div class="dl-meta">
-                <span>📦 当前版本 <b>0.15.4 Beta</b></span>
-                <span>🎁 <b>完全免费</b></span>
-                <span>🚫 <b>无广告</b></span>
-                <span>📏 安装包约 <b>4 MB</b></span>
-            </div>
-            <p class="tip">提示：若手机提示「未知来源应用」，请在系统设置中允许来自此来源的安装；首次打开后请先导入课表。</p>
-        </div>
-    </div>
-</section>
 
 <!-- ===================== 页脚 ===================== -->
 
-<!-- ===================== 常见问题（全页末尾） ===================== -->
-<section class="sec sec-green" id="tut-faq">
-    <div class="wrap">
-        <div class="tut-faq tut-scope reveal">
+<!-- ===================== 应用迭代更新安装教程 ===================== -->
+<section class="sec sec-green" id="tut-update" data-page-node-id="nTwFaYpsyK8G9cMAZd2qqP">
+    <div class="wrap" data-page-node-id="IRrJT8tt6liqQB5VyRi04R">
+        <div class="tut-faq tut-scope reveal" data-page-node-id="OdMELntW5DNPJASpchmGAq">
+            <div class="tut-phase-head" data-page-node-id="VBFK08zAeSZ7419iACsyfG">
+                <span class="tut-num" data-page-node-id="3jmt3IU2Db8cUUwWxaVc7h">UPDATE</span>
+                <h2 data-page-node-id="uucX5HNspjsHrArMAUghlY">应用迭代更新安装教程</h2>
+            </div>
+            <p class="tut-phase-desc" data-page-node-id="2S5t8PsHCMmkGDDQPirzdC">当有新版本发布时，按照下面的步骤更新到最新版即可。</p>
 
-      <div class="tut-phase-head">
-        <span class="tut-num">FAQ</span>
-        <h2>常见问题</h2>
-      </div>
-      <p class="tut-phase-desc">配图说明里提到的几个高频疑问，统一在这里解答。</p>
+            <article class="tut-step" id="tut-update-1" data-page-node-id="hUf6pay5yh7glCBEAWg3bg">
+                <div class="tut-step-badge" data-page-node-id="1hPrasRn2TdcVYEGK53fYH">1</div>
+                <div class="tut-step-body" data-page-node-id="S2Z2WHo7VjFKNb4F4qdgt7">
+                    <h3 data-page-node-id="TQRhEf8ru6TqKLDkou2l43">长按应用图标 → 点击「应用信息」</h3>
+                    <p data-page-node-id="8KQOmUEbJu0Htaz5suCy0r">在桌面上长按「师大课程表」应用图标，在弹出的菜单中点击「应用信息」（不同系统可能此按钮名称不同，如「应用详情」「应用设置」等），进入「应用信息」页。</p>
+                </div>
+                <a class="tut-step-img" data-src="assets/15.jpg" title="点击放大" data-page-node-id="FFuOFUfNn5Of7ClFsyvaHp">
+                    <img src="assets/15.jpg" alt="应用信息页" loading="lazy" data-page-node-id="UaCp8wBXBO7HewAlBydQEk" />
+                    <div class="caption" data-page-node-id="jJokcLnq31XqpLbFnaM5G4">图 1</div>
+                </a>
+            </article>
 
-      <details>
-        <summary>为什么浏览器会显示"风险提示"页面？安全吗？</summary>
-        <p>该域名是腾讯云 CloudBase 的<strong>测试域名</strong>（未备案、未申请正式域名），所以会触发"页面访问提示"。作者没有花钱申请正式域名是因为本软件只分享给师大的兄弟姐妹们使用。内容安全，可以放心点击"确认访问"。</p>
-      </details>
-      <details>
-        <summary>登录信息门户时，页面重复出现了两次怎么办？</summary>
-        <p>这是学校网信的小 bug，会在极少数手机上出现。无需担心，<strong>再输入一次账密登录</strong>即可继续。</p>
-      </details>
-      <details>
-        <summary>安卓系统提示"未知来源应用" / 安全扫描怎么办？</summary>
-        <p>选择 <strong>"继续安装"</strong> 即可。如果系统询问"是否允许此来源安装"，勾选允许。这是安卓对未上架应用商店的 APK 的常规流程。</p>
-      </details>
-      <details>
-        <summary>课表导入了但没收到上课提醒？</summary>
-        <p>请检查：① 通知权限、时间权限、勿扰权限是否都已授予；② 是否把 APP 加入<strong>电池白名单 / 后台锁定</strong>（国产 ROM 默认会杀后台）；③ 在系统设置里把 APP 的自启动权限打开。</p>
-      </details>
-      <details>
-        <summary>夏冬作息切换需要手动调整吗？</summary>
-        <p>不需要。"时间段管理"已经预设了夏冬两套作息，到了切换日 APP 会<strong>自动应用</strong>。</p>
-      </details>
-      <details>
-        <summary>如何反馈 Bug 或建议？</summary>
-        <p>打开 APP → 进入 <strong>"关于软件"</strong> 页面 → 点击蓝色字（开发者 CHISA_CWNU），会弹出作者联系方式。</p>
-      </details>
+            <article class="tut-step" id="tut-update-2" data-page-node-id="B4TBkLd5tIccOlnWcEFLEA">
+                <div class="tut-step-badge" data-page-node-id="OBrue9DDVNedZyTbGXPlZt">2</div>
+                <div class="tut-step-body" data-page-node-id="xEDywvNNOmZkMyKnFmC8kS">
+                    <h3 data-page-node-id="AqSB6q5GNIHyD8JlNePL6B">点击「存储」</h3>
+                    <p data-page-node-id="nMdUVJw6YyDKwLVFJSO9L4">在「应用信息」页中找到并点击「存储」，进入「存储空间」页。</p>
+                </div>
+                <a class="tut-step-img" data-src="assets/14.jpg" title="点击放大" data-page-node-id="rTmb6tnnbLxKCiIM7XkgmN">
+                    <img src="assets/14.jpg" alt="存储空间页" loading="lazy" data-page-node-id="H5cIRKqpOQflJHrpBx9IQP" />
+                    <div class="caption" data-page-node-id="2YNg23zrjDNBkQMeDthrm8">图 2</div>
+                </a>
+            </article>
+
+            <article class="tut-step" id="tut-update-3" data-page-node-id="HtFPQkGZNk9hDi3Q1uXdao">
+                <div class="tut-step-badge" data-page-node-id="2GcKiZsjK9NDA2KCDVpVLe">3</div>
+                <div class="tut-step-body" data-page-node-id="m60Rff6FdEuo8S6eJ5wJ5n">
+                    <h3 data-page-node-id="jsVk66k5HL7FHIH9blisAe">清除缓存与清除数据</h3>
+                    <p data-page-node-id="UcK1kpASN7E3Pw0bek5Ovp">先点击「清除缓存」，再点击「清除数据」（清除数据会移除旧版配置与缓存，请确保课表已备份或已记住导入方式）。</p>
+                </div>
+                <a class="tut-step-img" data-src="assets/13.jpg" title="点击放大" data-page-node-id="qXUfo1OGCV94P24mDSkymO">
+                    <img src="assets/13.jpg" alt="清除缓存与数据" loading="lazy" data-page-node-id="sD01Tl0fweBg9FN7GqbCxD" />
+                    <div class="caption" data-page-node-id="L0swKKnmCR6jEA0m95ZGr1">图 3</div>
+                </a>
+            </article>
+
+            <article class="tut-step" id="tut-update-4" data-page-node-id="47uDKCxnCQaAyMKDuJmR9i">
+                <div class="tut-step-badge" data-page-node-id="hxAHBOh1VnKFl0ccx3YjV8">4</div>
+                <div class="tut-step-body" data-page-node-id="F6skyQe9FVmYcTJWqHKIAr">
+                    <h3 data-page-node-id="8iOu652HPx4cqKWP0AvNIU">返回并卸载旧版</h3>
+                    <p data-page-node-id="eqv7i66lt74iJeX9DVr9vg">返回到「应用信息」页，点击「卸载」，将旧版本卸载。</p>
+                </div>
+                <a class="tut-step-img" data-src="assets/12.jpg" title="点击放大" data-page-node-id="EXLsobBb0k2shJAWq0CzI8">
+                    <img src="assets/12.jpg" alt="卸载应用" loading="lazy" data-page-node-id="zIhbmM8nEhC69ionrDjmk7" />
+                    <div class="caption" data-page-node-id="HTgEKs5FHth1pIa2erwqzY">图 4</div>
+                </a>
+            </article>
+
+            <article class="tut-step" id="tut-update-5" data-page-node-id="VNXPzO0Tk3QYyD4gnYsxrA">
+                <div class="tut-step-badge" data-page-node-id="USW7dYO8lEfvQBXfMJ9WUq">5</div>
+                <div class="tut-step-body" data-page-node-id="OsfUwwqV6Sdh2ouSH23Vyp">
+                    <h3 data-page-node-id="kzp7bCmjqHFiCxOMP6qvw9">重新下载安装最新版</h3>
+                    <p data-page-node-id="7F8YClUmg6zMj5MCv9YypC">再按照「安装使用教程」重新下载最新版安装包，完成安装即可使用新版本。</p>
+                </div>
+            </article>
         </div>
     </div>
 </section>
 
-<footer class="footer" id="about">
-    <div class="wrap">
-        <div class="about-grid">
-            <div>
-                <h3>关于师大课程表</h3>
-                <p>"师大课程表"是一款CHISA_CWNU专为西华师范大学定制的课程表APP，基于XingHeYuZhuan的开源项目改造，采用 Kotlin Multiplatform 与 Compose Multiplatform 构建。</p>
-                <p>本项目仅供学习、交流与技术研究使用，请勿用于任何商业用途。使用本软件即代表您已同意上述声明。</p>
-                <p>使用教程中的配图与文案仅供学习交流使用 · Icons by Google and CHISA_CWNU · UI Framework by Material Design 3</p>
+<!-- ===================== 常见问题（全页末尾） ===================== -->
+<section class="sec sec-green" id="tut-faq" data-page-node-id="5EVFqgYrX79Pym9mEml1uC">
+    <div class="wrap" data-page-node-id="rfeOSGynEZeRWKj8phdosK">
+        <div class="tut-faq tut-scope reveal" data-page-node-id="Kydyr9vLUEwmaH7I4M2BCd">
+
+      <div class="tut-phase-head" data-page-node-id="BcCUsiTo6rd5bThQbgs9zo">
+        <span class="tut-num" data-page-node-id="plrMR5iCtgQmnx5SuLePGV">FAQ</span>
+        <h2 data-page-node-id="uSr79pesarm4RsDQJhwYbZ">常见问题</h2>
+      </div>
+      <p class="tut-phase-desc" data-page-node-id="3NBAwhtVAUMsrMAPVrtP42">配图说明里提到的几个高频疑问，统一在这里解答。</p>
+
+      <details data-page-node-id="m4cmIBsZ8izZ0AJHh5mMC0">
+        <summary data-page-node-id="ThMdsr5QrLkEe3H9KgUA2w">为什么会出现「风险提示」页面？安全吗？</summary>
+        <p data-page-node-id="VbMRkfTDkt6MHohiJcHdI2">本软件的初衷是分享给师大的兄弟姐妹们使用，没有申请、没有核准也没有备案。内容绝对安全喵。</p>
+      </details>
+      <details data-page-node-id="QaMWGqLUmCDm7m6GKDcRIp">
+        <summary data-page-node-id="PhyEcAmyPbIboNhQPEwUq7">登录信息门户时，为什么会重复出现两次登录页？</summary>
+        <p data-page-node-id="rSEdNskgj5Fv1a0NQWWqAP">这是校方制作网页时遗留的问题喵。作者推测是因为连接 WiFi 实际连接的是校园网，能直接访问信息门户；而使用流量时，得先建立 VPN，再访问信息门户。不过无需担心，再输入一次账密登录即可继续。</p>
+      </details>
+
+      <details data-page-node-id="DEMWQFy62mvcRcnylzIQR0">
+        <summary data-page-node-id="MT5KRBZZA37uYZraplqUyn">课表导入了但没收到上课提醒？</summary>
+        <p data-page-node-id="aIFdUOFQEkiz3xE8OF1xFN">请检查：① 通知权限、时间权限、勿扰权限是否都已授予；② 是否把 APP 加入<strong data-page-node-id="QLFEewgqw7FaRUFPe7ari3">电池白名单 / 后台锁定</strong>（国产 ROM 默认会杀后台）；③ 在系统设置里把 APP 的自启动权限打开。</p>
+      </details>
+      <details data-page-node-id="NiyAin2CrtR0EXkmhNLyRu">
+        <summary data-page-node-id="2S2IOrXDO5cZhycIi10M3n">夏冬作息切换需要手动调整吗？</summary>
+        <p data-page-node-id="mHs230kku1RQvxWRUVlTOK">不需要。「时间段管理」已经预设了夏冬两套作息，到了切换日 APP 会<strong data-page-node-id="E529RGP8xxp9JKCMhtiQZQ">自动应用</strong>。</p>
+      </details>
+      <details data-page-node-id="qSmXYm5sKD2rubtkeLPGnT">
+        <summary data-page-node-id="maNzZrVJVS0aZ7OC9ANxyz">如何反馈 Bug 或建议？</summary>
+        <p data-page-node-id="c3YPTNyIL1Rm7oq64hJAcM">打开 APP → 进入 <strong data-page-node-id="D5hngiEMLAB1nLVtrSMiTP">「关于软件」</strong> 页面 → 点击蓝色字（开发者 CHISA_CWNU），会弹出作者联系方式。也可在本网页最下方「联系与反馈」找到作者联系方式喵。</p>
+      </details>
+      <details data-page-node-id="NOUbv3QZ2h92CqFygTStyY">
+        <summary data-page-node-id="zTYU6bnE87LkSVklrxD4Vx">软件只有 Android（安卓）吗？没有 iOS 和 HarmonyOS（鸿蒙操作系统）吗？</summary>
+        <p data-page-node-id="aw8v8Seu70F4LdggeeHVMD">软件目前只有 Android，暂未移植到 iOS 和 HarmonyOS。不过之后可能会移植到 HarmonyOS，但是大概率不会移植 iOS。因为我没有 iOS / MacOS 的设备以及它们的使用经验，最重要的是每年需要缴纳不少于 99 美元的 Apple Developer 费用，另外上架 APP Store 也要经过严格的审核和缴纳及其高昂的费用，成本非常高。所以大概率不会移植 iOS 喵。</p>
+      </details>
+      <div class="tut-thanks" style="text-align:center;font-size:20px;font-weight:700;line-height:1.7;margin-top:40px;background:linear-gradient(90deg,#00955c,#22c55e,#16a34a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;" data-page-node-id="AXzJfGj3YHX2WBdHP8pIdj">感谢您下载和使用本应用喵<br data-page-node-id="wIDqnpKOsLpt18lfeAYPHr"/>兄弟姐妹们的支持和信任就是作者开发和修复的动力喵</div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" id="about" data-page-node-id="0pugal61ITetHOpV9dx2k6">
+    <div class="wrap" data-page-node-id="zXmDxoGkDl45oKWH03stt6">
+        <div class="about-grid" data-page-node-id="t3Bex09C9HSeyil9QPje8B">
+            <div data-page-node-id="cf7vXLKzx8ADeDrDWOJ4AI">
+                <h3 data-page-node-id="kAc3yrXwPFO1SnRTaXS9Aj">关于师大课程表</h3>
+                <p data-page-node-id="I4gb0Gg8GUdIdZEFhqWQlb">「师大课程表」是一款CHISA_CWNU专为西华师范大学定制的课程表APP，基于XingHeYuZhuan的开源项目改造，采用 Kotlin Multiplatform 与 Compose Multiplatform 构建。</p>
+                <p data-page-node-id="iu4BNmmJWtpL9DanWGREOg">本项目仅供学习、交流与技术研究使用，请勿用于任何商业用途。使用本软件即代表您已同意上述声明。</p>
+                <p data-page-node-id="pHSaxQ4G8mnZsWByREVldV">使用教程中的配图与文案仅供学习交流使用 · Icons by Google and CHISA_CWNU · UI Framework by Material Design 3</p>
             </div>
-            <div>
-                <h3>联系与反馈</h3>
-                <p>CHISA_CWNU, who is a stupid student at the Business School of China West Normal University</p>
-                <p>邮箱：<a href="mailto:chisa8cwnu@duck.com">chisa8cwnu@duck.com</a></p>
-                <p>GitHub：<a href="https://github.com/CHISA8CWNU" target="_blank" rel="noopener">github.com/CHISA8CWNU</a></p>
-                <p>Gitee：<a href="https://gitee.com/CHISA8CWMU" target="_blank" rel="noopener" style="color:#6ee7b7">https://gitee.com/CHISA8CWMU</a></p>
-                <p>腾讯QID：Deep1Sleep</p>
-                <p>特别鸣谢：<a href="https://github.com/XingHeYuZhuan" target="_blank" rel="noopener">XingHeYuZhuan</a>及<a href="https://github.com/XingHeYuZhuan/shiguangschedule/graphs/contributors?from=2026%2F6%2F6" target="_blank" rel="noopener" style="color:#6ee7b7">代码仓库的贡献者们</a>。</p>
+            <div data-page-node-id="BNrJIDGDJtlcFIiXSwW3PA">
+                <h3 data-page-node-id="z9qJLaFhIRkVEcdz9b8y1T">联系与反馈</h3>
+                <p data-page-node-id="UEHKAcRnHxecaJ9lUBVzrG">CHISA_CWNU, who is a stupid student at the Business School of China West Normal University</p>
+                <p data-page-node-id="2udIfmPof8apw7IinirMec">邮箱：<a href="mailto:chisa8cwnu@duck.com" data-page-node-id="FgbeUamT9qpkyZz3Z1siQD">chisa8cwnu@duck.com</a></p>
+                <p data-page-node-id="HGOMoSuumqtL5Y1G9FqrG2">GitHub：<a href="https://github.com/CHISA8CWNU" target="_blank" rel="noopener" data-page-node-id="vNmAXSF6AxPY9ck3kVI3Xw">github.com/CHISA8CWNU</a></p>
+                <p data-page-node-id="14zxlBg4sWhU30rPomukeW">Gitee：<a href="https://gitee.com/CHISA8CWMU" target="_blank" rel="noopener" style="color:#6ee7b7" data-page-node-id="YuX00wRCTb8abF5q5Jmmke">https://gitee.com/CHISA8CWMU</a></p>
+                <p data-page-node-id="Yb1JLHkygzfDZCIH7fABOj">腾讯QID：Deep1Sleep</p>
+                <p data-page-node-id="Dzz4Mw9pDM21k89K3eNGxc">特别鸣谢：<a href="https://github.com/XingHeYuZhuan" target="_blank" rel="noopener" data-page-node-id="2qwTwoKQJgvoCZAEvQXXwZ">XingHeYuZhuan</a>及<a href="https://github.com/XingHeYuZhuan/shiguangschedule/graphs/contributors?from=2026%2F6%2F6" target="_blank" rel="noopener" style="color:#6ee7b7" data-page-node-id="VBEmOtsrSfPRfKu7ogiNCm">代码仓库的贡献者们</a>。</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <nav>
-                <a href="#tut-top">使用教程</a>
-                <a href="#import">功能介绍</a>
-                <a href="#widgets">小组件</a>
-                <a href="#download">下载</a>
-                <a href="#about">关于</a>
+        <div class="footer-bottom" data-page-node-id="YhAMFIdcx7fODSfV3rE4VT">
+            <nav data-page-node-id="WVk4a1xkQ7vTz7fEBVf0ov">
+                <a href="#tut-top" data-page-node-id="b2CmOYVZautcGa8zlntn2a">总览</a>
+                <a href="#intro" data-page-node-id="6uvYrjrScsBp9SMTCLC6Ti">详细介绍</a>
+                <a href="#tut-phase-1" data-page-node-id="CrpPIjgWCIcgZKXO0y5CiS">安装使用教程</a>
+                <a href="#tut-widgets" data-page-node-id="Hy0O6b6ve3WgWuhoTtmH4M">小组件使用教程</a>
+                <a href="#tut-update" data-page-node-id="J7EVCnvUGx11GaMxp2oDLf">应用迭代更新</a>
+                <a href="#tut-faq" data-page-node-id="m4S7uPhNnrbPk6FbvYPB9D">常见问题</a>
+                <a href="#about" data-page-node-id="OInEutqlx0Lb0SSAinRGQI">关于 & 反馈</a>
             </nav>
         </div>
     </div>
@@ -1981,32 +2064,9 @@ html { scroll-padding-top: 84px; }
     }
 })();
 
-// ---- 复制链接 ----
-  const copyBtn = document.getElementById('tut-copy-btn');
-  const urlEl = document.getElementById('tut-app-url');
-  copyBtn.addEventListener('click', async () => {
-    const url = urlEl.textContent.trim();
-    try {
-      await navigator.clipboard.writeText(url);
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = url;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-    copyBtn.textContent = '已复制 ✓';
-    copyBtn.classList.add('tut-copied');
-    setTimeout(() => {
-      copyBtn.textContent = '复制';
-      copyBtn.classList.remove('tut-copied');
-    }, 2000);
-  });
-
   // ---- TOC 高亮当前阶段 ----
   const tocLinks = document.querySelectorAll('.tut-toc a');
-  const sections = ['tut-phase-1', 'tut-phase-2', 'tut-phase-3', 'tut-phase-4', 'tut-phase-5', 'tut-widgets', 'tut-faq'];
+  const sections = ['tut-phase-1', 'tut-phase-2', 'tut-phase-3', 'tut-phase-4', 'tut-phase-5', 'tut-widgets', 'tut-update', 'tut-faq'];
   const setActive = (id) => {
     tocLinks.forEach(a => {
       a.classList.toggle('tut-active', a.getAttribute('href') === '#' + id);
